@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eletromobilidade — Esys Energia</title>
+
+  <!-- CSS global (header/footer/whats + seções reaproveitadas da Home) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS só desta página -->
+  <link rel="stylesheet" href="eletromobilidade.css" />
+</head>
+
+<body>
+
+  <!-- ✅ HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+
+      <!-- BLOCO ESQUERDO -->
+      <div class="header-left">
+        <a class="logo" href="index.html#topo">
+          <img src="logo esys.png" alt="Esys Energia">
+        </a>
+
+        <nav class="menu-left">
+          <a href="index.html#topo">Energia Solar</a>
+          <a href="eletromobilidade.html" class="active">Eletromobilidade</a>
+          <a href="smarthome.html">Smarthome</a>
+        </nav>
+      </div>
+
+      <!-- BLOCO DIREITO -->
+      <nav class="menu-right">
+        <a href="sobre.html">Sobre nós</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="eletro-page">
+
+    <!-- ✅ HERO + CARROSSEL -->
+    <section class="eletro-hero">
+      <div class="eletro-container">
+
+        <!-- TEXTO -->
+        <div class="eletro-left">
+          <div class="eletro-kicker">Soluções em Eletromobilidade</div>
+
+          <h1 class="eletro-title">
+            Carregadores veiculares<br>
+            <span>para qualquer cenário elétrico</span>
+          </h1>
+
+          <p class="eletro-subtitle">
+            A <strong>Esys Energia</strong> projeta e instala infraestrutura completa para carregamento residencial,
+            comercial e corporativo. Circuito dedicado, proteção correta e dimensionamento técnico para operação
+            segura, eficiente e conforme norma.
+          </p>
+
+          <div class="eletro-actions">
+            <a class="eletro-btn eletro-btn-primary"
+               href="https://wa.me/5511996187450?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20t%C3%A9cnico%20para%20carregador%20veicular."
+               target="_blank" rel="noopener">
+              Solicitar proposta técnica
+            </a>
+
+            <a class="eletro-btn eletro-btn-outline" href="#vantagens">
+              Ver detalhes ↓
+            </a>
+          </div>
+        </div>
+
+        <!-- CARROSSEL -->
+        <div class="eletro-right">
+          <div class="eletro-carousel" aria-label="Carrossel de eletromobilidade">
+
+            <button class="eletro-arrow prev" id="eletroPrev" type="button" aria-label="Imagem anterior">‹</button>
+
+            <div class="eletro-viewport">
+              <div class="eletro-track" id="eletroTrack">
+
+                <div class="eletro-slide">
+                  <img src="eletrohero1.png" alt="Carregador veicular residencial" loading="eager" decoding="async">
+                </div>
+
+                <div class="eletro-slide">
+                  <img src="eletrohero2.png" alt="Carregador veicular em ambiente comercial" loading="lazy" decoding="async">
+                </div>
+
+                <div class="eletro-slide">
+                  <img src="eletrohero3.png" alt="Infraestrutura de recarga em condomínio" loading="lazy" decoding="async">
+                </div>
+
+              </div>
+            </div>
+
+            <button class="eletro-arrow next" id="eletroNext" type="button" aria-label="Próxima imagem">›</button>
+
+            <div class="eletro-dots" id="eletroDots" aria-label="Navegação do carrossel"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ✅ SEÇÃO — 2 CENÁRIOS -->
+    <section class="eletro-pick2 reveal" id="vantagens">
+      <div class="eletro-section-inner">
+
+        <div class="pick2-head">
+          <div class="pick2-pill">Escolha rápida</div>
+          <h2>Qual carregador faz sentido no seu cenário?</h2>
+          <p class="pick2-sub">
+            Dois caminhos claros. A Esys dimensiona a infraestrutura e entrega com proteções e comissionamento.
+          </p>
+        </div>
+
+        <div class="pick2-grid">
+
+          <!-- RESIDENCIAL -->
+          <article class="pick2-card pick2-anim" style="--d: 0ms;">
+            <div class="pick2-top">
+              <div class="pick2-chip">Residencial</div>
+
+              <div class="pick2-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64">
+                  <path d="M32 12a2 2 0 0 1 2 2v6a2 2 0 1 1-4 0v-6a2 2 0 0 1 2-2zM32 44a2 2 0 0 1 2 2v6a2 2 0 1 1-4 0v-6a2 2 0 0 1 2-2zM12 32a2 2 0 0 1 2-2h6a2 2 0 1 1 0 4h-6a2 2 0 0 1-2-2zM44 32a2 2 0 0 1 2-2h6a2 2 0 1 1 0 4h-6a2 2 0 0 1-2-2zM18.2 18.2a2 2 0 0 1 2.8 0l4.2 4.2a2 2 0 1 1-2.8 2.8L18.2 21a2 2 0 0 1 0-2.8zM38.8 38.8a2 2 0 0 1 2.8 0l4.2 4.2a2 2 0 1 1-2.8 2.8l-4.2-4.2a2 2 0 0 1 0-2.8zM45.8 18.2a2 2 0 0 1 0 2.8l-4.2 4.2a2 2 0 1 1-2.8-2.8l4.2-4.2a2 2 0 0 1 2.8 0zM25.2 38.8a2 2 0 0 1 0 2.8L21 45.8a2 2 0 1 1-2.8-2.8l4.2-4.2a2 2 0 0 1 2.8 0z"/>
+                  <path d="M32 22c5.5 0 10 4.5 10 10 0 5.5-4.5 10-10 10s-10-4.5-10-10c0-5.5 4.5-10 10-10z"/>
+                  <path d="M47 29h-4a2 2 0 0 0-2 2v5a3 3 0 0 0 3 3h1v3a2 2 0 1 0 4 0v-3h1a3 3 0 0 0 3-3v-5a2 2 0 0 0-2-2h-2z"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="pick2-body">
+              <h3>Wallbox AC</h3>
+              <div class="pick2-meta">7–22 kW • recarga diária</div>
+
+              <div class="pick2-bullets">
+                <div class="pick2-row"><span class="pick2-dot"></span><span><strong>Ideal:</strong> garagem e rotina previsível.</span></div>
+                <div class="pick2-row"><span class="pick2-dot"></span><span><strong>Infra:</strong> circuito dedicado + DR/DPS.</span></div>
+                <div class="pick2-row"><span class="pick2-dot"></span><span><strong>Entrega:</strong> comissionamento + testes.</span></div>
+              </div>
+
+              <a class="pick2-cta"
+                 href="https://wa.me/5511996187450?text=Ol%C3%A1!%20Quero%20dimensionar%20um%20carregador%20RESIDENCIAL%20(AC)%20com%20proposta%20t%C3%A9cnica."
+                 target="_blank" rel="noopener">
+                Quero para casa →
+              </a>
+            </div>
+
+            <div class="pick2-photo">
+              <img src="eletro-residencial.jpg" alt="Carregador veicular residencial (wallbox)">
+            </div>
+          </article>
+
+          <!-- COMERCIAL -->
+          <article class="pick2-card pick2-anim" style="--d: 120ms;">
+            <div class="pick2-top">
+              <div class="pick2-chip">Comercial</div>
+
+              <div class="pick2-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64">
+                  <path d="M26 10a2 2 0 0 1 2 2v12a2 2 0 1 1-4 0V12a2 2 0 0 1 2-2zM38 10a2 2 0 0 1 2 2v12a2 2 0 1 1-4 0V12a2 2 0 0 1 2-2z"/>
+                  <path d="M20 26h24v8c0 8.3-6.7 15-15 15h-3c-3.3 0-6-2.7-6-6V26z"/>
+                  <path d="M36 34l-10 18h8l-2 12 12-18h-8l2-12z"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="pick2-body">
+              <h3>AC corporativo ou DC</h3>
+              <div class="pick2-meta">alto fluxo • viabilidade</div>
+
+              <div class="pick2-bullets">
+                <div class="pick2-row"><span class="pick2-dot"></span><span><strong>Ideal:</strong> frota, operação e clientes.</span></div>
+                <div class="pick2-row"><span class="pick2-dot"></span><span><strong>Viabilidade:</strong> demanda e infraestrutura.</span></div>
+                <div class="pick2-row"><span class="pick2-dot"></span><span><strong>Melhor ROI:</strong> definir AC vs DC certo.</span></div>
+              </div>
+
+              <a class="pick2-cta"
+                 href="https://wa.me/5511996187450?text=Ol%C3%A1!%20Quero%20avaliar%20viabilidade%20de%20carregador%20COMERCIAL%20(AC%20ou%20DC)%20com%20an%C3%A1lise%20t%C3%A9cnica."
+                 target="_blank" rel="noopener">
+                Quero para comércio →
+              </a>
+            </div>
+
+            <div class="pick2-photo">
+              <img src="eletro-comercial.jpg" alt="Carregador veicular comercial">
+            </div>
+          </article>
+
+        </div>
+
+        <div class="pick2-foot">
+          <div class="pick2-trust">
+            <strong>Padrão Esys:</strong> dimensionamento + circuito dedicado + DR/DPS + aterramento + comissionamento.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ✅ SOLAR + CARREGADOR -->
+    <section class="eletro-combo" id="solar-e-carregador">
+      <div class="eletro-section-inner">
+        <div class="combo-grid">
+
+          <!-- TEXTO -->
+          <div class="combo-left">
+            <div class="combo-pill">Solar + Eletromobilidade</div>
+
+            <h2 class="combo-title">
+              Painel solar + carregador veicular:<br>
+              <span>o combo que faz o custo por km despencar</span>
+            </h2>
+
+            <p class="combo-lead">
+              Se você já tem (ou pretende ter) <strong>energia solar</strong>, faz sentido planejar o carregador junto.
+              A Esys dimensiona o sistema considerando <strong>potência do wallbox</strong>, <strong>capacidade elétrica</strong>,
+              <strong>proteções</strong> e a estratégia de uso para que a recarga aconteça com segurança e o máximo de aproveitamento da sua geração.
+            </p>
+
+            <div class="combo-points">
+              <div class="combo-point">
+                <strong>Projeto integrado</strong>
+                <span>carregador + infraestrutura elétrica + consumo e geração no mesmo racional.</span>
+              </div>
+              <div class="combo-point">
+                <strong>Mais retorno do solar</strong>
+                <span>você “transforma sol em km”, reduzindo custo operacional do carro.</span>
+              </div>
+              <div class="combo-point">
+                <strong>Sem gambiarra</strong>
+                <span>circuito dedicado, DR/DPS, aterramento e comissionamento com entrega técnica.</span>
+              </div>
+            </div>
+
+            <div class="combo-actions">
+              <a class="combo-btn combo-btn-primary"
+                 href="https://wa.me/5511996187450?text=Ol%C3%A1!%20Quero%20uma%20proposta%20integrada%20de%20PAINEL%20SOLAR%20%2B%20CARREGADOR%20VEICULAR%20(com%20dimensionamento%20t%C3%A9cnico%20e%20infraestrutura)."
+                 target="_blank" rel="noopener">
+                Quero proposta do combo
+              </a>
+
+              <a class="combo-btn combo-btn-outline" href="#simulador">
+                Ver simulação ↓
+              </a>
+            </div>
+
+            <div class="combo-note">
+              * A viabilidade depende do seu perfil de uso, tarifa e capacidade elétrica disponível. A proposta técnica confirma o melhor cenário.
+            </div>
+          </div>
+
+          <!-- VISUAL / CARD -->
+          <div class="combo-right">
+            <div class="combo-card combo-card-animated" id="comboCard">
+
+              <div class="combo-illustration" aria-hidden="true">
+                <svg class="combo-svg" viewBox="0 0 420 240" role="img" aria-label="Ilustração: sol e plug">
+                  <defs>
+                    <radialGradient id="sunGlow" cx="50%" cy="50%" r="60%">
+                      <stop offset="0%" stop-color="rgba(255,210,46,.85)"/>
+                      <stop offset="70%" stop-color="rgba(255,210,46,.18)"/>
+                      <stop offset="100%" stop-color="rgba(255,210,46,0)"/>
+                    </radialGradient>
+
+                    <linearGradient id="plugGrad" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#c45a14"/>
+                      <stop offset="100%" stop-color="#8f3e0d"/>
+                    </linearGradient>
+                  </defs>
+
+                  <rect x="0" y="0" width="420" height="240" rx="22" fill="rgba(196,90,20,.05)"/>
+
+                  <g class="svg-sun">
+                    <circle cx="115" cy="110" r="54" fill="url(#sunGlow)"></circle>
+                    <circle cx="115" cy="110" r="30" fill="#FFD22E"></circle>
+
+                    <g class="sun-rays">
+                      <rect x="113" y="38" width="4" height="18" rx="2" fill="rgba(196,90,20,.70)"/>
+                      <rect x="113" y="164" width="4" height="18" rx="2" fill="rgba(196,90,20,.70)"/>
+                      <rect x="43" y="108" width="18" height="4" rx="2" fill="rgba(196,90,20,.70)"/>
+                      <rect x="169" y="108" width="18" height="4" rx="2" fill="rgba(196,90,20,.70)"/>
+
+                      <rect x="70" y="62" width="4" height="16" rx="2" transform="rotate(-45 70 62)" fill="rgba(196,90,20,.70)"/>
+                      <rect x="160" y="152" width="4" height="16" rx="2" transform="rotate(-45 160 152)" fill="rgba(196,90,20,.70)"/>
+                      <rect x="160" y="62" width="4" height="16" rx="2" transform="rotate(45 160 62)" fill="rgba(196,90,20,.70)"/>
+                      <rect x="70" y="152" width="4" height="16" rx="2" transform="rotate(45 70 152)" fill="rgba(196,90,20,.70)"/>
+                    </g>
+                  </g>
+
+                  <path class="svg-cable"
+                        d="M165 130 C230 175, 255 165, 295 150 C330 135, 352 132, 370 146"
+                        fill="none"
+                        stroke="rgba(15,23,42,.35)"
+                        stroke-width="10"
+                        stroke-linecap="round"/>
+
+                  <g class="svg-plug">
+                    <rect x="330" y="120" width="60" height="56" rx="16" fill="url(#plugGrad)"/>
+                    <rect x="342" y="132" width="8" height="18" rx="4" fill="rgba(255,255,255,.85)"/>
+                    <rect x="370" y="132" width="8" height="18" rx="4" fill="rgba(255,255,255,.85)"/>
+                    <rect x="348" y="155" width="26" height="12" rx="6" fill="rgba(255,255,255,.22)"/>
+                  </g>
+                </svg>
+
+                <div class="combo-caption">
+                  <strong>Solar → km</strong>
+                  <span>energia do telhado para a recarga</span>
+                </div>
+              </div>
+
+              <div class="combo-qa" aria-label="Perguntas rápidas sobre energia solar">
+                <div class="combo-qa-top">
+                  <div class="combo-badge">Perguntas rápidas</div>
+                  <h3>Você já tem energia solar?</h3>
+                  <p class="combo-qa-sub">Isso ajusta a mensagem do WhatsApp para o cenário certo.</p>
+                </div>
+
+                <div class="combo-qa-actions" role="group" aria-label="Escolha uma opção">
+                  <button type="button" class="combo-choice active" data-solar="sim" id="comboSolarSim">Já tenho</button>
+                  <button type="button" class="combo-choice" data-solar="nao" id="comboSolarNao">Ainda não</button>
+                </div>
+
+                <div class="combo-qa-footer">
+                  <div class="combo-mini">
+                    <strong id="comboMiniTitle">Cenário: já tenho solar</strong>
+                    <span id="comboMiniText">Quero integrar wallbox ao meu sistema e maximizar o aproveitamento da geração.</span>
+                  </div>
+
+                  <a class="combo-mini-cta" id="comboMiniCTA"
+                     href="https://wa.me/5511996187450?text=Ol%C3%A1!%20J%C3%A1%20tenho%20energia%20solar%20e%20quero%20integrar%20um%20carregador%20veicular%20(wallbox)%20com%20projeto%20el%C3%A9trico,%20prote%C3%A7%C3%B5es%20e%20dimensionamento."
+                     target="_blank" rel="noopener">
+                    Quero proposta do combo →
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ SIMULADOR -->
+    <section class="eletro-sim" id="simulador">
+      <div class="eletro-section-inner">
+        <div class="sim-header">
+          <div class="sim-pill">Simulador de custo</div>
+          <h2>Quanto custa rodar no elétrico?</h2>
+          <p class="sim-sub">
+            Estimativa comparativa entre veículo a combustão e veículo elétrico com base no seu uso e nas suas tarifas.
+          </p>
+        </div>
+
+        <div class="sim-grid">
+          <div class="sim-panel sim-panel-light">
+            <h3>Dados da simulação</h3>
+
+            <div class="sim-row">
+              <label class="sim-label" for="kmAno">Quilometragem por ano</label>
+              <input class="sim-input" id="kmAno" type="number" min="0" step="100" value="20000" placeholder="Ex: 20000">
+              <div class="sim-presets" role="group" aria-label="Presets de quilometragem">
+                <button type="button" class="sim-chip" data-km="12000">Urbano (12.000)</button>
+                <button type="button" class="sim-chip" data-km="20000">Misto (20.000)</button>
+                <button type="button" class="sim-chip" data-km="40000">Intenso (40.000)</button>
+              </div>
+            </div>
+
+            <div class="sim-cols">
+              <div class="sim-box">
+                <div class="sim-box-top">
+                  <span class="sim-dot sim-dot-gray" aria-hidden="true"></span>
+                  <h4>Seu carro atual (combustão)</h4>
+                </div>
+
+                <label class="sim-label" for="kmLitro">Consumo médio (km/L)</label>
+                <input class="sim-input" id="kmLitro" type="number" min="1" step="0.1" value="10">
+
+                <label class="sim-label" for="precoComb">Preço do combustível (R$/L)</label>
+                <input class="sim-input" id="precoComb" type="number" min="0" step="0.01" value="5.90">
+              </div>
+
+              <div class="sim-box sim-box-accent">
+                <div class="sim-box-top">
+                  <span class="sim-dot sim-dot-gold" aria-hidden="true"></span>
+                  <h4>Carro elétrico</h4>
+                </div>
+
+                <label class="sim-label" for="kmKwh">Eficiência (km/kWh)</label>
+                <input class="sim-input" id="kmKwh" type="number" min="1" step="0.1" value="7">
+
+                <label class="sim-label" for="precoKwhCasa">Tarifa de energia (R$/kWh)</label>
+                <input class="sim-input" id="precoKwhCasa" type="number" min="0" step="0.01" value="0.95">
+
+                <label class="sim-label" for="pctCasa">Percentual de carga em casa</label>
+                <div class="sim-slider">
+                  <input id="pctCasa" type="range" min="0" max="100" value="85">
+                  <div class="sim-slider-meta">
+                    <span>0%</span>
+                    <strong><span id="pctCasaLabel">85</span>%</strong>
+                    <span>100%</span>
+                  </div>
+                </div>
+
+                <label class="sim-label" for="precoKwhPublico">Preço no eletroposto (R$/kWh)</label>
+                <input class="sim-input" id="precoKwhPublico" type="number" min="0" step="0.01" value="1.80">
+              </div>
+            </div>
+
+            <div class="sim-footnote">
+              * Valores estimados. O custo real varia por veículo, tarifas, recargas em horário de ponta e condições de uso.
+            </div>
+          </div>
+
+          <div class="sim-panel sim-panel-dark">
+            <h3>Resultado anual</h3>
+
+            <div class="sim-bars">
+              <div class="sim-bar">
+                <div class="sim-bar-top">
+                  <span>Combustão</span>
+                  <strong id="resCombAno">R$ 0,00</strong>
+                </div>
+                <div class="sim-meter">
+                  <div class="sim-fill sim-fill-gray" id="barComb"></div>
+                </div>
+              </div>
+
+              <div class="sim-bar">
+                <div class="sim-bar-top">
+                  <span>Elétrico</span>
+                  <strong id="resEleAno">R$ 0,00</strong>
+                </div>
+                <div class="sim-meter">
+                  <div class="sim-fill sim-fill-gold" id="barEle"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sim-highlight">
+              <div class="sim-highlight-label">Economia estimada</div>
+              <div class="sim-highlight-value" id="resEcoAno">R$ 0,00</div>
+              <div class="sim-highlight-sub">aprox. <strong id="resEcoMes">R$ 0,00</strong> por mês</div>
+            </div>
+
+            <div class="sim-cta-wrap">
+              <button type="button" class="sim-cta" id="btnSimWhats">
+                Solicitar proposta técnica
+              </button>
+              <div class="sim-cta-note">
+                Enviaremos uma análise técnica com dimensionamento e requisitos elétricos do seu cenário.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ DEPOIMENTOS -->
+    <section class="testimonials reveal" id="depoimentos">
+      <div class="testimonials-container">
+
+        <div class="testimonials-left">
+          <h2 class="testimonials-title-big">DEPOIMENTOS</h2>
+          <div class="testimonials-underline"></div>
+          <p class="testimonials-small">DE NOSSOS CLIENTES</p>
+        </div>
+
+        <div class="testimonials-right">
+          <div class="carousel carousel-clean" aria-label="Depoimentos em carrossel">
+            <button class="carousel-btn prev" id="btnPrev" type="button" aria-label="Depoimento anterior">‹</button>
+
+            <div class="carousel-viewport">
+              <div class="carousel-track" id="carouselTrack">
+
+                <article class="t-card">
+                  <p class="t-text">Uma empresa séria, atenciosa, comprometida e muito atenta aos prazos estabelecidos. E o preço muito bom, super indico</p>
+                  <div class="t-footer"><span class="t-name">Marcelo Querentino</span></div>
+                </article>
+
+                <article class="t-card">
+                  <p class="t-text">A Esys instalou em minha residência o sistema de geração on-grid (fotovoltaico). Empresa cumpriu o prometido e dentro do prazo estimado.</p>
+                  <div class="t-footer"><span class="t-name">Rupen</span></div>
+                </article>
+
+                <article class="t-card">
+                  <p class="t-text">Excelente profissional. Tem sempre a solução ideal para alcançar a satisfação do cliente. Tem preço e qualidade. Recomendo.</p>
+                  <div class="t-footer"><span class="t-name">Carlos Amaro</span></div>
+                </article>
+
+                <article class="t-card">
+                  <p class="t-text">Trabalho de excelência e com um suporte pós venda fantástico. Ultra recomendo. Trabalho sensacional e a economia já aparece na conta de luz.</p>
+                  <div class="t-footer"><span class="t-name">Thiago Dias</span></div>
+                </article>
+
+                <article class="t-card">
+                  <p class="t-text">Rogerio e equipe são honestos na negociação, educados em todos os momentos e pontuais. Excelente assistência pós execução. Recomendadíssimo.</p>
+                  <div class="t-footer"><span class="t-name">Jose Matias Neto</span></div>
+                </article>
+
+                <article class="t-card">
+                  <p class="t-text">Profissional ímpar. Pontualidade, preço e qualidade sem igual. Organização, educação e respeito. Indico com propriedade.</p>
+                  <div class="t-footer"><span class="t-name">Claudia</span></div>
+                </article>
+
+                <article class="t-card">
+                  <p class="t-text">Muito prestativo, objetivo e de grande profissionalismo.</p>
+                  <div class="t-footer"><span class="t-name">Manoel Antônio Maia</span></div>
+                </article>
+
+                <article class="t-card">
+                  <p class="t-text">Excelentes profissionais, entendem muito do assunto, extremamente educados e prestativos. Recomendo de olhos fechados.</p>
+                  <div class="t-footer"><span class="t-name">Albert</span></div>
+                </article>
+
+                <article class="t-card">
+                  <p class="t-text">Excelente profissional e atencioso. Conhece bem os produtos, orienta sobre a melhor relação custo benefício. Super indico.</p>
+                  <div class="t-footer"><span class="t-name">Luciana Alves Brito</span></div>
+                </article>
+
+                <article class="t-card">
+                  <p class="t-text">Empresa incrível! Profissionalismo e respeito nota 10.</p>
+                  <div class="t-footer"><span class="t-name">Oliveira</span></div>
+                </article>
+
+                <article class="t-card">
+                  <p class="t-text">Serviço impecável, atendimento maravilhoso, solução de ponta, com o que há de mais moderno no mercado. Super recomendo!</p>
+                  <div class="t-footer"><span class="t-name">Ariel Krok</span></div>
+                </article>
+
+                <article class="t-card">
+                  <p class="t-text">O pessoal da Esys tem domínio no assunto. Meu sistema OFF-GRID tem mais de 1 ano e não apresentou problema. Recomendo.</p>
+                  <div class="t-footer"><span class="t-name">Ed Kazuo Kuno</span></div>
+                </article>
+
+              </div>
+            </div>
+
+            <button class="carousel-btn next" id="btnNext" type="button" aria-label="Próximo depoimento">›</button>
+          </div>
+
+          <div class="carousel-dots" id="carouselDots" aria-label="Navegação do carrossel"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ✅ NÚMEROS -->
+    <section class="stats">
+      <div class="stats-overlay"></div>
+
+      <div class="stats-container">
+        <div class="stat-item">
+          <span class="stat-number" data-target="80">0</span>
+          <span class="stat-label">Projetos executados</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-number" data-target="110">0</span>
+          <span class="stat-label">Clientes satisfeitos</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-number" data-target="4">0</span>
+          <span class="stat-label">Anos de Experiência</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-spacer" aria-hidden="true"></div>
+
+    <!-- ✅ CASES -->
+    <section class="cases reveal" id="cases">
+      <div class="cases-container">
+
+        <h2 class="cases-title">NOSSOS CASES</h2>
+        <div class="cases-underline"></div>
+
+        <div class="cases-grid">
+          <div class="case-item">
+            <div class="case-image"></div>
+            <span class="case-label">RESIDÊNCIAS</span>
+          </div>
+
+          <div class="case-item">
+            <div class="case-image"></div>
+            <span class="case-label">COMÉRCIO</span>
+          </div>
+
+          <div class="case-item">
+            <div class="case-image"></div>
+            <span class="case-label">INDÚSTRIAS</span>
+          </div>
+
+          <div class="case-item">
+            <div class="case-image"></div>
+            <span class="case-label">USINAS</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="section-spacer" aria-hidden="true"></div>
+
+    <!-- ✅ PARCEIROS -->
+  <div class="section-spacer" aria-hidden="true"></div>
+
+<section class="partners reveal" id="parceiros">
+  <div class="partners-container">
+    <h2 class="partners-title">EMPRESAS PARCEIRAS</h2>
+    <div class="partners-underline"></div>
+
+    <div class="partners-carousel" aria-label="Empresas parceiras em carrossel">
+      <button class="partners-btn prev" id="partnersPrev" type="button" aria-label="Parceiro anterior">‹</button>
+
+      <div class="partners-viewport">
+        <div class="partners-track" id="partnersTrack">
+          <div class="partner-item">
+            <img src="solfacil.png" alt="Solfácil" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item is-featured">
+            <img src="Banco BV.png" alt="Banco BV" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item partner-card">
+            <img src="Pieta.tech.png" alt="Pieta.tech" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item">
+            <img src="Huawei.png" alt="Huawei" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item">
+            <img src="taranis solar.png" alt="Taranis Solar" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item">
+            <img src="intelbras.png" alt="Intelbras" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item">
+            <img src="weg.png" alt="WEG" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item">
+            <img src="idealtech.png" alt="Idealtech" loading="eager" decoding="async" />
+          </div>
+        </div>
+      </div>
+
+      <button class="partners-btn next" id="partnersNext" type="button" aria-label="Próximo parceiro">›</button>
+    </div>
+
+    <div class="partners-dots" id="partnersDots" aria-label="Navegação do carrossel de parceiros"></div>
+  </div>
+</section>
+
+  <!-- WhatsApp flutuante -->
+  <a class="whatsapp-float" id="whatsFloat" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path fill="currentColor" d="M19.11 17.46c-.27-.14-1.57-.77-1.81-.86-.24-.09-.42-.14-.6.14-.18.27-.69.86-.84 1.04-.15.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.47-1.82-.15-.27-.02-.41.11-.54.12-.12.27-.31.4-.46.14-.15.18-.27.27-.45.09-.18.04-.34-.02-.48-.07-.14-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47l-.51-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.98 2.67 1.12 2.85c.14.18 1.93 2.95 4.68 4.13.66.28 1.18.45 1.58.58.66.21 1.26.18 1.74.11.53-.08 1.57-.64 1.79-1.26.22-.62.22-1.15.15-1.26-.07-.11-.24-.18-.51-.32zM16.04 3C8.85 3 3 8.67 3 15.64c0 2.46.74 4.74 2.01 6.67L3.7 28.9l6.86-1.79c1.86 1 4 1.57 6.48 1.57 7.19 0 13.04-5.67 13.04-12.64C30.08 8.67 23.23 3 16.04 3zm0 23.3c-2.32 0-4.46-.66-6.28-1.8l-.45-.28-4.07 1.06 1.09-3.92-.3-.44c-1.22-1.78-1.87-3.87-1.87-6.08 0-6.11 5.15-11.08 11.88-11.08 6.55 0 11.88 4.97 11.88 11.08S22.59 26.3 16.04 26.3z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram flutuante -->
+  <a class="instagram-float"
+     href="https://www.instagram.com/esysenergia/"
+     target="_blank"
+     rel="noopener"
+     aria-label="Visitar Instagram da Esys">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm10.3 2.2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+    </svg>
+  </a>
+
+  <footer class="site-footer" id="contato">
+    <div class="footer-container">
+
+      <div class="footer-top">
+        <div class="footer-cta">
+          <h3>Pronto para avançar na eletromobilidade?</h3>
+          <p>Fale com a Esys agora e receba uma proposta técnica pelo WhatsApp.</p>
+
+          <div class="footer-actions">
+            <a class="btn-footer btn-footer-primary" href="#simulador">
+              Simular custo
+            </a>
+
+            <a
+              class="btn-footer btn-footer-whats"
+              href="https://wa.me/5511996187450?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20t%C3%A9cnico%20para%20carregador%20veicular."
+              target="_blank"
+              rel="noopener"
+            >
+              Falar no WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-info">
+          <h4>Esys Energia</h4>
+          <p class="footer-muted">
+            Energia e infraestrutura técnica para projetos residenciais e corporativos.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+
+        <div>
+          <h5>Contato</h5>
+          <ul>
+            <li>
+              <a target="_blank" rel="noopener"
+                 href="https://wa.me/5511996187450?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20carregador%20veicular.">
+                (11) 99618-7450 — WhatsApp
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel="noopener"
+                 href="https://wa.me/5511978230095?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20carregador%20veicular.">
+                (11) 97823-0095 — WhatsApp
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel="noopener"
+                 href="https://wa.me/5511998864287?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20carregador%20veicular.">
+                (11) 99886-4287 — WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contato@esystecnologia.com.br">
+                contato@esystecnologia.com.br
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Trabalhe Conosco</h5>
+          <p class="footer-muted">
+            Para trabalhar conosco, por favor envie seu currículo e informações para:<br>
+            <a href="mailto:contato@esystecnologia.com.br">
+              contato@esystecnologia.com.br
+            </a>
+          </p>
+        </div>
+
+        <div>
+          <h5>Matriz</h5>
+          <p class="footer-muted">Osasco / SP</p>
+        </div>
+
+        <div>
+          <h5>Institucional</h5>
+          <ul>
+            <li><a href="index.html#topo">Home</a></li>
+            <li><a href="eletromobilidade.html">Eletromobilidade</a></li>
+            <li><a href="smarthome.html">Smarthome</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="index.html#depoimentos">Depoimentos</a></li>
+            <li><a href="index.html#cases">Cases</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="footerYear"></span> Coelho Viltrumita — Todos os direitos reservados
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ✅ JS unificado -->
+  <script src="app.js"></script>
+
+</body>
+</html>

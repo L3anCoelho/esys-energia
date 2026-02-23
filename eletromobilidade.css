@@ -1,0 +1,1126 @@
+/* =========================
+   ELETROMOBILIDADE.CSS
+   Só para eletromobilidade.html
+========================= */
+
+:root{
+  --esys-orange: #c45a14;
+  --esys-orange-2: #8f3e0d;
+
+  /* ✅ AGORA: azul do footer (sem azul claro) */
+  --esys-gold: #0b1f33;
+
+  /* ✅ azul do footer (já estava certo) */
+  --esys-blue: #0b1f33;
+  --esys-blue-2: #071626;
+
+  --esys-text: #0f172a;
+
+  /* ✅ helper (pra usar nos rgba) — agora do azul do footer */
+  --esys-gold-rgb: 11,31,51;
+}
+
+.eletro-page{ background:#fff; }
+
+/* =========================
+   HERO
+========================= */
+.eletro-hero{
+  background: linear-gradient(135deg, var(--esys-orange), var(--esys-orange-2));
+  color:#fff;
+  padding: 90px 20px;
+}
+
+.eletro-container{
+  max-width:1300px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.eletro-kicker{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background: rgba(255,255,255,.14);
+  font-weight:900;
+  font-size:13px;
+  letter-spacing:.4px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.eletro-title{
+  font-size:56px;
+  font-weight:900;
+  line-height:1.06;
+  margin-bottom:16px;
+}
+
+/* ✅ agora é azul do footer */
+.eletro-title span{ color: var(--esys-gold); }
+
+.eletro-subtitle{
+  max-width:560px;
+  line-height:1.75;
+  font-size:16px;
+  color: rgba(255,255,255,.92);
+  margin-bottom:26px;
+}
+
+.eletro-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.eletro-btn{
+  height:48px;
+  padding:0 18px;
+  border-radius:10px;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.eletro-btn:hover{
+  transform: translateY(-2px);
+  opacity:.96;
+}
+
+.eletro-btn-primary{
+  /* ✅ agora é azul do footer */
+  background: var(--esys-gold);
+  color:#fff;
+}
+
+.eletro-btn-outline{
+  border:1px solid rgba(255,255,255,.38);
+  color:#fff;
+  background: rgba(0,0,0,.10);
+}
+
+/* =========================
+   CARROSSEL (HERO)
+========================= */
+.eletro-carousel{
+  position:relative;
+  background: rgba(255,255,255,.12);
+  padding:18px;
+  border-radius:26px;
+  box-shadow: 0 26px 60px rgba(0,0,0,.22);
+}
+
+.eletro-viewport{
+  overflow:hidden;
+  border-radius:20px;
+}
+
+.eletro-track{
+  display:flex;
+  transform: translateX(0);
+  transition: transform .55s ease;
+  will-change: transform;
+}
+
+.eletro-slide{ flex: 0 0 100%; }
+
+.eletro-slide img{
+  width:100%;
+  display:block;
+  border-radius:20px;
+}
+
+.eletro-arrow{
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  width:44px;
+  height:44px;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  background: rgba(0,0,0,.45);
+  color:#fff;
+  font-size:32px;
+  line-height:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition: transform .15s ease, background .15s ease;
+  z-index:5;
+}
+
+.eletro-arrow:hover{
+  transform: translateY(-50%) scale(1.06);
+  background: rgba(0,0,0,.58);
+}
+
+.eletro-arrow.prev{ left:12px; }
+.eletro-arrow.next{ right:12px; }
+
+.eletro-dots{
+  margin-top:14px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+.eletro-dot{
+  width:7px;
+  height:7px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  background: rgba(255,255,255,.38);
+  transition: transform .2s ease, background .2s ease;
+}
+
+.eletro-dot.active{
+  background: rgba(255,255,255,.95);
+  transform: scale(1.25);
+}
+
+/* =========================
+   WRAPPER PADRÃO (conteúdo)
+========================= */
+.eletro-section-inner{
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.eletro-section-inner h2{
+  color: var(--esys-orange);
+  font-size:34px;
+  margin-bottom:10px;
+  letter-spacing:-.6px;
+}
+
+.eletro-section-inner p{
+  color: rgba(0,0,0,.72);
+  line-height:1.7;
+}
+
+/* =========================
+   #vantagens — PICK2 (2 cards)
+========================= */
+.eletro-pick2{
+  padding:90px 20px;
+  background:
+    /* ✅ agora é azul do footer */
+    radial-gradient(1200px 500px at 20% 0%, rgba(var(--esys-gold-rgb), .20), transparent 60%),
+    radial-gradient(900px 480px at 90% 10%, rgba(196,90,20,.18), transparent 55%),
+    linear-gradient(180deg, #fff, rgba(196,90,20,.05));
+}
+
+.pick2-head{
+  max-width:920px;
+  margin-bottom:26px;
+}
+
+.pick2-pill{
+  display:inline-flex;
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.35px;
+  text-transform:uppercase;
+  color: var(--esys-orange-2);
+  border:1px solid rgba(196,90,20,.22);
+  background: rgba(196,90,20,.10);
+  margin-bottom:12px;
+}
+
+.pick2-sub{
+  margin-top:8px;
+  color: rgba(15,23,42,.72);
+  line-height:1.7;
+}
+
+.pick2-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:18px;
+}
+
+.pick2-card{
+  border-radius:26px;
+  overflow:hidden;
+  background: rgba(255,255,255,.86);
+  border:1px solid rgba(196,90,20,.18);
+  box-shadow: 0 26px 70px rgba(0,0,0,.08);
+  position:relative;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.pick2-card::before{
+  content:"";
+  position:absolute;
+  inset:-60px;
+  background:
+    /* ✅ agora é azul do footer */
+    radial-gradient(520px 280px at 20% 10%, rgba(var(--esys-gold-rgb), .28), transparent 60%),
+    radial-gradient(520px 280px at 90% 20%, rgba(196,90,20,.22), transparent 60%);
+  opacity:.55;
+  pointer-events:none;
+}
+
+.pick2-card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(196,90,20,.32);
+  box-shadow: 0 32px 90px rgba(0,0,0,.12);
+}
+
+.pick2-top{
+  position:relative;
+  z-index:2;
+  padding:16px 16px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.pick2-chip{
+  display:inline-flex;
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:900;
+  font-size:11px;
+  letter-spacing:.35px;
+  text-transform:uppercase;
+  color: rgba(15,23,42,.86);
+  background: rgba(255,255,255,.75);
+  border:1px solid rgba(15,23,42,.08);
+  backdrop-filter: blur(8px);
+}
+
+.pick2-icon{
+  width:44px;
+  height:44px;
+  border-radius:16px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(196,90,20,.22);
+
+  /* ✅ agora é azul do footer */
+  background: rgba(var(--esys-gold-rgb), .20);
+
+  box-shadow: 0 16px 40px rgba(196,90,20,.18);
+  animation: pick2Float 3.6s ease-in-out infinite;
+}
+
+.pick2-icon svg{
+  width:24px;
+  height:24px;
+  fill: var(--esys-orange-2);
+}
+
+@keyframes pick2Float{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-4px); }
+}
+
+.pick2-body{
+  position:relative;
+  z-index:2;
+  padding:12px 16px 14px;
+}
+
+.pick2-body h3{
+  margin:8px 0 4px;
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:-.2px;
+  color: var(--esys-text);
+}
+
+.pick2-meta{
+  font-size:13px;
+  color: rgba(15,23,42,.70);
+  margin-bottom:12px;
+}
+
+.pick2-bullets{
+  display:grid;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.pick2-row{
+  display:grid;
+  grid-template-columns: 10px 1fr;
+  gap:10px;
+  align-items:start;
+  color: rgba(15,23,42,.74);
+  font-size:13.5px;
+  line-height:1.45;
+}
+
+.pick2-row strong{
+  color: var(--esys-text);
+  font-weight:900;
+}
+
+.pick2-dot{
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  margin-top:6px;
+  background: linear-gradient(135deg, var(--esys-orange), var(--esys-orange-2));
+}
+
+.pick2-cta{
+  display:grid;
+  place-items:center;
+  height:50px;
+  border-radius:16px;
+  text-decoration:none;
+  font-weight:900;
+  color:#fff;
+  background: linear-gradient(135deg, var(--esys-orange), var(--esys-orange-2));
+  box-shadow: 0 18px 44px rgba(196,90,20,.22);
+  transition: transform .15s ease, filter .15s ease, opacity .15s ease;
+}
+
+.pick2-cta:hover{
+  transform: translateY(-2px);
+  filter: brightness(1.03);
+  opacity:.98;
+}
+
+.pick2-photo{
+  position:relative;
+  z-index:2;
+  height:180px;
+  margin:0 16px 16px;
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid rgba(15,23,42,.10);
+  box-shadow: 0 18px 50px rgba(0,0,0,.10);
+}
+
+.pick2-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transform: scale(1.03);
+  transition: transform .40s ease;
+}
+
+.pick2-card:hover .pick2-photo img{
+  transform: scale(1.08);
+}
+
+.pick2-anim{
+  opacity:0;
+  transform: translateY(12px);
+  animation: pick2In .60s ease forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes pick2In{
+  to{ opacity:1; transform: translateY(0); }
+}
+
+.pick2-foot{ margin-top:16px; }
+
+.pick2-trust{
+  border:1px solid rgba(196,90,20,.18);
+
+  /* ✅ agora é azul do footer */
+  background: rgba(var(--esys-gold-rgb), .14);
+
+  border-radius:18px;
+  padding:14px 16px;
+  color: rgba(15,23,42,.76);
+  line-height:1.45;
+  font-size:13.5px;
+}
+
+.pick2-trust strong{
+  color: var(--esys-text);
+  font-weight:900;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .pick2-anim{ animation:none; opacity:1; transform:none; }
+  .pick2-icon{ animation:none; }
+  .pick2-photo img{ transition:none; }
+}
+
+/* =========================
+   SEÇÃO: SOLAR + CARREGADOR (COMBO)
+========================= */
+.eletro-combo{
+  padding:90px 20px;
+  background: linear-gradient(180deg, #fff, rgba(196,90,20,.04));
+}
+
+.combo-grid{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap:22px;
+  align-items:start;
+}
+
+.combo-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid rgba(196,90,20,.22);
+  background: rgba(196,90,20,.08);
+  color: var(--esys-orange-2);
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.35px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+
+.combo-title{
+  margin:0 0 12px;
+  font-size:34px;
+  line-height:1.15;
+  letter-spacing:-.6px;
+  color: var(--esys-text);
+}
+
+.combo-title span{ color: var(--esys-orange); }
+
+.combo-lead{
+  margin:0 0 18px;
+  color: rgba(15,23,42,.72);
+  line-height:1.75;
+  font-size:16px;
+  max-width:820px;
+}
+
+.combo-points{
+  display:grid;
+  gap:10px;
+  margin:18px 0;
+}
+
+.combo-point{
+  border:1px solid rgba(15,23,42,.08);
+  border-radius:16px;
+  padding:14px;
+  background:#fff;
+  box-shadow: 0 14px 34px rgba(0,0,0,.05);
+  display:grid;
+  gap:4px;
+}
+
+.combo-point strong{
+  font-weight:900;
+  color: var(--esys-text);
+  font-size:14px;
+}
+
+.combo-point span{
+  color: rgba(15,23,42,.70);
+  font-size:13.5px;
+  line-height:1.45;
+}
+
+.combo-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.combo-btn{
+  height:48px;
+  padding:0 18px;
+  border-radius:12px;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.combo-btn:hover{
+  transform: translateY(-2px);
+  opacity:.96;
+}
+
+.combo-btn-primary{
+  background: linear-gradient(135deg, var(--esys-orange), var(--esys-orange-2));
+  color:#fff;
+  box-shadow: 0 18px 44px rgba(0,0,0,.12);
+}
+
+.combo-btn-outline{
+  border:1px solid rgba(15,23,42,.18);
+  background: rgba(255,255,255,.6);
+  color: var(--esys-text);
+}
+
+.combo-note{
+  margin-top:12px;
+  font-size:12.5px;
+  color: rgba(15,23,42,.62);
+  line-height:1.55;
+}
+
+/* Card (direita) */
+.combo-card{
+  border:1px solid rgba(15,23,42,.10);
+  border-radius:20px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow: 0 22px 60px rgba(0,0,0,.08);
+}
+
+/* =========================
+   COMBO — ILUSTRAÇÃO + QA + ANIMAÇÕES
+========================= */
+.combo-card-animated{
+  position: relative;
+  overflow: hidden;
+  animation: comboEnter .55s ease both;
+}
+
+.combo-card-animated::before{
+  content:"";
+  position: absolute;
+  inset: -40px;
+  background:
+    /* ✅ agora é azul do footer */
+    radial-gradient(circle at 25% 20%, rgba(var(--esys-gold-rgb), .22), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(196,90,20,.18), transparent 55%);
+  filter: blur(10px);
+  animation: comboGlow 4.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes comboGlow{
+  0%,100%{ transform: translateY(0) scale(1); opacity: .85; }
+  50%{ transform: translateY(-6px) scale(1.02); opacity: 1; }
+}
+
+@keyframes comboEnter{
+  from{ opacity: 0; transform: translateY(10px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+.combo-illustration{
+  position: relative;
+  padding: 18px 18px 10px;
+}
+
+.combo-svg{
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(15,23,42,.08);
+  box-shadow: 0 18px 44px rgba(0,0,0,.06);
+}
+
+.svg-sun{ animation: sunFloat 3.8s ease-in-out infinite; transform-origin: 115px 110px; }
+@keyframes sunFloat{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-5px); }
+}
+
+.sun-rays{ animation: raysSpin 9s linear infinite; transform-origin: 115px 110px; }
+@keyframes raysSpin{
+  from{ transform: rotate(0deg); }
+  to{ transform: rotate(360deg); }
+}
+
+.svg-plug{ animation: plugNudge 3.8s ease-in-out infinite; transform-origin: 360px 150px; }
+@keyframes plugNudge{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(4px); }
+}
+
+.combo-caption{
+  margin-top: 10px;
+  display: grid;
+  gap: 2px;
+  text-align: center;
+}
+.combo-caption strong{
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.2px;
+}
+.combo-caption span{
+  font-size: 13px;
+  color: rgba(15,23,42,.68);
+}
+
+/* QA */
+.combo-qa{
+  position: relative;
+  padding: 14px 18px 18px;
+}
+
+.combo-qa-top{ margin-top: 2px; }
+
+.combo-badge{
+  display:inline-flex;
+  font-weight:900;
+  font-size:11px;
+  letter-spacing:.35px;
+  text-transform:uppercase;
+  color: rgba(15,23,42,.78);
+  background: rgba(15,23,42,.04);
+  padding:8px 12px;
+  border-radius:999px;
+  margin-bottom:10px;
+}
+
+.combo-qa-top h3{
+  margin: 8px 0 6px;
+  font-size: 16px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.combo-qa-sub{
+  margin: 0 0 12px;
+  font-size: 13.5px;
+  color: rgba(15,23,42,.70);
+  line-height: 1.45;
+}
+
+.combo-qa-actions{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.combo-choice{
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid rgba(15,23,42,.12);
+  background: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.combo-choice:hover{
+  transform: translateY(-1px);
+  border-color: rgba(196,90,20,.28);
+  background: rgba(196,90,20,.06);
+}
+
+.combo-choice.active{
+  border-color: rgba(196,90,20,.34);
+  background: rgba(196,90,20,.10);
+  box-shadow: 0 12px 34px rgba(0,0,0,.06);
+}
+
+.combo-mini{
+  border: 1px solid rgba(15,23,42,.08);
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px;
+  display: grid;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.combo-mini strong{
+  color: #0f172a;
+  font-weight: 900;
+  font-size: 13.5px;
+}
+.combo-mini span{
+  color: rgba(15,23,42,.72);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.combo-mini-cta{
+  display:block;
+  height:48px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:900;
+  display:grid;
+  place-items:center;
+
+  /* ✅ agora é azul do footer */
+  color:#fff;
+  background: var(--esys-gold);
+
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.combo-mini-cta:hover{
+  transform: translateY(-2px);
+  opacity:.96;
+}
+
+@media (max-width: 980px){
+  .combo-qa-actions{ grid-template-columns: 1fr; }
+}
+
+/* =========================
+   SIMULADOR (Premium)
+========================= */
+.eletro-sim{
+  padding:90px 20px;
+  background:#fff;
+}
+
+.sim-header{
+  text-align:center;
+  margin-bottom:34px;
+}
+
+.sim-pill{
+  display:inline-flex;
+  align-items:center;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid rgba(196,90,20,.28);
+  background: rgba(196,90,20,.10);
+  color: var(--esys-orange-2);
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:.35px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+
+.eletro-sim h2{ color: var(--esys-text); }
+
+.sim-sub{
+  max-width:820px;
+  margin:0 auto;
+  color: rgba(15,23,42,.70);
+  line-height:1.7;
+}
+
+.sim-grid{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns: 1.25fr .9fr;
+  gap:22px;
+  align-items:stretch;
+}
+
+.sim-panel{
+  border-radius:18px;
+  border:1px solid rgba(0,0,0,.07);
+  overflow:hidden;
+}
+
+.sim-panel-light{
+  background:#fff;
+  box-shadow: 0 18px 44px rgba(0,0,0,.06);
+  padding:22px;
+}
+
+.sim-panel-dark{
+  background: linear-gradient(135deg, var(--esys-blue), var(--esys-blue-2));
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow: 0 20px 60px rgba(0,0,0,.20);
+  padding:22px;
+  color:#fff;
+}
+
+.sim-panel h3{
+  margin:0 0 18px;
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:-.2px;
+}
+
+.sim-row{ margin-bottom:18px; }
+
+.sim-label{
+  display:block;
+  font-weight:900;
+  font-size:13px;
+  color: rgba(15,23,42,.78);
+  margin-bottom:8px;
+  letter-spacing:.2px;
+}
+
+.sim-panel-dark .sim-label{ color: rgba(255,255,255,.70); }
+
+.sim-input{
+  width:100%;
+  height:46px;
+  border-radius:12px;
+  border:1px solid rgba(15,23,42,.14);
+  padding:0 14px;
+  font-size:15px;
+  font-weight:800;
+  color:#111;
+  outline:none;
+}
+
+.sim-input:focus{
+  border-color: rgba(196,90,20,.35);
+  box-shadow: 0 0 0 4px rgba(196,90,20,.10);
+}
+
+.sim-presets{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.sim-chip{
+  border:1px solid rgba(15,23,42,.12);
+  background:#fff;
+  border-radius:999px;
+  padding:8px 12px;
+  font-weight:900;
+  font-size:12.5px;
+  cursor:pointer;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  color: rgba(15,23,42,.86);
+}
+
+.sim-chip:hover{
+  transform: translateY(-1px);
+  border-color: rgba(196,90,20,.30);
+  background: rgba(196,90,20,.08);
+}
+
+.sim-cols{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:14px;
+}
+
+.sim-box{
+  border:1px solid rgba(15,23,42,.10);
+  border-radius:16px;
+  padding:16px;
+  background:#fff;
+}
+
+.sim-box-accent{
+  border-color: rgba(196,90,20,.26);
+  background: rgba(196,90,20,.05);
+}
+
+.sim-box-top{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.sim-box h4{
+  margin:0;
+  font-size:13.5px;
+  font-weight:900;
+  color:#111;
+}
+
+.sim-dot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  display:inline-block;
+}
+
+.sim-dot-gray{ background:#9aa3ad; }
+.sim-dot-gold{ background: var(--esys-orange); }
+
+.sim-slider{
+  border:1px solid rgba(15,23,42,.14);
+  border-radius:14px;
+  padding:12px 12px 10px;
+  background:#fff;
+}
+
+.sim-slider input[type="range"]{
+  width:100%;
+  accent-color: var(--esys-orange);
+}
+
+.sim-slider-meta{
+  display:flex;
+  justify-content:space-between;
+  margin-top:6px;
+  font-size:12px;
+  color: rgba(15,23,42,.70);
+}
+
+.sim-slider-meta strong{
+  color:#111;
+  font-weight:900;
+}
+
+.sim-footnote{
+  margin-top:14px;
+  font-size:12.5px;
+  color: rgba(15,23,42,.68);
+  line-height:1.55;
+}
+
+/* Resultados */
+.sim-bars{ display:grid; gap:14px; margin-top:6px; }
+
+.sim-bar-top{
+  display:flex;
+  justify-content:space-between;
+  color: rgba(255,255,255,.88);
+  font-size:13.5px;
+  margin-bottom:8px;
+}
+
+.sim-bar-top strong{
+  color:#fff;
+  font-weight:900;
+}
+
+.sim-meter{
+  width:100%;
+  height:10px;
+  border-radius:999px;
+  background: rgba(255,255,255,.10);
+  overflow:hidden;
+}
+
+.sim-fill{
+  height:100%;
+  width:10%;
+  border-radius:999px;
+  transition: width .3s ease;
+}
+
+.sim-fill-gray{ background: rgba(255,255,255,.55); }
+
+/* ✅ mantém laranja aqui (não é “amarelo”), se você quiser azul também eu troco */
+.sim-fill-gold{ background: linear-gradient(90deg, var(--esys-orange), #ff9a3c); }
+
+.sim-highlight{
+  margin-top:18px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  padding:16px;
+  background: rgba(255,255,255,.07);
+  text-align:center;
+}
+
+.sim-highlight-label{
+  font-size:12px;
+  color: rgba(255,255,255,.80);
+  text-transform:uppercase;
+  letter-spacing:.35px;
+  font-weight:900;
+}
+
+/* ✅ aqui NÃO é amarelo, é laranja. Se quiser azul do footer, eu troco também. */
+.sim-highlight-value{
+  font-size:40px;
+  font-weight:900;
+  margin:8px 0 2px;
+  color:#ff9a3c;
+  letter-spacing:-.8px;
+  text-shadow: 0 6px 22px rgba(0,0,0,.35);
+}
+
+.sim-highlight-sub{
+  font-size:13.5px;
+  color: rgba(255,255,255,.86);
+}
+
+.sim-cta-wrap{ margin-top:18px; }
+
+.sim-cta{
+  width:100%;
+  height:52px;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  font-weight:900;
+  background: linear-gradient(135deg, var(--esys-orange), var(--esys-orange-2));
+  color:#fff;
+  font-size:15px;
+  letter-spacing:.2px;
+  transition: transform .15s ease, opacity .15s ease;
+}
+
+.sim-cta:hover{
+  transform: translateY(-2px);
+  opacity:.96;
+}
+
+.sim-cta-note{
+  margin-top:10px;
+  font-size:13px;
+  color: rgba(255,255,255,.86);
+  line-height:1.5;
+}
+
+/* =========================
+   RESPONSIVO (geral)
+========================= */
+@media (max-width: 980px){
+  .eletro-container{ grid-template-columns:1fr; gap:28px; }
+  .eletro-title{ font-size:40px; }
+
+  .pick2-grid{ grid-template-columns:1fr; }
+  .pick2-photo{ height:200px; }
+
+  .combo-grid{ grid-template-columns:1fr; }
+  .combo-title{ font-size:30px; }
+
+  .sim-grid{ grid-template-columns:1fr; }
+  .sim-cols{ grid-template-columns:1fr; }
+  .sim-panel-light, .sim-panel-dark{ padding:18px; }
+  .sim-highlight-value{ font-size:34px; }
+}
+
+/* ✅ Botão flutuante Instagram */
+.ig-float{
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+
+  color: #fff;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  box-shadow: 0 18px 44px rgba(0,0,0,.22);
+  text-decoration: none;
+
+  transition: transform .15s ease, opacity .15s ease, filter .15s ease;
+}
+
+.ig-float:hover{
+  transform: translateY(-2px);
+  opacity: .96;
+}
+
+@media (max-width: 480px){
+  .ig-float{
+    left: 14px;
+    bottom: 14px;
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+  }
+}

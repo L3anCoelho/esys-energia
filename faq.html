@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Esys Energia Solar</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* HERO FAQ */
+    .faq-hero{
+      position: relative;
+      height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .faq-hero::before{
+      content:"";
+      position: absolute;
+      inset: 0;
+      background: url("faq-bg.jpg") center/cover no-repeat;
+      filter: saturate(1.12) contrast(1.10) brightness(1.03);
+      transform: scale(1.04);
+    }
+
+    .faq-hero::after{
+      content:"";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.50);
+    }
+
+    .faq-hero-inner{
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 20px;
+      max-width: 1100px;
+    }
+
+    .faq-hero-title{
+      color: #c45a14; /* laranja Esys */
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 52px;
+      line-height: 1.05;
+      text-shadow:
+        0 4px 14px rgba(0,0,0,.35),
+        0 0 22px rgba(196,90,20,.28);
+    }
+
+    .faq-hero-sub{
+      margin-top: 14px;
+      color: rgba(255,255,255,.88);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* FAQ (Accordion) */
+    .faq-wrap{
+      background: #c45a14;
+      padding: 80px 20px 110px;
+    }
+
+    .faq-container{
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .faq-list{
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .faq-item{
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: 0 12px 28px rgba(0,0,0,.06);
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .faq-q{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 18px;
+      border: none;
+      background: #fff;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-q-title{
+      font-weight: 900;
+      color: #c45a14;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .faq-arrow{
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(0,0,0,.08);
+      color: #c45a14;
+      font-size: 18px;
+      flex: 0 0 auto;
+      transition: transform .18s ease, background .18s ease;
+      background: rgba(196,90,20,.06);
+    }
+
+    .faq-item.is-open .faq-arrow{
+      transform: rotate(180deg);
+      background: rgba(196,90,20,.12);
+    }
+
+    .faq-a{
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .25s ease;
+      border-top: 1px solid rgba(0,0,0,.06);
+    }
+
+    .faq-a-inner{
+      padding: 16px 18px 18px;
+      color: rgba(0,0,0,.78);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    .faq-a-inner strong{
+      color: rgba(0,0,0,.88);
+    }
+
+    /* Responsivo */
+    @media (max-width: 900px){
+      .faq-hero-title{ font-size: 40px; }
+      .faq-q{ padding: 16px; }
+      .faq-a-inner{ padding: 14px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-container">
+
+    <!-- BLOCO ESQUERDO -->
+    <div class="header-left">
+      <a class="logo" href="index.html#topo">
+        <img src="logo esys.png" alt="Esys Energia">
+      </a>
+
+      <nav class="menu-left">
+        <a href="index.html#topo" class="active">Energia Solar</a>
+        <a href="eletromobilidade.html">Eletromobilidade</a>
+        <a href="smarthome.html">Smarthome</a>
+      </nav>
+    </div>
+
+    <!-- BLOCO DIREITO -->
+    <nav class="menu-right">
+      <a href="sobre.html">Sobre nós</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+  </div>
+</header>
+
+
+  <!-- HERO FAQ -->
+  <section class="faq-hero">
+    <div class="faq-hero-inner">
+      <h1 class="faq-hero-title">PERGUNTAS FREQUENTES</h1>
+      <p class="faq-hero-sub">
+        Tire suas dúvidas sobre energia solar, economia, instalação e funcionamento do sistema.
+      </p>
+    </div>
+  </section>
+
+  <!-- ✅ FAQ ACCORDION (AGORA TEM id="faq") -->
+  <section class="faq-wrap" id="faq">
+    <div class="faq-container">
+      <div class="faq-list" id="faqList">
+
+        <!-- 1 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Por que eu deveria ser Micro ou Mini gerador solar?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              <strong>Quais são os benefícios financeiros da energia solar?</strong><br>
+              Quando você instala um sistema de energia solar em sua propriedade, você economiza dinheiro em suas contas de eletricidade e se protege contra o aumento das tarifas de eletricidade no futuro. O quanto você pode economizar depende das taxas de serviços públicos e das políticas de energia solar em sua área, mas a energia solar é um investimento inteligente, independentemente de onde você mora.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Como descubro quanto pago por eletricidade?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              A maneira mais fácil de descobrir quanto você paga pela eletricidade (e quanta eletricidade você usa por mês) é dar uma olhada em sua conta de energia elétrica.
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">O que é medição líquida?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              A medição líquida é o sistema que as concessionárias usam para gerar créditos aos proprietários de sistemas de energia solar pela eletricidade produzida por seus painéis solares. Assim, toda vez que você produzir mais do que consome, você não estará desperdiçando energia: o excedente produzido volta para você na forma de crédito em energia elétrica para ser usada quando você estiver com produção baixa.
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Como a energia solar afeta os valores do meu imóvel?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Estudos mostraram que casas com sistemas de energia solar são vendidas por mais que casas sem elas. No entanto, o valor da sua propriedade só aumentará se você possuir, em vez de arrendar, o seu sistema de painéis solares.
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Como funcionam os painéis solares fotovoltaicos (PV)?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Os painéis solares absorvem a energia do sol ao longo do dia e convertem-na em corrente contínua (CC). A maioria das residências e empresas opera com corrente alternada (CA), então um inversor converte para CA utilizável.
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Os meus painéis solares produzem energia quando o sol não está brilhando?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              A geração depende da luz solar. Em dias nublados produz menos e à noite não produz. Ainda assim, pode valer a pena dependendo da tarifa e dimensionamento.
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Posso desconectar da rede da concessionária com painéis solares?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Normalmente você permanece conectado à rede. Sair totalmente (off-grid) exige baterias e encarece bastante, sendo desnecessário para a maioria.
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Eu ainda receberei uma conta de luz se eu tiver painéis solares?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Se for on-grid, normalmente ainda existe tarifa mínima/custos e possíveis diferenças mensais. A conta tende a cair bastante.
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Os painéis solares funcionam em um apagão?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Sistemas on-grid desligam no blecaute por segurança. Com inversor compatível e bateria (backup), dá para ter energia em parte da casa.
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Quanto custa a manutenção do painel solar?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Em geral é baixa. Limpeza eventual e inspeções. Equipamentos costumam ter garantias e longa vida útil.
+            </div>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Como escolho o melhor empréstimo solar?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Compare CET, prazos e condições. Considere retorno do sistema e fluxo de caixa mensal.
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Posso me dar ao luxo de ser Micro ou mini gerador?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Se você paga conta de energia, provavelmente existe um cenário viável — à vista ou financiado — mas o ideal é dimensionar com base no consumo real.
+            </div>
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">O meu telhado é adequado para painéis solares?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Depende de orientação, sombreamento e área disponível. Mesmo sem “telhado perfeito”, pode haver alternativas de projeto.
+            </div>
+          </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Qual o tamanho do sistema de energia solar que devo obter?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Depende do seu consumo mensal e das condições do local (irradiação, sombras, telhado).
+            </div>
+          </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Preciso substituir meu telhado antes de instalar o solar?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Se o telhado está perto do fim de vida, vale trocar antes. Remover e reinstalar sistema depois sai caro.
+            </div>
+          </div>
+        </div>
+
+        <!-- 16 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Quanto tempo dura o meu sistema de energia solar?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Em geral, o sistema pode operar por décadas. Alguns componentes podem precisar de troca ao longo do tempo.
+            </div>
+          </div>
+        </div>
+
+        <!-- 17 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">O que acontece se eu vender minha casa solar?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Se o sistema é seu, pode valorizar o imóvel. Se for financiado, é importante alinhar a transferência/quitação.
+            </div>
+          </div>
+        </div>
+
+        <!-- 18 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Quais são os diferentes tipos de inversores de energia?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Existem string/central, microinversores e otimizadores (dependendo do projeto e sombras).
+            </div>
+          </div>
+        </div>
+
+        <!-- 19 -->
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span class="faq-q-title">Preciso instalar baterias solares com meu sistema de energia solar?</span>
+            <span class="faq-arrow">▾</span>
+          </button>
+          <div class="faq-a" aria-hidden="true">
+            <div class="faq-a-inner">
+              Para on-grid comum, geralmente não precisa. Bateria serve para backup/independência, mas aumenta o custo.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp flutuante (pode ficar igual, ou usar o do app.js) -->
+  <a class="whatsapp-float"
+     href="https://wa.me/5511999187450?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20energia%20solar."
+     target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <span class="whats-icon">✆</span>
+    <span class="whats-text">Falar agora</span>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contato">
+    <div class="footer-container">
+
+      <div class="footer-top">
+        <div class="footer-cta">
+          <h3>Pronto para reduzir sua conta de luz?</h3>
+          <p>Fale com a Esys agora e receba um orçamento rápido pelo WhatsApp.</p>
+
+          <div class="footer-actions">
+            <a class="btn-footer btn-footer-primary" href="index.html#simulador">
+              Simular economia
+            </a>
+
+            <a class="btn-footer btn-footer-whats"
+               href="https://wa.me/5511999187450?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20energia%20solar."
+               target="_blank" rel="noopener">
+              Falar no WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-info">
+          <h4>Esys Energia</h4>
+          <p class="footer-muted">Energia solar inteligente para gerar economia real.</p>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <h5>Contato</h5>
+          <ul>
+            <li>
+              <a target="_blank" rel="noopener"
+                 href="https://wa.me/5511996187450?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20energia%20solar.">
+                (11) 99618-7450 — WhatsApp
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel="noopener"
+                 href="https://wa.me/5511978230095?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20energia%20solar.">
+                (11) 97823-0095 — WhatsApp
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel="noopener"
+                 href="https://wa.me/5511998864287?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20energia%20solar.">
+                (11) 99886-4287 — WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contato@esystecnologia.com.br">contato@esystecnologia.com.br</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Trabalhe Conosco</h5>
+          <p class="footer-muted">
+            Para trabalhar conosco, por favor envie seu currículo e informações para:<br>
+            <a href="mailto:contato@esystecnologia.com.br">contato@esystecnologia.com.br</a>
+          </p>
+        </div>
+
+        <div>
+          <h5>Matriz</h5>
+          <p class="footer-muted">Osasco / SP</p>
+        </div>
+
+        <div>
+          <h5>Institucional</h5>
+          <ul>
+            <li><a href="index.html#topo">Home</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="faq.html#faq">FAQ</a></li>
+            <li><a href="index.html#simulador">Simulador</a></li>
+            <li><a href="index.html#depoimentos">Depoimentos</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="footerYear"></span> Coelho VIltrumita — Todos os direitos reservados
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ✅ mantém só o JS do accordion aqui (sem mexer no ano) -->
+  <script>
+    const items = document.querySelectorAll(".faq-item");
+
+    function closeAll(exceptItem){
+      items.forEach(item => {
+        if (item === exceptItem) return;
+        item.classList.remove("is-open");
+        const btn = item.querySelector(".faq-q");
+        const a = item.querySelector(".faq-a");
+        btn.setAttribute("aria-expanded", "false");
+        a.setAttribute("aria-hidden", "true");
+        a.style.maxHeight = "0px";
+      });
+    }
+
+    items.forEach(item => {
+      const btn = item.querySelector(".faq-q");
+      const a = item.querySelector(".faq-a");
+
+      btn.addEventListener("click", () => {
+        const isOpen = item.classList.contains("is-open");
+
+        if (!isOpen) closeAll(item);
+
+        item.classList.toggle("is-open");
+        const nowOpen = item.classList.contains("is-open");
+
+        btn.setAttribute("aria-expanded", nowOpen ? "true" : "false");
+        a.setAttribute("aria-hidden", nowOpen ? "false" : "true");
+        a.style.maxHeight = nowOpen ? a.scrollHeight + "px" : "0px";
+      });
+    });
+
+    window.addEventListener("resize", () => {
+      items.forEach(item => {
+        if (!item.classList.contains("is-open")) return;
+        const a = item.querySelector(".faq-a");
+        a.style.maxHeight = a.scrollHeight + "px";
+      });
+    });
+  </script>
+
+  <!-- ✅ app.js por último (ele seta o ano do footer) -->
+  <script src="app.js"></script>
+
+</body>
+</html>

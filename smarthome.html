@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smarthome — Esys Energia</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="smarthome.css" />
+</head>
+
+<body>
+
+  <!-- ✅ HEADER -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-left">
+        <a class="logo" href="index.html#topo">
+          <img src="logo esys.png" alt="Esys Energia">
+        </a>
+
+        <nav class="menu-left">
+          <a href="index.html#topo">Energia Solar</a>
+          <a href="eletromobilidade.html">Eletromobilidade</a>
+          <a href="smarthome.html" class="active">Smarthome</a>
+        </nav>
+      </div>
+
+      <nav class="menu-right">
+        <a href="sobre.html">Sobre nós</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="smart-page">
+
+    <!-- ✅ HERO COM VÍDEO (FUNDO) -->
+    <section class="smart-hero-video" id="topo">
+      <video
+        class="smart-bg-video"
+        id="smartBgVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="smarthome-poster.jpg"
+      >
+        <source src="smarthome-bg.mp4" type="video/mp4" />
+      </video>
+
+      <!-- overlay para contraste -->
+      <div class="smart-video-overlay" aria-hidden="true"></div>
+
+      <div class="smart-hero-inner">
+        <div class="smart-pill">Smarthome • Automação Inteligente</div>
+
+        <h1 class="smart-hero-title">
+          Controle sua casa<br>
+          <span>com um toque</span>
+        </h1>
+
+        <p class="smart-hero-sub">
+          Iluminação, tomadas, cenas, rotinas e segurança — instalação limpa, configuração completa e entrega funcionando.
+        </p>
+
+        <div class="smart-hero-actions">
+          <a class="smart-btn smart-btn-primary"
+             href="https://wa.me/5511999187450?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20smarthome%20(automa%C3%A7%C3%A3o)%20com%20instala%C3%A7%C3%A3o%20e%20configura%C3%A7%C3%A3o."
+             target="_blank" rel="noopener">
+            Pedir orçamento no WhatsApp
+          </a>
+
+          <a class="smart-btn smart-btn-ghost" href="#conteudo">
+            Ver possibilidades ↓
+          </a>
+        </div>
+
+        <!-- botão opcional (apenas desktop) -->
+        <button class="smart-sound-toggle" id="smartSoundToggle" type="button" aria-label="Ativar som do vídeo">
+          Som: OFF
+        </button>
+      </div>
+    </section>
+
+    <!-- ✅ Conteúdo (placeholder por enquanto) -->
+    <section class="smart-section" id="conteudo">
+      <div class="smart-container">
+        <p class="smart-muted"></p>
+      </div>
+    </section>
+
+    <!-- ✅ O QUE SUA CASA PODE FAZER -->
+    <section class="smart-showcase">
+      <div class="smart-container">
+
+        <h2 class="smart-section-title">O que sua casa pode fazer</h2>
+
+        <div class="smart-showcase-grid">
+          <!-- Card 1 -->
+          <div class="smart-showcase-card">
+            <img src="smarthome iluminacao.jpg" alt="Iluminação automática">
+            <div class="smart-overlay"></div>
+            <div class="smart-card-content">
+              <h3>Iluminação automática</h3>
+              <p>Luzes que reagem à sua presença.</p>
+              <span class="smart-line"></span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="smart-showcase-card">
+            <img src="smarthome fechadura.jpg" alt="Fechadura inteligente">
+            <div class="smart-overlay"></div>
+            <div class="smart-card-content">
+              <h3>Fechadura inteligente</h3>
+              <p>Acesso por app ou biometria.</p>
+              <span class="smart-line"></span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="smart-showcase-card">
+            <img src="smarthome monitoramento.jpg" alt="Monitoramento remoto">
+            <div class="smart-overlay"></div>
+            <div class="smart-card-content">
+              <h3>Monitoramento remoto</h3>
+              <p>Segurança na palma da mão.</p>
+              <span class="smart-line"></span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="smart-showcase-card">
+            <img src="smarthome cheguei.jpg" alt="Cena Cheguei">
+            <div class="smart-overlay"></div>
+            <div class="smart-card-content">
+              <h3>Cena “Cheguei”</h3>
+              <p>Luz, clima e ambiente prontos.</p>
+              <span class="smart-line"></span>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="smart-showcase-card">
+            <img src="smarthome dormir.jpg" alt="Modo Dormir">
+            <div class="smart-overlay"></div>
+            <div class="smart-card-content">
+              <h3>Modo Dormir</h3>
+              <p>Casa segura enquanto você descansa.</p>
+              <span class="smart-line"></span>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="smart-showcase-card">
+            <img src="smarthome controle.jpg" alt="Controle total">
+            <div class="smart-overlay"></div>
+            <div class="smart-card-content">
+              <h3>Controle total</h3>
+              <p>Tudo pelo celular.</p>
+              <span class="smart-line"></span>
+            </div>
+          </div>
+        </div><!-- ✅ FECHAMENTO QUE ESTAVA FALTANDO: smart-showcase-grid -->
+
+      </div>
+    </section><!-- ✅ FECHAMENTO QUE ESTAVA FALTANDO: smart-showcase -->
+
+    <!-- ✅ BLOCO APP -->
+    <section class="smart-app-control">
+      <div class="smart-container smart-app-grid">
+
+        <div class="smart-app-text">
+          <h2>Controle tudo pelo aplicativo</h2>
+          <p>
+            Ajuste luzes, cenas, temperatura e monitoramento em tempo real.
+            Mesmo fora de casa, você tem controle total na palma da mão.
+          </p>
+        </div>
+
+        <div class="smart-app-visual">
+          <img src="controle pelo app.png" alt="Controle pelo aplicativo">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ✅ INTEGRAÇÃO SOLAR -->
+    <section class="smart-solar-integration">
+      <div class="smart-container smart-solar-grid">
+
+        <div class="smart-solar-visual">
+          <img src="integraçao solarhome.png" alt="Integração energia solar">
+        </div>
+
+        <div class="smart-solar-text">
+          <h2>Integração com energia solar</h2>
+          <p>
+            Automatize o consumo conforme sua geração solar.
+            Ligue equipamentos nos horários mais inteligentes e maximize sua economia.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+     REDES MESH — NOVA SEÇÃO (SEM CONFLITO)
+========================= -->
+<section class="esys-mesh reveal" id="redes-mesh" aria-label="Seção Redes Mesh">
+  <div class="esys-mesh__container">
+
+    <!-- ESQUERDA: texto -->
+    <div class="esys-mesh__left">
+      <span class="esys-mesh__badge">WI-FI FORTE NA CASA TODA</span>
+
+      <h2 class="esys-mesh__title">
+        Redes Mesh:
+        <span>estabilidade real</span>
+        para sua <strong>Smarthome</strong>
+      </h2>
+
+      <p class="esys-mesh__text">
+        Em vez de um roteador “sofrendo” sozinho, a Mesh usa vários pontos que trabalham juntos como
+        <strong>uma única rede</strong>. Você anda pela casa e o Wi-Fi acompanha sem quedas — perfeito para
+        câmeras, automação, Alexa e streaming.
+      </p>
+
+      <div class="esys-mesh__cards">
+        <article class="esys-mesh__card">
+          <div>
+            <h3>Uma rede só</h3>
+            <p>Mesmo nome e senha em toda a casa, sem trocar manualmente.</p>
+          </div>
+        </article>
+
+        <article class="esys-mesh__card">
+          <div class="esys-mesh__icon">🏠</div>
+          <div>
+            <h3>Mais alcance</h3>
+            <p>Elimina zonas sem sinal (quartos, corredor, área externa).</p>
+          </div>
+        </article>
+
+        <article class="esys-mesh__card">
+          <div class="esys-mesh__icon">⚡</div>
+          <div>
+            <h3>Mais estável</h3>
+            <p>Menos travamentos em câmeras, automação e streaming.</p>
+          </div>
+        </article>
+
+        <article class="esys-mesh__card">
+          <div class="esys-mesh__icon">🔒</div>
+          <div>
+            <h3>Mais seguro</h3>
+            <p>Configuração correta + posicionamento ideal dos pontos.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="esys-mesh__cta">
+        <a class="esys-mesh__btn" href="#contato">Quero melhorar meu Wi-Fi →</a>
+        <span class="esys-mesh__hint">A gente avalia o ambiente e recomenda a melhor Mesh.</span>
+      </div>
+    </div>
+
+    <!-- DIREITA: imagem estilizada -->
+    <div class="esys-mesh__right">
+      <div class="esys-mesh__imageCard" role="img" aria-label="Ilustração de rede mesh em casa">
+        <!-- Troque a imagem abaixo pela sua quando quiser -->
+        <img class="esys-mesh__img" src="mesh.jpg" alt="Rede mesh com pontos distribuídos" loading="lazy">
+        <div class="esys-mesh__glow"></div>
+
+        <!-- bolinhas animadas (decorativas) -->
+        <span class="esys-mesh__dot d1"></span>
+        <span class="esys-mesh__dot d2"></span>
+        <span class="esys-mesh__dot d3"></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- WhatsApp flutuante -->
+  <a class="whatsapp-float" id="whatsFloat" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path fill="currentColor" d="M19.11 17.46c-.27-.14-1.57-.77-1.81-.86-.24-.09-.42-.14-.6.14-.18.27-.69.86-.84 1.04-.15.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.47-1.82-.15-.27-.02-.41.11-.54.12-.12.27-.31.4-.46.14-.15.18-.27.27-.45.09-.18.04-.34-.02-.48-.07-.14-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47l-.51-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.98 2.67 1.12 2.85c.14.18 1.93 2.95 4.68 4.13.66.28 1.18.45 1.58.58.66.21 1.26.18 1.74.11.53-.08 1.57-.64 1.79-1.26.22-.62.22-1.15.15-1.26-.07-.11-.24-.18-.51-.32zM16.04 3C8.85 3 3 8.67 3 15.64c0 2.46.74 4.74 2.01 6.67L3.7 28.9l6.86-1.79c1.86 1 4 1.57 6.48 1.57 7.19 0 13.04-5.67 13.04-12.64C30.08 8.67 23.23 3 16.04 3zm0 23.3c-2.32 0-4.46-.66-6.28-1.8l-.45-.28-4.07 1.06 1.09-3.92-.3-.44c-1.22-1.78-1.87-3.87-1.87-6.08 0-6.11 5.15-11.08 11.88-11.08 6.55 0 11.88 4.97 11.88 11.08S22.59 26.3 16.04 26.3z"/>
+    </svg>
+  </a>
+
+  <!-- ✅ DEPOIMENTOS (COMPLETO) -->
+  <section class="testimonials reveal" id="depoimentos">
+    <div class="testimonials-container">
+
+      <div class="testimonials-left">
+        <h2 class="testimonials-title-big">DEPOIMENTOS</h2>
+        <div class="testimonials-underline"></div>
+        <p class="testimonials-small">DE NOSSOS CLIENTES</p>
+      </div>
+
+      <div class="testimonials-right">
+        <div class="carousel carousel-clean" aria-label="Depoimentos em carrossel">
+          <button class="carousel-btn prev" id="btnPrev" type="button" aria-label="Depoimento anterior">‹</button>
+
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="carouselTrack">
+
+              <article class="t-card">
+                <p class="t-text">Uma empresa séria, atenciosa, comprometida e muito atenta aos prazos estabelecidos. E o preço muito bom, super indico</p>
+                <div class="t-footer"><span class="t-name">Marcelo Querentino</span></div>
+              </article>
+
+              <article class="t-card">
+                <p class="t-text">A Esys instalou em minha residência o sistema de geração on-grid (fotovoltaico). Empresa cumpriu o prometido e dentro do prazo estimado.</p>
+                <div class="t-footer"><span class="t-name">Rupen</span></div>
+              </article>
+
+              <article class="t-card">
+                <p class="t-text">Excelente profissional. Tem sempre a solução ideal para alcançar a satisfação do cliente. Tem preço e qualidade. Recomendo.</p>
+                <div class="t-footer"><span class="t-name">Carlos Amaro</span></div>
+              </article>
+
+              <article class="t-card">
+                <p class="t-text">Trabalho de excelência e com um suporte pós venda fantástico. Ultra recomendo. Trabalho sensacional e a economia já aparece na conta de luz.</p>
+                <div class="t-footer"><span class="t-name">Thiago Dias</span></div>
+              </article>
+
+              <article class="t-card">
+                <p class="t-text">Rogerio e equipe são honestos na negociação, educados em todos os momentos e pontuais. Excelente assistência pós execução. Recomendadíssimo.</p>
+                <div class="t-footer"><span class="t-name">Jose Matias Neto</span></div>
+              </article>
+
+              <article class="t-card">
+                <p class="t-text">Profissional ímpar. Pontualidade, preço e qualidade sem igual. Organização, educação e respeito. Indico com propriedade.</p>
+                <div class="t-footer"><span class="t-name">Claudia</span></div>
+              </article>
+
+              <article class="t-card">
+                <p class="t-text">Muito prestativo, objetivo e de grande profissionalismo.</p>
+                <div class="t-footer"><span class="t-name">Manoel Antônio Maia</span></div>
+              </article>
+
+              <article class="t-card">
+                <p class="t-text">Excelentes profissionais, entendem muito do assunto, extremamente educados e prestativos. Recomendo de olhos fechados.</p>
+                <div class="t-footer"><span class="t-name">Albert</span></div>
+              </article>
+
+              <article class="t-card">
+                <p class="t-text">Excelente profissional e atencioso. Conhece bem os produtos, orienta sobre a melhor relação custo benefício. Super indico.</p>
+                <div class="t-footer"><span class="t-name">Luciana Alves Brito</span></div>
+              </article>
+
+              <article class="t-card">
+                <p class="t-text">Empresa incrível! Profissionalismo e respeito nota 10.</p>
+                <div class="t-footer"><span class="t-name">Oliveira</span></div>
+              </article>
+
+              <article class="t-card">
+                <p class="t-text">Serviço impecável, atendimento maravilhoso, solução de ponta, com o que há de mais moderno no mercado. Super recomendo!</p>
+                <div class="t-footer"><span class="t-name">Ariel Krok</span></div>
+              </article>
+
+              <article class="t-card">
+                <p class="t-text">O pessoal da Esys tem domínio no assunto. Meu sistema OFF-GRID tem mais de 1 ano e não apresentou problema. Recomendo.</p>
+                <div class="t-footer"><span class="t-name">Ed Kazuo Kuno</span></div>
+              </article>
+
+            </div>
+          </div>
+
+          <button class="carousel-btn next" id="btnNext" type="button" aria-label="Próximo depoimento">›</button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" aria-label="Navegação do carrossel"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ✅ NÚMEROS (IGUAL HOME) -->
+  <section class="stats">
+    <div class="stats-overlay"></div>
+
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-number" data-target="80">0</span>
+        <span class="stat-label">Projetos executados</span>
+      </div>
+
+      <div class="stat-item">
+        <span class="stat-number" data-target="110">0</span>
+        <span class="stat-label">Clientes satisfeitos</span>
+      </div>
+
+      <div class="stat-item">
+        <span class="stat-number" data-target="4">0</span>
+        <span class="stat-label">Anos de Experiência</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-spacer" aria-hidden="true"></div>
+
+  <!-- ✅ CASES (IGUAL HOME) -->
+  <section class="cases reveal" id="cases">
+    <div class="cases-container">
+
+      <h2 class="cases-title">NOSSOS CASES</h2>
+      <div class="cases-underline"></div>
+
+      <div class="cases-grid">
+        <div class="case-item">
+          <div class="case-image"></div>
+          <span class="case-label">RESIDÊNCIAS</span>
+        </div>
+
+        <div class="case-item">
+          <div class="case-image"></div>
+          <span class="case-label">COMÉRCIO</span>
+        </div>
+
+        <div class="case-item">
+          <div class="case-image"></div>
+          <span class="case-label">INDÚSTRIAS</span>
+        </div>
+
+        <div class="case-item">
+          <div class="case-image"></div>
+          <span class="case-label">USINAS</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-spacer" aria-hidden="true"></div>
+
+  <!-- ✅ PARCEIROS (IGUAL HOME) -->
+  <div class="section-spacer" aria-hidden="true"></div>
+
+<section class="partners reveal" id="parceiros">
+  <div class="partners-container">
+    <h2 class="partners-title">EMPRESAS PARCEIRAS</h2>
+    <div class="partners-underline"></div>
+
+    <div class="partners-carousel" aria-label="Empresas parceiras em carrossel">
+      <button class="partners-btn prev" id="partnersPrev" type="button" aria-label="Parceiro anterior">‹</button>
+
+      <div class="partners-viewport">
+        <div class="partners-track" id="partnersTrack">
+          <div class="partner-item">
+            <img src="solfacil.png" alt="Solfácil" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item is-featured">
+            <img src="Banco BV.png" alt="Banco BV" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item partner-card">
+            <img src="Pieta.tech.png" alt="Pieta.tech" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item">
+            <img src="Huawei.png" alt="Huawei" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item">
+            <img src="taranis solar.png" alt="Taranis Solar" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item">
+            <img src="intelbras.png" alt="Intelbras" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item">
+            <img src="weg.png" alt="WEG" loading="eager" decoding="async" />
+          </div>
+
+          <div class="partner-item">
+            <img src="idealtech.png" alt="Idealtech" loading="eager" decoding="async" />
+          </div>
+        </div>
+      </div>
+
+      <button class="partners-btn next" id="partnersNext" type="button" aria-label="Próximo parceiro">›</button>
+    </div>
+
+    <div class="partners-dots" id="partnersDots" aria-label="Navegação do carrossel de parceiros"></div>
+  </div>
+</section>
+  <!-- ✅ FOOTER (padrão) -->
+  <footer class="site-footer" id="contato">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-cta">
+          <h3>Pronto para reduzir sua conta de luz?</h3>
+          <p>Fale com a Esys agora e receba um orçamento rápido pelo WhatsApp.</p>
+
+          <div class="footer-actions">
+            <a class="btn-footer btn-footer-primary" href="index.html#simulador">
+              Simular economia
+            </a>
+
+            <a class="btn-footer btn-footer-whats"
+               href="https://wa.me/5511996187450?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20energia%20solar."
+               target="_blank" rel="noopener">
+              Falar no WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-info">
+          <h4>Esys Energia</h4>
+          <p class="footer-muted">Energia solar inteligente para gerar economia real.</p>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <h5>Contato</h5>
+          <ul>
+            <li><a target="_blank" rel="noopener"
+              href="https://wa.me/5511996187450?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20energia%20solar.">
+              (11) 99618-7450 — WhatsApp</a></li>
+            <li><a target="_blank" rel="noopener"
+              href="https://wa.me/5511978230095?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20energia%20solar.">
+              (11) 97823-0095 — WhatsApp</a></li>
+            <li><a target="_blank" rel="noopener"
+              href="https://wa.me/5511998864287?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20energia%20solar.">
+              (11) 99886-4287 — WhatsApp</a></li>
+            <li><a href="mailto:contato@esystecnologia.com.br">contato@esystecnologia.com.br</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Trabalhe Conosco</h5>
+          <p class="footer-muted">
+            Envie seu currículo para:<br>
+            <a href="mailto:contato@esystecnologia.com.br">contato@esystecnologia.com.br</a>
+          </p>
+        </div>
+
+        <div>
+          <h5>Matriz</h5>
+          <p class="footer-muted">Osasco / SP</p>
+        </div>
+
+        <div>
+          <h5>Institucional</h5>
+          <ul>
+            <li><a href="index.html#topo">Home</a></li>
+            <li><a href="eletromobilidade.html">Eletromobilidade</a></li>
+            <li><a href="smarthome.html">Smarthome</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="faq.html#faq">FAQ</a></li>
+            <li><a href="index.html#simulador">Simulador</a></li>
+            <li><a href="index.html#depoimentos">Depoimentos</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="footerYear"></span> Coelho Viltrumita — Todos os direitos reservados
+      </div>
+    </div>
+  </footer>
+
+  <!-- Instagram flutuante -->
+  <a class="instagram-float"
+     href="https://www.instagram.com/esysenergia/"
+     target="_blank"
+     rel="noopener"
+     aria-label="Visitar Instagram da Esys">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="currentColor" d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm10.3 2.2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z"/>
+    </svg>
+  </a>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

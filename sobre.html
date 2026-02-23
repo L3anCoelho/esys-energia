@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre nós — Esys Energia Solar</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .about-hero{
+      position: relative;
+      height: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .about-hero::before{
+      content:"";
+      position: absolute;
+      inset: 0;
+      background: url("sobre-bg.jpg") center/cover no-repeat;
+      filter: saturate(1.05) contrast(1.05);
+      transform: scale(1.02);
+    }
+
+    .about-hero::after{
+      content:"";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+    }
+
+    .about-hero-inner{
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 20px;
+      max-width: 1100px;
+    }
+
+    .about-hero-title{
+      color: #c45a14;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 56px;
+      line-height: 1;
+    }
+
+    .about-hero-sub{
+      margin-top: 14px;
+      color: rgba(255,255,255,.88);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .mvv{
+      background: #fff;
+      padding: 90px 20px 110px;
+    }
+
+    .mvv-container{
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .mvv-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 70px;
+      align-items: start;
+      text-align: center;
+    }
+
+    .mvv-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .mvv-icon{
+      width: 76px;
+      height: 76px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: 2px solid #FFD22E;
+      margin-bottom: 18px;
+    }
+
+    /* cada ícone com cor levemente diferente */
+    .mvv-item:nth-child(1) .mvv-icon{ border-color: #FFD22E; }
+    .mvv-item:nth-child(2) .mvv-icon{ border-color: #c45a14; }
+    .mvv-item:nth-child(3) .mvv-icon{ border-color: #FFD22E; }
+
+    .mvv-icon svg{
+      width: 34px;
+      height: 34px;
+      display: block;
+    }
+
+    .mvv-item:nth-child(1) .mvv-icon svg{ color: #FFD22E; }
+    .mvv-item:nth-child(2) .mvv-icon svg{ color: #c45a14; }
+    .mvv-item:nth-child(3) .mvv-icon svg{ color: #FFD22E; }
+
+    .mvv-title{
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-size: 18px;
+      color: #111;
+    }
+
+    .mvv-text{
+      max-width: 360px;
+      color: #111;
+      font-size: 18px;
+      line-height: 1.85;
+      font-weight: 500;
+    }
+
+    @media (max-width: 980px){
+      .about-hero-title{ font-size: 44px; }
+      .mvv-grid{ grid-template-columns: 1fr; gap: 46px; }
+      .mvv-text{ max-width: 520px; }
+    }
+  </style>
+</head>
+<body>
+
+ <header class="site-header">
+  <div class="header-container">
+
+    <!-- BLOCO ESQUERDO -->
+    <div class="header-left">
+      <a class="logo" href="index.html#topo">
+        <img src="logo esys.png" alt="Esys Energia">
+      </a>
+
+      <nav class="menu-left">
+        <a href="index.html#topo" class="active">Energia Solar</a>
+        <a href="eletromobilidade.html">Eletromobilidade</a>
+        <a href="smarthome.html">Smarthome</a>
+      </nav>
+    </div>
+
+    <!-- BLOCO DIREITO -->
+    <nav class="menu-right">
+      <a href="sobre.html">Sobre nós</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+  </div>
+</header>
+
+
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <h1 class="about-hero-title">SOBRE NÓS</h1>
+      <p class="about-hero-sub">
+        Conheça a Esys e o nosso compromisso com energia limpa, economia e projetos bem dimensionados.
+      </p>
+    </div>
+  </section>
+
+  <section class="mvv">
+    <div class="mvv-container">
+      <div class="mvv-grid">
+
+        <div class="mvv-item">
+          <div class="mvv-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19V5" />
+              <path d="M4 19h16" />
+              <path d="M8 15v-4" />
+              <path d="M12 15V9" />
+              <path d="M16 15v-7" />
+            </svg>
+          </div>
+          <h3 class="mvv-title">NOSSA MISSÃO</h3>
+          <p class="mvv-text">
+            Conectar pessoas à fontes de energia limpa e renovável, levando conforto e economia para milhares de lares,
+            industrias e comércios.
+          </p>
+        </div>
+
+        <div class="mvv-item">
+          <div class="mvv-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
+          <h3 class="mvv-title">NOSSA VISÃO</h3>
+          <p class="mvv-text">
+            Alcançar excelência em nossos projetos e atendimentos, prezando pelo custos reduzidos e benefícios presentes
+            apresentando sempre novas tecnologias e métodos.
+          </p>
+        </div>
+
+        <div class="mvv-item">
+          <div class="mvv-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3 7 7 .6-5.3 4.6 1.7 7.2L12 18l-6.4 3.4 1.7-7.2L2 9.6 9 9l3-7z"/>
+            </svg>
+          </div>
+          <h3 class="mvv-title">NOSSOS VALORES</h3>
+          <p class="mvv-text">
+            Nossos valores abrange foco nas estratégias e ética nas operações seja elas quais forem.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <a class="whatsapp-float"
+     href="https://wa.me/5511999187450?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20energia%20solar."
+     target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <span class="whats-icon">✆</span>
+    <span class="whats-text">Falar agora</span>
+  </a>
+
+  <footer class="site-footer" id="contato">
+    <div class="footer-container">
+
+      <div class="footer-top">
+        <div class="footer-cta">
+          <h3>Pronto para reduzir sua conta de luz?</h3>
+          <p>Fale com a Esys agora e receba um orçamento rápido pelo WhatsApp.</p>
+
+          <div class="footer-actions">
+            <a class="btn-footer btn-footer-primary" href="index.html#simulador">
+              Simular economia
+            </a>
+
+            <a class="btn-footer btn-footer-whats"
+               href="https://wa.me/5511999187450?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20de%20energia%20solar."
+               target="_blank" rel="noopener">
+              Falar no WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-info">
+          <h4>Esys Energia</h4>
+          <p class="footer-muted">Energia solar inteligente para gerar economia real.</p>
+        </div>
+      </div>
+
+      <div class="footer-grid">
+        <div>
+          <h5>Contato</h5>
+          <ul>
+            <li>
+              <a target="_blank" rel="noopener"
+                 href="https://wa.me/5511996187450?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20energia%20solar.">
+                (11) 99618-7450 — WhatsApp
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel="noopener"
+                 href="https://wa.me/5511978230095?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20energia%20solar.">
+                (11) 97823-0095 — WhatsApp
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel="noopener"
+                 href="https://wa.me/5511998864287?text=Ol%C3%A1!%20Quero%20informa%C3%A7%C3%B5es%20sobre%20energia%20solar.">
+                (11) 99886-4287 — WhatsApp
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contato@esystecnologia.com.br">contato@esystecnologia.com.br</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h5>Trabalhe Conosco</h5>
+          <p class="footer-muted">
+            Para trabalhar conosco, por favor envie seu currículo e informações para:<br>
+            <a href="mailto:contato@esystecnologia.com.br">contato@esystecnologia.com.br</a>
+          </p>
+        </div>
+
+        <div>
+          <h5>Matriz</h5>
+          <p class="footer-muted">Osasco / SP</p>
+        </div>
+
+        <div>
+          <h5>Institucional</h5>
+          <ul>
+            <li><a href="index.html#topo">Home</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="faq.html#faq">FAQ</a></li>
+            <li><a href="index.html#simulador">Simulador</a></li>
+            <li><a href="index.html#depoimentos">Depoimentos</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="footerYear"></span> Coelho Viltrumita — Todos os direitos reservados
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
