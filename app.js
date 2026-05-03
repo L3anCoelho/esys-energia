@@ -81,10 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const hero = document.getElementById("hero") || document.querySelector(".hero");
 
   const heroSlides = [
-    { img: "hero 1.png", href: null },
-    { img: "hero 2.png", href: null },
-    { img: "hero smarthome.png", href: "smarthome.html" },
-    { img: "hero eletro.png", href: "eletromobilidade.html" },
+    { img: "imagem-site/hero 1.png", href: null },
+    { img: "imagem-site/hero 2.png", href: null },
+    { img: "imagem-site/hero smarthome.png", href: "smarthome.html" },
+    { img: "imagem-site/hero eletro.png", href: "eletromobilidade.html" },
   ];
 
   if (heroBg && heroTrack && heroDots && hero && heroSlides.length) {
@@ -378,12 +378,12 @@ if (partnersTrack && partnersViewport) {
       const allItems = Array.from(partnersTrack.children);
 
       let step = 0;
-      let index = totalOriginal; // começa no “meio”
+      let index = totalOriginal; // começa no "meio"
       let timer = null;
       let isAnimating = false;
 
       function setTransition(on) {
-        partnersTrack.style.transition = on ? "transform .55s ease" : "none";
+        partnersTrack.style.transition = on ? "transform .35s ease" : "none"; // ⚡ era .55s
       }
 
       function applyTransform() {
@@ -465,7 +465,7 @@ if (partnersTrack && partnersViewport) {
           setTransition(false);
           index -= totalOriginal;
           applyTransform();
-          // força reflow pra “colar” sem animar
+          // força reflow pra "colar" sem animar
           void partnersTrack.offsetWidth;
         }
 
@@ -481,7 +481,7 @@ if (partnersTrack && partnersViewport) {
 
       function startAuto() {
         stopAuto();
-        timer = setInterval(next, 3500);
+        timer = setInterval(next, 2200); // ⚡ era 3500
       }
 
       function stopAuto() {
@@ -514,7 +514,7 @@ if (partnersTrack && partnersViewport) {
       }
 
       async function initPartners() {
-        // ✅ espera imagens (evita step=0 e “teleporte”/duplicação)
+        // ✅ espera imagens (evita step=0 e "teleporte"/duplicação)
         await waitImages();
 
         calcStep();
@@ -544,6 +544,7 @@ if (partnersTrack && partnersViewport) {
     }
   }
 }
+
   // =========================
   // ✅ CONTADOR (HOME)
   // =========================
@@ -853,4 +854,21 @@ if (partnersTrack && partnersViewport) {
       smartBtnSound.textContent = newMuted ? "Som: OFF" : "Som: ON";
     });
   }
+});
+
+
+// ============================================================
+// CARROSSEL CASES
+// ============================================================
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const images = carousel.querySelectorAll('img');
+  if (images.length <= 1) return;
+
+  let index = 0;
+
+  setInterval(() => {
+    images[index].classList.remove('active');
+    index = (index + 1) % images.length;
+    images[index].classList.add('active');
+  }, 3000);
 });

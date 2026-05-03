@@ -398,7 +398,8 @@
 .pick2-photo{
   position:relative;
   z-index:2;
-  height:180px;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 🔥 chave do ajuste perfeito */
   margin:0 16px 16px;
   border-radius:20px;
   overflow:hidden;
