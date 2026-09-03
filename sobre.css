@@ -1,0 +1,477 @@
+/* =========================================================
+   SOBRE.CSS — seção "Sustentabilidade, ética e governança"
+   Usado só por sobre.html (namespace .esg-)
+   Depende das variáveis de style.css (--laranja, --header-h...)
+========================================================= */
+
+.esg {
+  background: var(--bg);
+  color: var(--texto);
+}
+
+/* =========================
+   CAPA
+========================= */
+.esg-capa {
+  background: linear-gradient(135deg, #1c1c20 0%, #2f2f33 55%, #3a2a1c 100%);
+  color: #fff;
+  padding: 72px 20px;
+}
+
+.esg-capa-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 48px;
+  align-items: center;
+}
+
+.esg-capa h2 {
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.15;
+  font-weight: 900;
+  letter-spacing: .5px;
+  margin-bottom: 18px;
+}
+
+.esg-capa h2 em {
+  font-style: normal;
+  color: var(--laranja);
+}
+
+.esg-capa p {
+  max-width: 760px;
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: rgba(255,255,255,.82);
+}
+
+.esg-carimbo {
+  justify-self: end;
+  padding: 20px 22px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-left: 4px solid var(--laranja);
+  border-radius: 14px;
+  background: rgba(255,255,255,.05);
+
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(255,255,255,.75);
+}
+
+.esg-carimbo strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14.5px;
+  font-weight: 900;
+  color: #fff;
+}
+
+/* =========================
+   CORPO — sumário + leitura
+========================= */
+.esg-corpo {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 64px 20px 90px;
+
+  display: grid;
+  /* minmax(0,...) impede que a faixa de chips do sumário (flex nowrap)
+     force o track a ficar maior que a tela */
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 44px;
+  align-items: start;
+}
+
+/* ---- sumário ---- */
+.esg-sumario {
+  position: sticky;
+  top: calc(var(--header-h, 120px) + 20px);
+
+  min-width: 0;
+  padding: 24px 22px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.07);
+  border-radius: 18px;
+  box-shadow: var(--shadow2);
+}
+
+.esg-sumario h3 {
+  font-size: 12.5px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #8a8a90;
+  margin-bottom: 14px;
+}
+
+.esg-sumario ol {
+  list-style: none;
+  counter-reset: esg;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.esg-sumario li {
+  counter-increment: esg;
+}
+
+.esg-sumario a {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+
+  padding: 9px 12px;
+  border-radius: 10px;
+  border-left: 3px solid transparent;
+
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #555;
+  text-decoration: none;
+  transition: background .18s ease, color .18s ease, border-color .18s ease;
+}
+
+.esg-sumario a::before {
+  content: counter(esg, decimal-leading-zero);
+  font-size: 11.5px;
+  font-weight: 900;
+  color: #b9b9bf;
+}
+
+.esg-sumario a:hover {
+  background: var(--laranjaSoft);
+  color: var(--laranja);
+}
+
+.esg-sumario a.is-current {
+  background: var(--laranjaSoft);
+  border-left-color: var(--laranja);
+  color: var(--laranja);
+}
+
+.esg-sumario a.is-current::before {
+  color: var(--laranja);
+}
+
+/* ---- leitura ---- */
+.esg-leitura {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+
+.esg-bloco {
+  padding: 38px 40px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 20px;
+  box-shadow: var(--shadow2);
+}
+
+.esg-bloco h3 {
+  position: relative;
+  padding-bottom: 14px;
+  margin-bottom: 22px;
+
+  font-size: clamp(21px, 2.2vw, 27px);
+  font-weight: 900;
+  line-height: 1.25;
+  color: #111;
+}
+
+.esg-bloco h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 64px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--laranja);
+}
+
+.esg-bloco h4 {
+  margin: 26px 0 10px;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  color: var(--laranja);
+}
+
+.esg-bloco h4:first-of-type {
+  margin-top: 0;
+}
+
+.esg-bloco p {
+  margin-bottom: 14px;
+  font-size: 16.5px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+.esg-bloco p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- lista de valores (chips) ---- */
+.esg-valores {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.esg-valores li {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(196,90,20,.28);
+  background: var(--laranjaSoft);
+
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--laranja);
+}
+
+/* ---- listas com marcador ---- */
+.esg-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0 0;
+}
+
+.esg-lista li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.esg-lista li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--laranja);
+}
+
+/* ---- dimensões ESG ---- */
+.esg-dimensao {
+  margin-top: 20px;
+  padding: 24px 26px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.06);
+  border-left: 5px solid var(--laranja);
+  background: #fafafa;
+}
+
+.esg-dimensao h4 {
+  margin-top: 0;
+}
+
+.esg-dimensao p:last-child {
+  margin-bottom: 0;
+}
+
+.esg-dim-ambiental {
+  border-left-color: #2e9e5b;
+  background: rgba(46,158,91,.06);
+}
+
+.esg-dim-ambiental h4 { color: #227944; }
+.esg-dim-ambiental .esg-lista li::before { background: #2e9e5b; }
+
+.esg-dim-social {
+  border-left-color: var(--azul);
+  background: rgba(31,63,138,.06);
+}
+
+.esg-dim-social h4 { color: var(--azul); }
+.esg-dim-social .esg-lista li::before { background: var(--azul); }
+
+.esg-dim-governanca {
+  border-left-color: var(--laranja);
+  background: rgba(196,90,20,.06);
+}
+
+.esg-dim-governanca h4 { color: var(--laranja); }
+
+/* ---- tabela de indicadores ---- */
+.esg-tabela-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 14px;
+}
+
+.esg-tabela {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 15.5px;
+}
+
+.esg-tabela th {
+  padding: 15px 18px;
+  text-align: left;
+  font-weight: 900;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #fff;
+  background: #2f2f33;
+}
+
+.esg-tabela td {
+  padding: 16px 18px;
+  vertical-align: top;
+  line-height: 1.7;
+  color: var(--muted);
+  border-top: 1px solid rgba(0,0,0,.07);
+}
+
+.esg-tabela tbody tr:nth-child(odd) {
+  background: #fafafa;
+}
+
+.esg-tabela td:first-child {
+  width: 170px;
+  font-weight: 900;
+  color: #111;
+}
+
+/* ---- canal de ética ---- */
+.esg-contato {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 18px 0 4px;
+}
+
+.esg-contato a {
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--laranja);
+  color: #fff;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  transition: filter .2s ease, transform .2s ease;
+}
+
+.esg-contato a:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+/* ---- painel de destaque ---- */
+.esg-painel {
+  padding: 24px 26px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.06);
+  border-left: 5px solid var(--laranja);
+  background: #fafafa;
+}
+
+.esg-painel p:last-child {
+  margin-bottom: 0;
+}
+
+.esg-painel-verde {
+  border-left-color: #2e9e5b;
+  background: rgba(46,158,91,.08);
+}
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+@media (max-width: 1100px) {
+  .esg-capa-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .esg-carimbo {
+    justify-self: start;
+  }
+
+  .esg-corpo {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  /* sumário vira faixa de "chips" rolável, sem grudar na tela */
+  .esg-sumario {
+    position: static;
+    padding: 18px 16px;
+  }
+
+  .esg-sumario ol {
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .esg-sumario ol::-webkit-scrollbar {
+    display: none;
+  }
+
+  .esg-sumario li {
+    flex: 0 0 auto;
+  }
+
+  .esg-sumario a {
+    border-left: 0;
+    border-radius: 999px;
+    border: 1px solid rgba(0,0,0,.10);
+    padding: 9px 14px;
+    font-size: 13.5px;
+    white-space: nowrap;
+  }
+
+  .esg-sumario a.is-current {
+    border-color: var(--laranja);
+  }
+}
+
+@media (max-width: 900px) {
+  .esg-capa {
+    padding: 48px 16px;
+  }
+
+  .esg-corpo {
+    padding: 34px 16px 60px;
+  }
+
+  .esg-bloco {
+    padding: 26px 20px;
+    border-radius: 16px;
+  }
+
+  .esg-bloco p,
+  .esg-lista li {
+    font-size: 15.5px;
+  }
+
+  .esg-dimensao,
+  .esg-painel {
+    padding: 18px 18px;
+  }
+
+  .esg-contato a {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}

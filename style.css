@@ -37,6 +37,10 @@
 html, body {
   width: 100%;
   overflow-x: hidden;
+  /* clip recorta igual ao hidden, mas sem criar contexto de rolagem —
+     é o que mantém o position: sticky funcionando (ex.: sumário do ESG).
+     Navegador antigo ignora esta linha e fica com o hidden acima. */
+  overflow-x: clip;
 }
 
 body {
