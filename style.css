@@ -143,16 +143,21 @@ body {
 =========================== */
 .site-header {
   background: #fff;
-  height: 120px;
+  /* altura é dada pela barra principal (.header-container) + a subnav,
+     quando a página tiver uma */
+  height: auto;
   box-shadow: 0 4px 14px rgba(0,0,0,.08);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 50;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 .header-container {
   max-width: 1400px;
-  height: 100%;
+  height: 120px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
@@ -1453,8 +1458,11 @@ body {
 =========================== */
 @media (max-width: 900px) {
   .site-header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     z-index: 9999;
     background: #2f2f33;
     height: auto;
@@ -1814,13 +1822,18 @@ body {
 
 }
 /* =========================================================
-   ATALHOS NO HEADER (NAV DROPDOWN) + AJUSTES DE PERFORMANCE
+   HEADER FIXO + BARRA SECUNDÁRIA + AJUSTES DE PERFORMANCE
    Adicionado em 09/2026
 ========================================================= */
 
 :root {
-  /* altura real do header — usado pelo scroll dos atalhos */
+  /* altura real do header — medida pelo app.js */
   --header-h: 120px;
+}
+
+/* header é fixed, então o conteúdo precisa começar abaixo dele */
+body {
+  padding-top: var(--header-h, 190px);
 }
 
 /* Rolagem suave + compensação da altura do header fixo,
@@ -1840,168 +1853,53 @@ aside[id] {
   html { scroll-behavior: auto; }
 }
 
-/* ---------- Item de menu com atalho ---------- */
-.nav-item {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
+/* ---------- Barra de navegação secundária ---------- */
+.subnav {
+  background: #f4f4f5;
+  border-top: 1px solid rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.06);
 }
 
-.nav-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  padding: 0;
-  border: 0;
-  border-radius: 8px;
-  background: transparent;
-  color: #666;
-  cursor: pointer;
-  transition: background .2s ease, color .2s ease, transform .25s ease;
-}
-
-.nav-toggle svg {
-  width: 16px;
-  height: 16px;
-  display: block;
-}
-
-.nav-toggle:hover {
-  background: var(--laranjaSoft);
-  color: var(--laranja);
-}
-
-.nav-item.is-open > .nav-toggle {
-  transform: rotate(180deg);
-  color: var(--laranja);
-}
-
-.nav-item:hover > .nav-toggle {
-  color: var(--laranja);
-}
-
-/* ---------- Painel de atalhos ---------- */
-.nav-panel {
-  position: absolute;
-  top: calc(100% + 14px);
-  left: 0;
-  z-index: 60;
-
-  min-width: 260px;
-  max-height: 62vh;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  padding: 10px;
-
+.subnav-track {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
-  flex-direction: column;
-  gap: 2px;
-
-  background: #fff;
-  border: 1px solid rgba(0,0,0,.08);
-  border-radius: 16px;
-  box-shadow: 0 22px 50px rgba(0,0,0,.16);
-
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  pointer-events: none;
-  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+  gap: 22px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
-.nav-panel-right {
-  left: auto;
-  right: 0;
-}
-
-/* setinha do balão */
-.nav-panel::before {
-  content: "";
-  position: absolute;
-  top: -7px;
-  left: 24px;
-  width: 14px;
-  height: 14px;
-  background: #fff;
-  border-left: 1px solid rgba(0,0,0,.08);
-  border-top: 1px solid rgba(0,0,0,.08);
-  transform: rotate(45deg);
-  border-radius: 3px 0 0 0;
-}
-
-.nav-panel-right::before {
-  left: auto;
-  right: 24px;
-}
-
-/* área invisível que evita o painel fechar ao mover o mouse */
-.nav-item::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 16px;
-}
-
-/* abre por hover (desktop) ou por clique (classe .is-open) */
-.nav-item.is-open > .nav-panel {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-@media (hover: hover) and (min-width: 901px) {
-  .nav-item:hover > .nav-panel,
-  .nav-item:focus-within > .nav-panel {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-}
-
-/* links de dentro do painel — sobrescreve o estilo padrão do menu */
-.menu-left .nav-panel a,
-.menu-right .nav-panel a {
-  display: block;
-  padding: 10px 12px;
-  border-radius: 10px;
-
-  font-size: 14px;
-  font-weight: 700;
-  color: #333;
-  background: transparent;
-  white-space: nowrap;
-
-  transform: none;
-  transition: background .18s ease, color .18s ease, padding-left .18s ease;
-}
-
-.menu-left .nav-panel a::after,
-.menu-right .nav-panel a::after {
+.subnav-track::-webkit-scrollbar {
   display: none;
 }
 
-.menu-left .nav-panel a:hover,
-.menu-right .nav-panel a:hover,
-.menu-left .nav-panel a:focus-visible,
-.menu-right .nav-panel a:focus-visible {
-  background: var(--laranjaSoft);
+.subnav a {
+  flex: 0 0 auto;
+  padding: 11px 2px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #555;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color .18s ease, border-color .18s ease;
+}
+
+.subnav a:hover {
   color: var(--laranja);
-  padding-left: 16px;
-  transform: none;
+}
+
+.subnav a.is-current {
+  color: var(--laranja);
+  border-bottom-color: var(--laranja);
 }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 900px) {
   :root { --header-h: 210px; }
 
-  /* o painel precisa poder “vazar” do menu */
   .menu-left {
     position: relative;
     overflow: visible;
@@ -2022,52 +1920,33 @@ aside[id] {
     padding: 8px 4px;
   }
 
-  .nav-item {
-    position: static;
-    gap: 0;
+  /* faixa rolável de "chips" logo abaixo da barra principal */
+  .subnav {
+    background: #26262a;
+    border-top: 1px solid rgba(255,255,255,.10);
+    border-bottom: none;
   }
 
-  .nav-toggle {
-    width: 18px;
-    height: 18px;
-    color: rgba(255,255,255,.75);
+  .subnav-track {
+    padding: 8px 12px;
+    gap: 8px;
   }
 
-  .nav-toggle svg {
-    width: 13px;
-    height: 13px;
+  .subnav a {
+    padding: 7px 12px;
+    font-size: 12.5px;
+    color: rgba(255,255,255,.82);
+    background: rgba(255,255,255,.08);
+    border: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-radius: 999px;
   }
 
-  .nav-toggle:hover,
-  .nav-item.is-open > .nav-toggle {
-    background: rgba(255,255,255,.12);
+  .subnav a:hover,
+  .subnav a.is-current {
     color: #fff;
-  }
-
-  /* painel ocupa a largura toda, logo abaixo da linha do menu */
-  .nav-panel,
-  .nav-panel-right {
-    left: 0;
-    right: 0;
-    top: calc(100% + 10px);
-    min-width: 0;
-  }
-
-  .nav-panel::before {
-    display: none;
-  }
-
-  .menu-left .nav-panel a,
-  .menu-right .nav-panel a {
-    color: #333;
-    font-size: 14px;
-    white-space: normal;
-  }
-
-  .menu-left .nav-panel a:hover,
-  .menu-right .nav-panel a:hover {
-    color: var(--laranja);
-    background: var(--laranjaSoft);
+    background: var(--laranja);
+    border-color: var(--laranja);
   }
 }
 

@@ -72,55 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // =========================
-  // ✅ ATALHOS DO HEADER (nav dropdown)
-  // =========================
-  const navItems = Array.from(document.querySelectorAll(".nav-item"));
-
-  if (navItems.length) {
-    const fecharTodos = (exceto) => {
-      navItems.forEach((item) => {
-        if (item === exceto) return;
-        item.classList.remove("is-open");
-        const btn = item.querySelector(".nav-toggle");
-        if (btn) btn.setAttribute("aria-expanded", "false");
-      });
-    };
-
-    navItems.forEach((item) => {
-      const btn = item.querySelector(".nav-toggle");
-      if (!btn) return;
-
-      btn.addEventListener("click", (ev) => {
-        ev.preventDefault();
-        ev.stopPropagation();
-
-        const abrindo = !item.classList.contains("is-open");
-        fecharTodos(item);
-        item.classList.toggle("is-open", abrindo);
-        btn.setAttribute("aria-expanded", abrindo ? "true" : "false");
-      });
-
-      // clicou num atalho -> fecha o painel
-      item.querySelectorAll(".nav-panel a").forEach((link) => {
-        link.addEventListener("click", () => fecharTodos(null));
-      });
-    });
-
-    // clique fora fecha
-    document.addEventListener("click", (ev) => {
-      if (!ev.target.closest(".nav-item")) fecharTodos(null);
-    });
-
-    // ESC fecha
-    document.addEventListener("keydown", (ev) => {
-      if (ev.key === "Escape") fecharTodos(null);
-    });
-  }
-
-
-  // =========================
   // ✅ ALTURA REAL DO HEADER -> --header-h
-  //    (faz a ancora dos atalhos parar no lugar certo)
+  //    (mede a barra principal + a subnav, quando existir)
   // =========================
   const siteHeader = document.querySelector(".site-header");
 
@@ -135,6 +88,58 @@ document.addEventListener("DOMContentLoaded", () => {
     medirHeader();
     window.addEventListener("resize", medirHeader, { passive: true });
     window.addEventListener("load", medirHeader);
+  }
+
+
+  // =========================
+  // ✅ SUBNAV — destaca sozinha a seção que está sendo vista
+  // =========================
+  const subnavLinks = Array.from(document.querySelectorAll(".subnav a"));
+
+  if (subnavLinks.length && "IntersectionObserver" in window) {
+    const mapa = {};
+    const alvos = [];
+
+    subnavLinks.forEach((link) => {
+      const id = link.getAttribute("href").slice(1);
+      const alvo = document.getElementById(id);
+      if (alvo) {
+        mapa[id] = link;
+        alvos.push(alvo);
+      }
+    });
+
+    // ordem do documento (a ordem dos links pode ser outra)
+    alvos.sort((a, b) =>
+      a.compareDocumentPosition(b) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1
+    );
+
+    const visiveis = new Set();
+
+    const marcarAtual = () => {
+      let atual = null;
+      for (const alvo of alvos) {
+        if (visiveis.has(alvo.id)) {
+          atual = alvo.id;
+          break;
+        }
+      }
+      subnavLinks.forEach((l) => l.classList.remove("is-current"));
+      if (atual && mapa[atual]) mapa[atual].classList.add("is-current");
+    };
+
+    const ioSubnav = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) visiveis.add(e.target.id);
+          else visiveis.delete(e.target.id);
+        });
+        marcarAtual();
+      },
+      { rootMargin: "-30% 0px -55% 0px" }
+    );
+
+    alvos.forEach((a) => ioSubnav.observe(a));
   }
 
 
