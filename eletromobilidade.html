@@ -6,6 +6,11 @@
   <title>Eletromobilidade — Esys Energia</title>
 
   <!-- CSS global (header/footer/whats + seções reaproveitadas da Home) -->
+    <!-- ✅ Favicon -->
+  <link rel="icon" href="imagem-site/logo esys.png" type="image/png" />
+  <link rel="apple-touch-icon" href="imagem-site/logo esys.png" />
+  <meta name="theme-color" content="#c45a14" />
+
   <link rel="stylesheet" href="style.css" />
 
   <!-- CSS só desta página -->
@@ -16,29 +21,71 @@
 
   <!-- ✅ HEADER -->
   <header class="site-header">
-    <div class="header-container">
+  <div class="header-container">
 
-      <!-- BLOCO ESQUERDO -->
-      <div class="header-left">
-        <a class="logo" href="index.html#topo">
-          <img src="imagem-site/logo esys.png" alt="Esys Energia">
-        </a>
+    <!-- BLOCO ESQUERDO -->
+    <div class="header-left">
+      <a class="logo" href="index.html#topo">
+        <img src="imagem-site/logo esys.png" alt="Esys Energia" width="260" height="170" fetchpriority="high" decoding="async">
+      </a>
 
-        <nav class="menu-left">
+      <nav class="menu-left" aria-label="Seções do site">
+        <div class="nav-item">
           <a href="index.html#topo">Energia Solar</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Energia Solar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-panel" role="menu">
+            <a href="index.html#simulador" role="menuitem">Simulador de economia</a>
+            <a href="index.html#faq" role="menuitem">Vantagens e como funciona</a>
+            <a href="index.html#sobre" role="menuitem">Quem somos</a>
+            <a href="index.html#depoimentos" role="menuitem">Depoimentos</a>
+            <a href="index.html#cases" role="menuitem">Nossos cases</a>
+            <a href="index.html#parceiros" role="menuitem">Empresas parceiras</a>
+          </div>
+        </div>
+        <div class="nav-item">
           <a href="eletromobilidade.html" class="active">Eletromobilidade</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Eletromobilidade"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-panel" role="menu">
+            <a href="eletromobilidade.html#vantagens" role="menuitem">Vantagens</a>
+            <a href="eletromobilidade.html#solar-e-carregador" role="menuitem">Solar + carregador</a>
+            <a href="eletromobilidade.html#simulador" role="menuitem">Simulador de custo</a>
+            <a href="eletromobilidade.html#depoimentos" role="menuitem">Depoimentos</a>
+            <a href="eletromobilidade.html#cases" role="menuitem">Nossos cases</a>
+            <a href="eletromobilidade.html#parceiros" role="menuitem">Empresas parceiras</a>
+          </div>
+        </div>
+        <div class="nav-item">
           <a href="smarthome.html">Smarthome</a>
-        </nav>
-      </div>
-
-      <!-- BLOCO DIREITO -->
-      <nav class="menu-right">
-        <a href="sobre.html">Sobre nós</a>
-        <a href="faq.html">FAQ</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Smarthome"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-panel" role="menu">
+            <a href="smarthome.html#conteudo" role="menuitem">O que sua casa pode fazer</a>
+            <a href="smarthome.html#app-control" role="menuitem">Controle pelo aplicativo</a>
+            <a href="smarthome.html#solar-smart" role="menuitem">Integração com solar</a>
+            <a href="smarthome.html#redes-mesh" role="menuitem">Redes Mesh</a>
+            <a href="smarthome.html#depoimentos" role="menuitem">Depoimentos</a>
+            <a href="smarthome.html#cases" role="menuitem">Nossos cases</a>
+          </div>
+        </div>
       </nav>
-
     </div>
-  </header>
+
+    <!-- BLOCO DIREITO -->
+    <nav class="menu-right" aria-label="Institucional">
+      <div class="nav-item">
+        <a href="sobre.html">Sobre nós</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Sobre nós"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-panel nav-panel-right" role="menu">
+            <a href="sobre.html#quem-somos" role="menuitem">Missão, visão e valores</a>
+            <a href="sobre.html#esg" role="menuitem">Sustentabilidade e ESG</a>
+            <a href="sobre.html#esg-qualidade" role="menuitem">Qualidade e segurança</a>
+            <a href="sobre.html#esg-indicadores" role="menuitem">Indicadores ESG</a>
+        </div>
+      </div>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+  </div>
+</header>
 
   <main class="eletro-page">
 
@@ -84,7 +131,7 @@
               <div class="eletro-track" id="eletroTrack">
 
                 <div class="eletro-slide">
-                  <img src="imagem-site/eletrohero1.png" alt="Carregador veicular residencial" loading="eager" decoding="async">
+                  <img src="imagem-site/eletrohero1.png" alt="Carregador veicular residencial" loading="lazy" decoding="async">
                 </div>
 
                 <div class="eletro-slide">
@@ -153,7 +200,7 @@
             </div>
 
             <div class="pick2-photo">
-              <img src="imagem-site/eletroresidencial.jpg" alt="Carregador veicular residencial (wallbox)">
+              <img src="imagem-site/eletroresidencial.jpg" alt="Carregador veicular residencial (wallbox)" loading="lazy" decoding="async">
             </div>
           </article>
 
@@ -189,7 +236,7 @@
             </div>
 
             <div class="pick2-photo">
-              <img src="imagem-site/eletrocomercial.jpg" alt="Carregador veicular comercial">
+              <img src="imagem-site/eletrocomercial.jpg" alt="Carregador veicular comercial" loading="lazy" decoding="async">
             </div>
           </article>
 
@@ -591,11 +638,11 @@
       <div class="case-item">
         <div class="case-image">
           <div class="carousel">
-            <img src="imagem-site/insta1.png" class="active" alt="Instalação 1">
-            <img src="imagem-site/insta2.png" alt="Instalação 2">
-            <img src="imagem-site/insta3.png" alt="Instalação 3">
-            <img src="imagem-site/insta4.png" alt="Instalação 4">
-            <img src="imagem-site/insta5.png" alt="Instalação 5">
+            <img src="imagem-site/insta1.png" class="active" alt="Instalação 1" loading="lazy" decoding="async">
+            <img src="imagem-site/insta2.png" alt="Instalação 2" loading="lazy" decoding="async">
+            <img src="imagem-site/insta3.png" alt="Instalação 3" loading="lazy" decoding="async">
+            <img src="imagem-site/insta4.png" alt="Instalação 4" loading="lazy" decoding="async">
+            <img src="imagem-site/insta5.png" alt="Instalação 5" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="case-label">Instalação Profissional</span>
@@ -605,15 +652,15 @@
       <div class="case-item">
         <div class="case-image">
           <div class="carousel">
-            <img src="imagem-site/proj1.jpg" class="active" alt="Projeto 1">
-            <img src="imagem-site/proj2.jpg" alt="Projeto 2">
-            <img src="imagem-site/proj3.jpg" alt="Projeto 3">
-            <img src="imagem-site/proj4.jpg" alt="Projeto 4">
-            <img src="imagem-site/proj5.jpg" alt="Projeto 5">
-            <img src="imagem-site/proj6.jpg" alt="Projeto 6">
-            <img src="imagem-site/proj7.jpg" alt="Projeto 7">
-            <img src="imagem-site/proj8.jpg" alt="Projeto 8">
-            <img src="imagem-site/proj9.jpg" alt="Projeto 9">
+            <img src="imagem-site/proj1.jpg" class="active" alt="Projeto 1" loading="lazy" decoding="async">
+            <img src="imagem-site/proj2.jpg" alt="Projeto 2" loading="lazy" decoding="async">
+            <img src="imagem-site/proj3.jpg" alt="Projeto 3" loading="lazy" decoding="async">
+            <img src="imagem-site/proj4.jpg" alt="Projeto 4" loading="lazy" decoding="async">
+            <img src="imagem-site/proj5.jpg" alt="Projeto 5" loading="lazy" decoding="async">
+            <img src="imagem-site/proj6.jpg" alt="Projeto 6" loading="lazy" decoding="async">
+            <img src="imagem-site/proj7.jpg" alt="Projeto 7" loading="lazy" decoding="async">
+            <img src="imagem-site/proj8.jpg" alt="Projeto 8" loading="lazy" decoding="async">
+            <img src="imagem-site/proj9.jpg" alt="Projeto 9" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="case-label">Projetos Concluídos</span>
@@ -623,11 +670,11 @@
       <div class="case-item">
         <div class="case-image">
           <div class="carousel">
-            <img src="imagem-site/tec1.jpeg" class="active" alt="Tecnologia 1">
-            <img src="imagem-site/tec2.jpeg" alt="Tecnologia 2">
-            <img src="imagem-site/tec3.jpeg" alt="Tecnologia 3">
-            <img src="imagem-site/tec4.jpeg" alt="Tecnologia 4">
-            <img src="imagem-site/tec5.jpeg" alt="Tecnologia 5">
+            <img src="imagem-site/tec1.jpeg" class="active" alt="Tecnologia 1" loading="lazy" decoding="async">
+            <img src="imagem-site/tec2.jpeg" alt="Tecnologia 2" loading="lazy" decoding="async">
+            <img src="imagem-site/tec3.jpeg" alt="Tecnologia 3" loading="lazy" decoding="async">
+            <img src="imagem-site/tec4.jpeg" alt="Tecnologia 4" loading="lazy" decoding="async">
+            <img src="imagem-site/tec5.jpeg" alt="Tecnologia 5" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="case-label">Tecnologia Avançada</span>
@@ -652,43 +699,43 @@
       <div class="partners-viewport">
         <div class="partners-track" id="partnersTrack">
           <div class="partner-item">
-            <img src="imagem-site/solfacil.png" alt="Solfácil" loading="eager" decoding="async" />
+            <img src="imagem-site/solfacil.png" alt="Solfácil" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item is-featured">
-            <img src="imagem-site/Banco BV.png" alt="Banco BV" loading="eager" decoding="async" />
+            <img src="imagem-site/Banco BV.png" alt="Banco BV" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item partner-card">
-            <img src="imagem-site/Pieta.tech.png" alt="Pieta.tech" loading="eager" decoding="async" />
+            <img src="imagem-site/Pieta.tech.png" alt="Pieta.tech" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/Huawei.png" alt="Huawei" loading="eager" decoding="async" />
+            <img src="imagem-site/Huawei.png" alt="Huawei" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/Taranis Solar.png" alt="Taranis Solar" loading="eager" decoding="async" />
+            <img src="imagem-site/Taranis Solar.png" alt="Taranis Solar" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/Intelbras.png" alt="Intelbras" loading="eager" decoding="async" />
+            <img src="imagem-site/Intelbras.png" alt="Intelbras" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/weg.png" alt="WEG" loading="eager" decoding="async" />
+            <img src="imagem-site/weg.png" alt="WEG" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-          <img src="imagem-site/ekaza.png" alt="EKA Energia" loading="eager" decoding="async" />  
+          <img src="imagem-site/ekaza.png" alt="EKA Energia" loading="lazy" decoding="async" />  
         </div>
 
         <div class="partner-item">
-          <img src="imagem-site/novadigital.png" alt="Nova Digital" loading="eager" decoding="async" />
+          <img src="imagem-site/novadigital.png" alt="Nova Digital" loading="lazy" decoding="async" />
         </div>
 
           <div class="partner-item">
-            <img src="imagem-site/idealtech.png" alt="Idealtech" loading="eager" decoding="async" />
+            <img src="imagem-site/idealtech.png" alt="Idealtech" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -700,7 +747,9 @@
   </div>
 </section>
 
-  <!-- WhatsApp flutuante -->
+  </main>
+
+<!-- WhatsApp flutuante -->
   <a class="whatsapp-float" id="whatsFloat" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <svg viewBox="0 0 32 32" aria-hidden="true">
       <path fill="currentColor" d="M19.11 17.46c-.27-.14-1.57-.77-1.81-.86-.24-.09-.42-.14-.6.14-.18.27-.69.86-.84 1.04-.15.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.47-1.82-.15-.27-.02-.41.11-.54.12-.12.27-.31.4-.46.14-.15.18-.27.27-.45.09-.18.04-.34-.02-.48-.07-.14-.6-1.45-.82-1.99-.22-.53-.44-.46-.6-.47l-.51-.01c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.98 2.67 1.12 2.85c.14.18 1.93 2.95 4.68 4.13.66.28 1.18.45 1.58.58.66.21 1.26.18 1.74.11.53-.08 1.57-.64 1.79-1.26.22-.62.22-1.15.15-1.26-.07-.11-.24-.18-.51-.32zM16.04 3C8.85 3 3 8.67 3 15.64c0 2.46.74 4.74 2.01 6.67L3.7 28.9l6.86-1.79c1.86 1 4 1.57 6.48 1.57 7.19 0 13.04-5.67 13.04-12.64C30.08 8.67 23.23 3 16.04 3zm0 23.3c-2.32 0-4.46-.66-6.28-1.8l-.45-.28-4.07 1.06 1.09-3.92-.3-.44c-1.22-1.78-1.87-3.87-1.87-6.08 0-6.11 5.15-11.08 11.88-11.08 6.55 0 11.88 4.97 11.88 11.08S22.59 26.3 16.04 26.3z"/>
@@ -819,7 +868,7 @@
   </footer>
 
   <!-- ✅ JS unificado -->
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 
 </body>
 </html>

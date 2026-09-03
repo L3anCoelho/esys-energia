@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre nós — Esys Energia Solar</title>
+    <!-- ✅ Favicon -->
+  <link rel="icon" href="imagem-site/logo esys.png" type="image/png" />
+  <link rel="apple-touch-icon" href="imagem-site/logo esys.png" />
+  <meta name="theme-color" content="#c45a14" />
+
   <link rel="stylesheet" href="style.css" />
   
 
@@ -136,6 +141,9 @@
       .mvv-text{ max-width: 520px; }
     }
   </style>
+
+  <!-- ✅ CSS da seção Sustentabilidade / ESG -->
+  <link rel="stylesheet" href="sobre.css" />
 </head>
 <body>
 
@@ -145,19 +153,61 @@
     <!-- BLOCO ESQUERDO -->
     <div class="header-left">
       <a class="logo" href="index.html#topo">
-        <img src="imagem-site/logo esys.png" alt="Esys Energia">
+        <img src="imagem-site/logo esys.png" alt="Esys Energia" width="260" height="170" fetchpriority="high" decoding="async">
       </a>
 
-      <nav class="menu-left">
-        <a href="index.html#topo" class="active">Energia Solar</a>
-        <a href="eletromobilidade.html">Eletromobilidade</a>
-        <a href="smarthome.html">Smarthome</a>
+      <nav class="menu-left" aria-label="Seções do site">
+        <div class="nav-item">
+          <a href="index.html#topo">Energia Solar</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Energia Solar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-panel" role="menu">
+            <a href="index.html#simulador" role="menuitem">Simulador de economia</a>
+            <a href="index.html#faq" role="menuitem">Vantagens e como funciona</a>
+            <a href="index.html#sobre" role="menuitem">Quem somos</a>
+            <a href="index.html#depoimentos" role="menuitem">Depoimentos</a>
+            <a href="index.html#cases" role="menuitem">Nossos cases</a>
+            <a href="index.html#parceiros" role="menuitem">Empresas parceiras</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="eletromobilidade.html">Eletromobilidade</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Eletromobilidade"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-panel" role="menu">
+            <a href="eletromobilidade.html#vantagens" role="menuitem">Vantagens</a>
+            <a href="eletromobilidade.html#solar-e-carregador" role="menuitem">Solar + carregador</a>
+            <a href="eletromobilidade.html#simulador" role="menuitem">Simulador de custo</a>
+            <a href="eletromobilidade.html#depoimentos" role="menuitem">Depoimentos</a>
+            <a href="eletromobilidade.html#cases" role="menuitem">Nossos cases</a>
+            <a href="eletromobilidade.html#parceiros" role="menuitem">Empresas parceiras</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="smarthome.html">Smarthome</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Smarthome"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-panel" role="menu">
+            <a href="smarthome.html#conteudo" role="menuitem">O que sua casa pode fazer</a>
+            <a href="smarthome.html#app-control" role="menuitem">Controle pelo aplicativo</a>
+            <a href="smarthome.html#solar-smart" role="menuitem">Integração com solar</a>
+            <a href="smarthome.html#redes-mesh" role="menuitem">Redes Mesh</a>
+            <a href="smarthome.html#depoimentos" role="menuitem">Depoimentos</a>
+            <a href="smarthome.html#cases" role="menuitem">Nossos cases</a>
+          </div>
+        </div>
       </nav>
     </div>
 
     <!-- BLOCO DIREITO -->
-    <nav class="menu-right">
-      <a href="sobre.html">Sobre nós</a>
+    <nav class="menu-right" aria-label="Institucional">
+      <div class="nav-item">
+        <a href="sobre.html" class="active">Sobre nós</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Sobre nós"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-panel nav-panel-right" role="menu">
+            <a href="sobre.html#quem-somos" role="menuitem">Missão, visão e valores</a>
+            <a href="sobre.html#esg" role="menuitem">Sustentabilidade e ESG</a>
+            <a href="sobre.html#esg-qualidade" role="menuitem">Qualidade e segurança</a>
+            <a href="sobre.html#esg-indicadores" role="menuitem">Indicadores ESG</a>
+        </div>
+      </div>
       <a href="faq.html">FAQ</a>
     </nav>
 
@@ -174,7 +224,7 @@
     </div>
   </section>
 
-  <section class="mvv">
+  <section class="mvv" id="quem-somos">
     <div class="mvv-container">
       <div class="mvv-grid">
 
@@ -227,6 +277,259 @@
       </div>
     </div>
   </section>
+
+
+  <!-- ============================================================
+       SUSTENTABILIDADE, ÉTICA E GOVERNANÇA
+       Conteúdo: documento institucional Esys Energia (rev. 0)
+       Estilos: sobre.css  |  Script: no fim desta página
+  ============================================================ -->
+  <section class="esg" id="esg" aria-labelledby="esg-titulo">
+
+    <!-- capa -->
+    <div class="esg-capa">
+      <div class="esg-capa-inner">
+        <div>
+          <h2 id="esg-titulo">Sustentabilidade, <em>ética</em> e governança</h2>
+          <p>
+            Na Esys Energia, a engenharia é uma ferramenta para transformar ambientes, otimizar recursos
+            e gerar desenvolvimento com responsabilidade. Atuamos em soluções elétricas e energéticas com
+            excelência técnica, segurança, transparência e respeito às pessoas, ao meio ambiente e às
+            normas que orientam o nosso setor.
+          </p>
+        </div>
+
+        <div class="esg-carimbo">
+          <strong>ES Oliveira Serviços e Comércio Ltda</strong>
+          Documento institucional<br>
+          Revisão 0 — Osasco/SP
+        </div>
+      </div>
+    </div>
+
+    <!-- corpo -->
+    <div class="esg-corpo">
+
+      <!-- sumário -->
+      <nav class="esg-sumario" id="esgSumario" aria-label="Índice do documento">
+        <h3>Neste documento</h3>
+        <ol>
+          <li><a href="#esg-essencia">Nossa essência</a></li>
+          <li><a href="#esg-mvv">Missão, visão e valores</a></li>
+          <li><a href="#esg-compromisso">Compromisso ESG</a></li>
+          <li><a href="#esg-qualidade">Qualidade e segurança</a></li>
+          <li><a href="#esg-relacionamentos">Relacionamentos</a></li>
+          <li><a href="#esg-indicadores">Indicadores ESG</a></li>
+          <li><a href="#esg-etica">Canal de ética</a></li>
+        </ol>
+      </nav>
+
+      <!-- leitura -->
+      <div class="esg-leitura">
+
+        <article class="esg-bloco" id="esg-essencia">
+          <h3>Nossa essência</h3>
+          <p>
+            Mais do que executar instalações e projetos, desenvolvemos soluções que contribuem para a
+            eficiência energética, a confiabilidade operacional e a geração de valor para nossos clientes.
+          </p>
+          <p>
+            Nosso compromisso é unir qualidade técnica, inovação e conduta responsável para apoiar empresas,
+            condomínios e organizações na construção de um futuro energeticamente mais eficiente, seguro
+            e sustentável.
+          </p>
+        </article>
+
+        <article class="esg-bloco" id="esg-mvv">
+          <h3>Missão, visão e valores</h3>
+
+          <h4>Missão</h4>
+          <p>
+            Desenvolver soluções em engenharia elétrica, energia solar fotovoltaica, infraestrutura
+            elétrica e eficiência energética, entregando serviços com excelência técnica, inovação,
+            segurança e compromisso com resultados.
+          </p>
+
+          <h4>Visão</h4>
+          <p>
+            Ser reconhecida como referência em engenharia elétrica e soluções energéticas, destacando-se
+            pela qualidade, confiabilidade, inovação e responsabilidade socioambiental.
+          </p>
+
+          <h4>Valores</h4>
+          <ul class="esg-valores">
+            <li>Ética e integridade</li>
+            <li>Transparência</li>
+            <li>Excelência técnica</li>
+            <li>Segurança</li>
+            <li>Comprometimento</li>
+            <li>Inovação</li>
+            <li>Sustentabilidade</li>
+            <li>Respeito às pessoas</li>
+            <li>Melhoria contínua</li>
+            <li>Responsabilidade técnica</li>
+          </ul>
+        </article>
+
+        <article class="esg-bloco" id="esg-compromisso">
+          <h3>Nosso compromisso ESG</h3>
+          <p>
+            Integramos os princípios ESG às decisões e processos da empresa, buscando crescimento
+            sustentável e geração de valor para clientes, colaboradores, parceiros e sociedade.
+          </p>
+
+          <div class="esg-dimensao esg-dim-ambiental">
+            <h4>Ambiental</h4>
+            <p>
+              Promovemos soluções que incentivam o uso de energia limpa, a eficiência energética e a
+              redução de impactos ambientais.
+            </p>
+            <ul class="esg-lista">
+              <li>Fomento à energia solar fotovoltaica e a tecnologias de menor impacto.</li>
+              <li>Uso consciente de recursos e destinação adequada de resíduos.</li>
+              <li>Priorização de fornecedores alinhados a boas práticas ambientais.</li>
+            </ul>
+          </div>
+
+          <div class="esg-dimensao esg-dim-social">
+            <h4>Social</h4>
+            <p>
+              Valorizamos relações seguras, respeitosas e transparentes com colaboradores, clientes,
+              fornecedores e parceiros.
+            </p>
+            <ul class="esg-lista">
+              <li>Ambiente de trabalho seguro e respeito aos direitos humanos.</li>
+              <li>Igualdade de oportunidades e combate à discriminação.</li>
+              <li>Capacitação técnica contínua e atendimento responsável aos clientes.</li>
+            </ul>
+          </div>
+
+          <div class="esg-dimensao esg-dim-governanca">
+            <h4>Governança</h4>
+            <p>
+              Conduzimos nossa gestão com ética, conformidade, transparência e responsabilidade no uso
+              dos recursos.
+            </p>
+            <ul class="esg-lista">
+              <li>Cumprimento da legislação, normas técnicas e requisitos das concessionárias.</li>
+              <li>Integridade nas relações comerciais e prevenção a fraude e corrupção.</li>
+              <li>Confidencialidade das informações e prestação de contas aos clientes.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="esg-bloco" id="esg-qualidade">
+          <h3>Qualidade, segurança e conformidade</h3>
+
+          <h4>Política da qualidade</h4>
+          <ul class="esg-lista">
+            <li>Compreender as necessidades de cada cliente e propor a melhor solução técnica e econômica.</li>
+            <li>Executar serviços com materiais certificados, mão de obra qualificada e observância das normas aplicáveis.</li>
+            <li>Cumprir prazos acordados, manter comunicação clara e buscar melhoria contínua dos processos.</li>
+          </ul>
+
+          <h4>Saúde e segurança</h4>
+          <ul class="esg-lista">
+            <li>Planejamento prévio das atividades e análise de riscos.</li>
+            <li>Uso obrigatório de EPIs e atendimento às NR-10, NR-35 e demais normas aplicáveis.</li>
+            <li>Treinamentos periódicos e prevenção contínua de acidentes.</li>
+          </ul>
+
+          <h4>Ética empresarial</h4>
+          <p>
+            A Esys Energia não tolera corrupção, fraude, suborno, assédio, discriminação, favorecimentos
+            indevidos ou conflitos de interesse.
+          </p>
+          <p>
+            Esperamos o mesmo compromisso ético de colaboradores, clientes, fornecedores e parceiros.
+          </p>
+
+          <h4>Compliance e proteção de dados</h4>
+          <p>
+            Nossos serviços observam a legislação brasileira, as normas da ABNT, as normas regulamentadoras
+            do Ministério do Trabalho, os requisitos técnicos das concessionárias de energia, a LGPD e as
+            boas práticas de engenharia.
+          </p>
+        </article>
+
+        <article class="esg-bloco" id="esg-relacionamentos">
+          <h3>Relacionamentos responsáveis</h3>
+
+          <h4>Clientes</h4>
+          <p>
+            Construímos relações duradouras baseadas em confiança, transparência, comunicação clara,
+            excelência técnica e atendimento de qualidade.
+          </p>
+
+          <h4>Fornecedores</h4>
+          <p>
+            Buscamos parcerias com empresas que atuem em conformidade legal, valorizem a segurança,
+            respeitem o meio ambiente e mantenham elevados padrões de qualidade.
+          </p>
+
+          <h4>Inovação e melhoria contínua</h4>
+          <p>
+            Investimos continuamente em novas tecnologias, métodos de engenharia e processos internos
+            para entregar soluções mais eficientes, inteligentes e sustentáveis.
+          </p>
+        </article>
+
+        <article class="esg-bloco" id="esg-indicadores">
+          <h3>Indicadores ESG acompanhados</h3>
+
+          <div class="esg-tabela-wrap">
+            <table class="esg-tabela">
+              <thead>
+                <tr>
+                  <th scope="col">Dimensão</th>
+                  <th scope="col">Indicadores monitorados</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ambiental</td>
+                  <td>Potência fotovoltaica instalada, energia renovável gerada, emissões de CO₂ evitadas e gestão de resíduos.</td>
+                </tr>
+                <tr>
+                  <td>Social</td>
+                  <td>Horas de treinamento, segurança do trabalho, desenvolvimento profissional e satisfação dos clientes.</td>
+                </tr>
+                <tr>
+                  <td>Governança</td>
+                  <td>Conformidade documental, auditorias internas, atendimento ao cliente e avaliação de fornecedores.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="esg-bloco" id="esg-etica">
+          <h3>Canal de ética</h3>
+          <p>
+            A Esys Energia incentiva a comunicação de situações incompatíveis com seus princípios éticos.
+            Todos os relatos devem ser tratados com confidencialidade, imparcialidade e responsabilidade.
+          </p>
+
+          <div class="esg-contato">
+            <a href="mailto:contato@esystecnologia.com.br">contato@esystecnologia.com.br</a>
+            <a href="https://wa.me/5511996187450?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20o%20canal%20de%20%C3%A9tica%20da%20Esys."
+               target="_blank" rel="noopener">(11) 99618-7450</a>
+          </div>
+
+          <h4>Nosso compromisso</h4>
+          <div class="esg-painel esg-painel-verde">
+            <p>
+              Cada projeto representa uma oportunidade de transformar energia em desenvolvimento.
+              Seguiremos investindo em qualidade, segurança, inovação e sustentabilidade para entregar
+              soluções confiáveis e contribuir para um setor elétrico mais moderno, eficiente e responsável.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
 
 <!-- WhatsApp flutuante -->
 <a class="whatsapp-float" id="whatsFloat" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
@@ -336,7 +639,51 @@
   </footer>
 
 
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
+
+
+<!-- ✅ Sumário do documento ESG: realça a seção que está na tela -->
+<script>
+  (function () {
+    var sumario = document.getElementById("esgSumario");
+    if (!sumario || !("IntersectionObserver" in window)) return;
+
+    var links = Array.prototype.slice.call(sumario.querySelectorAll("a"));
+    var mapa = {};
+    var alvos = [];
+
+    links.forEach(function (link) {
+      var id = link.getAttribute("href").slice(1);
+      var alvo = document.getElementById(id);
+      if (!alvo) return;
+      mapa[id] = link;
+      alvos.push(alvo);
+    });
+
+    if (!alvos.length) return;
+
+    var visiveis = new Set();
+
+    function marcar() {
+      var atual = null;
+      for (var i = 0; i < alvos.length; i++) {
+        if (visiveis.has(alvos[i].id)) { atual = alvos[i].id; break; }
+      }
+      links.forEach(function (l) { l.classList.remove("is-current"); });
+      if (atual && mapa[atual]) mapa[atual].classList.add("is-current");
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) visiveis.add(e.target.id);
+        else visiveis.delete(e.target.id);
+      });
+      marcar();
+    }, { rootMargin: "-25% 0px -55% 0px" });
+
+    alvos.forEach(function (a) { io.observe(a); });
+  })();
+</script>
 
 </body>
 </html>

@@ -71,6 +71,73 @@ document.addEventListener("DOMContentLoaded", () => {
   if (footerYear) footerYear.textContent = new Date().getFullYear();
 
 
+  // =========================
+  // ✅ ATALHOS DO HEADER (nav dropdown)
+  // =========================
+  const navItems = Array.from(document.querySelectorAll(".nav-item"));
+
+  if (navItems.length) {
+    const fecharTodos = (exceto) => {
+      navItems.forEach((item) => {
+        if (item === exceto) return;
+        item.classList.remove("is-open");
+        const btn = item.querySelector(".nav-toggle");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+    };
+
+    navItems.forEach((item) => {
+      const btn = item.querySelector(".nav-toggle");
+      if (!btn) return;
+
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+
+        const abrindo = !item.classList.contains("is-open");
+        fecharTodos(item);
+        item.classList.toggle("is-open", abrindo);
+        btn.setAttribute("aria-expanded", abrindo ? "true" : "false");
+      });
+
+      // clicou num atalho -> fecha o painel
+      item.querySelectorAll(".nav-panel a").forEach((link) => {
+        link.addEventListener("click", () => fecharTodos(null));
+      });
+    });
+
+    // clique fora fecha
+    document.addEventListener("click", (ev) => {
+      if (!ev.target.closest(".nav-item")) fecharTodos(null);
+    });
+
+    // ESC fecha
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape") fecharTodos(null);
+    });
+  }
+
+
+  // =========================
+  // ✅ ALTURA REAL DO HEADER -> --header-h
+  //    (faz a ancora dos atalhos parar no lugar certo)
+  // =========================
+  const siteHeader = document.querySelector(".site-header");
+
+  if (siteHeader) {
+    const medirHeader = () => {
+      const alturaAtual = siteHeader.offsetHeight;
+      if (alturaAtual) {
+        document.documentElement.style.setProperty("--header-h", alturaAtual + "px");
+      }
+    };
+
+    medirHeader();
+    window.addEventListener("resize", medirHeader, { passive: true });
+    window.addEventListener("load", medirHeader);
+  }
+
+
 
   // =========================
   // ✅ HERO CARROSSEL 
@@ -136,7 +203,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function startAuto() {
       stopAuto();
-      heroTimer = setInterval(() => goTo(heroIndex + 1), 5500);
+      heroTimer = setInterval(() => {
+        if (document.hidden) return; // ⚡ aba em segundo plano: nao faz nada
+        goTo(heroIndex + 1);
+      }, 5500);
     }
 
     function stopAuto() {
@@ -330,7 +400,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let timer = null;
     function startAutoPlay() {
       stopAutoPlay();
-      timer = setInterval(() => goTo(index + 1), 6000);
+      timer = setInterval(() => {
+        if (document.hidden) return; // ⚡
+        goTo(index + 1);
+      }, 6000);
     }
     function stopAutoPlay() {
       if (timer) clearInterval(timer);
@@ -481,7 +554,10 @@ if (partnersTrack && partnersViewport) {
 
       function startAuto() {
         stopAuto();
-        timer = setInterval(next, 2200); // ⚡ era 3500
+        timer = setInterval(() => {
+          if (document.hidden) return; // ⚡
+          next();
+        }, 2600);
       }
 
       function stopAuto() {
@@ -498,18 +574,22 @@ if (partnersTrack && partnersViewport) {
         const imgs = Array.from(partnersTrack.querySelectorAll("img"));
         if (!imgs.length) return;
 
-        await Promise.all(
-          imgs.map((img) => {
-            // decode dá melhor resultado que só "load"
-            if (img.decode) {
-              return img.decode().catch(() => {});
-            }
-            return new Promise((res) => {
-              if (img.complete) return res();
-              img.addEventListener("load", res, { once: true });
-              img.addEventListener("error", res, { once: true });
-            });
-          })
+        // ⚡ timeout: com loading="lazy" o decode() de uma imagem fora da
+        // viewport nunca resolve. Sem isso o carrossel nao iniciava.
+        const comTimeout = (promessa, ms = 1200) =>
+          Promise.race([promessa, new Promise((r) => setTimeout(r, ms))]);
+
+        await comTimeout(
+          Promise.all(
+            imgs.map((img) => {
+              if (img.decode) return img.decode().catch(() => {});
+              return new Promise((res) => {
+                if (img.complete) return res();
+                img.addEventListener("load", res, { once: true });
+                img.addEventListener("error", res, { once: true });
+              });
+            })
+          )
         );
       }
 
@@ -631,7 +711,10 @@ if (partnersTrack && partnersViewport) {
 
       function startAuto() {
         stopAuto();
-        timer = setInterval(() => goTo(index + 1), 5500);
+        timer = setInterval(() => {
+        if (document.hidden) return; // ⚡
+        goTo(index + 1);
+      }, 5500);
       }
 
       function stopAuto() {
@@ -809,13 +892,13 @@ if (partnersTrack && partnersViewport) {
         miniText.textContent =
           "Quero integrar wallbox ao meu sistema e maximizar o aproveitamento da geração.";
         miniCTA.textContent = "Quero integrar ao meu solar →";
-        miniCTA.href = `https://wa.me/${principal}?text=${encodeURIComponent(msgSim)}`;
+        miniCTA.href = `https://wa.me/${numero}?text=${encodeURIComponent(msgSim)}`;
       } else {
         miniTitle.textContent = "Cenário: ainda não tenho solar";
         miniText.textContent =
           "Quero proposta completa do combo (solar + carregador) com projeto elétrico bem dimensionado.";
         miniCTA.textContent = "Quero proposta do combo →";
-        miniCTA.href = `https://wa.me/${principal}?text=${encodeURIComponent(msgNao)}`;
+        miniCTA.href = `https://wa.me/${numero}?text=${encodeURIComponent(msgNao)}`;
       }
 
       if (comboCard) {
@@ -860,15 +943,43 @@ if (partnersTrack && partnersViewport) {
 // ============================================================
 // CARROSSEL CASES
 // ============================================================
-document.querySelectorAll('.carousel').forEach(carousel => {
+document.querySelectorAll('.carousel').forEach((carousel) => {
   const images = carousel.querySelectorAll('img');
   if (images.length <= 1) return;
 
   let index = 0;
+  let timer = null;
 
-  setInterval(() => {
-    images[index].classList.remove('active');
-    index = (index + 1) % images.length;
-    images[index].classList.add('active');
-  }, 3000);
+  const play = () => {
+    if (timer) return;
+    timer = setInterval(() => {
+      if (document.hidden) return;
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }, 3000);
+  };
+
+  const pause = () => {
+    if (!timer) return;
+    clearInterval(timer);
+    timer = null;
+  };
+
+  // ⚡ so roda enquanto o carrossel esta visivel na tela.
+  // Antes: 3 carrosseis x ~19 imagens trocando classe a cada 3s,
+  // o tempo todo, mesmo fora da viewport.
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      (entries) => entries.forEach((e) => (e.isIntersecting ? play() : pause())),
+      { rootMargin: '200px 0px' }
+    );
+    io.observe(carousel);
+  } else {
+    play();
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) pause();
+  });
 });

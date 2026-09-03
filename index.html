@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Esys Energia Solar</title>
+    <!-- ✅ Favicon -->
+  <link rel="icon" href="imagem-site/logo esys.png" type="image/png" />
+  <link rel="apple-touch-icon" href="imagem-site/logo esys.png" />
+  <meta name="theme-color" content="#c45a14" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,19 +19,61 @@
     <!-- BLOCO ESQUERDO -->
     <div class="header-left">
       <a class="logo" href="index.html#topo">
-        <img src="imagem-site/logo esys.png" alt="Esys Energia">
+        <img src="imagem-site/logo esys.png" alt="Esys Energia" width="260" height="170" fetchpriority="high" decoding="async">
       </a>
 
-      <nav class="menu-left">
-        <a href="index.html#topo" class="active">Energia Solar</a>
-        <a href="eletromobilidade.html">Eletromobilidade</a>
-        <a href="smarthome.html">Smarthome</a>
+      <nav class="menu-left" aria-label="Seções do site">
+        <div class="nav-item">
+          <a href="index.html#topo" class="active">Energia Solar</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Energia Solar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-panel" role="menu">
+            <a href="index.html#simulador" role="menuitem">Simulador de economia</a>
+            <a href="index.html#faq" role="menuitem">Vantagens e como funciona</a>
+            <a href="index.html#sobre" role="menuitem">Quem somos</a>
+            <a href="index.html#depoimentos" role="menuitem">Depoimentos</a>
+            <a href="index.html#cases" role="menuitem">Nossos cases</a>
+            <a href="index.html#parceiros" role="menuitem">Empresas parceiras</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="eletromobilidade.html">Eletromobilidade</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Eletromobilidade"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-panel" role="menu">
+            <a href="eletromobilidade.html#vantagens" role="menuitem">Vantagens</a>
+            <a href="eletromobilidade.html#solar-e-carregador" role="menuitem">Solar + carregador</a>
+            <a href="eletromobilidade.html#simulador" role="menuitem">Simulador de custo</a>
+            <a href="eletromobilidade.html#depoimentos" role="menuitem">Depoimentos</a>
+            <a href="eletromobilidade.html#cases" role="menuitem">Nossos cases</a>
+            <a href="eletromobilidade.html#parceiros" role="menuitem">Empresas parceiras</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="smarthome.html">Smarthome</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Smarthome"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-panel" role="menu">
+            <a href="smarthome.html#conteudo" role="menuitem">O que sua casa pode fazer</a>
+            <a href="smarthome.html#app-control" role="menuitem">Controle pelo aplicativo</a>
+            <a href="smarthome.html#solar-smart" role="menuitem">Integração com solar</a>
+            <a href="smarthome.html#redes-mesh" role="menuitem">Redes Mesh</a>
+            <a href="smarthome.html#depoimentos" role="menuitem">Depoimentos</a>
+            <a href="smarthome.html#cases" role="menuitem">Nossos cases</a>
+          </div>
+        </div>
       </nav>
     </div>
 
     <!-- BLOCO DIREITO -->
-    <nav class="menu-right">
-      <a href="sobre.html">Sobre nós</a>
+    <nav class="menu-right" aria-label="Institucional">
+      <div class="nav-item">
+        <a href="sobre.html">Sobre nós</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Sobre nós"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-panel nav-panel-right" role="menu">
+            <a href="sobre.html#quem-somos" role="menuitem">Missão, visão e valores</a>
+            <a href="sobre.html#esg" role="menuitem">Sustentabilidade e ESG</a>
+            <a href="sobre.html#esg-qualidade" role="menuitem">Qualidade e segurança</a>
+            <a href="sobre.html#esg-indicadores" role="menuitem">Indicadores ESG</a>
+        </div>
+      </div>
       <a href="faq.html">FAQ</a>
     </nav>
 
@@ -123,7 +170,7 @@
 
   <div class="video-content">
     <div class="video-wrapper reveal">
-      <video controls poster="imagem-site/thumb-dono.jpg">
+      <video controls preload="none" playsinline poster="imagem-site/thumb-dono.jpg">
         <source src="video-dono.mp4" type="video/mp4" />
         Seu navegador não suporta vídeo.
       </video>
@@ -200,8 +247,7 @@
             class="steps-illustration"
             src="imagem-site/como funciona.gif"
             alt="Diagrama de como funciona a energia solar: painéis, inversor, consumo e rede elétrica"
-            loading="lazy"
-          />
+            loading="lazy" decoding="async" />
           <p class="steps-caption">
             Fluxo simples: o painel gera, o inversor converte, sua casa consome e a rede compensa.
           </p>
@@ -266,17 +312,16 @@ Esys Energia. Seu presente mais sustentável. Seu futuro mais brilhante.</p>
   <div class="about-photos reveal">
 
   <figure class="about-photo">
-    <img src="imagem-site/dono1.jpg" alt="Erik — Fundador Esys Energia" />
+    <img src="imagem-site/dono1.jpg" alt="Erik — Fundador Esys Energia" loading="lazy" decoding="async" />
 
   </figure>
 
   <figure class="about-photo">
-    <img src="imagem-site/dono2.jpg" alt="Rogerio — Fundador Esys Energia" />
+    <img src="imagem-site/dono2.jpg" alt="Rogerio — Fundador Esys Energia" loading="lazy" decoding="async" />
    
   </figure>
 
 </div>
-    </div>
 
   </div>
 </section>
@@ -410,11 +455,11 @@ Esys Energia. Seu presente mais sustentável. Seu futuro mais brilhante.</p>
       <div class="case-item">
         <div class="case-image">
           <div class="carousel">
-            <img src="imagem-site/insta1.png" class="active" alt="Instalação 1">
-            <img src="imagem-site/insta2.png" alt="Instalação 2">
-            <img src="imagem-site/insta3.png" alt="Instalação 3">
-            <img src="imagem-site/insta4.png" alt="Instalação 4">
-            <img src="imagem-site/insta5.png" alt="Instalação 5">
+            <img src="imagem-site/insta1.png" class="active" alt="Instalação 1" loading="lazy" decoding="async">
+            <img src="imagem-site/insta2.png" alt="Instalação 2" loading="lazy" decoding="async">
+            <img src="imagem-site/insta3.png" alt="Instalação 3" loading="lazy" decoding="async">
+            <img src="imagem-site/insta4.png" alt="Instalação 4" loading="lazy" decoding="async">
+            <img src="imagem-site/insta5.png" alt="Instalação 5" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="case-label">Instalação Profissional</span>
@@ -424,15 +469,15 @@ Esys Energia. Seu presente mais sustentável. Seu futuro mais brilhante.</p>
       <div class="case-item">
         <div class="case-image">
           <div class="carousel">
-            <img src="imagem-site/proj1.jpg" class="active" alt="Projeto 1">
-            <img src="imagem-site/proj2.jpg" alt="Projeto 2">
-            <img src="imagem-site/proj3.jpg" alt="Projeto 3">
-            <img src="imagem-site/proj4.jpg" alt="Projeto 4">
-            <img src="imagem-site/proj5.jpg" alt="Projeto 5">
-            <img src="imagem-site/proj6.jpg" alt="Projeto 6">
-            <img src="imagem-site/proj7.jpg" alt="Projeto 7">
-            <img src="imagem-site/proj8.jpg" alt="Projeto 8">
-            <img src="imagem-site/proj9.jpg" alt="Projeto 9">
+            <img src="imagem-site/proj1.jpg" class="active" alt="Projeto 1" loading="lazy" decoding="async">
+            <img src="imagem-site/proj2.jpg" alt="Projeto 2" loading="lazy" decoding="async">
+            <img src="imagem-site/proj3.jpg" alt="Projeto 3" loading="lazy" decoding="async">
+            <img src="imagem-site/proj4.jpg" alt="Projeto 4" loading="lazy" decoding="async">
+            <img src="imagem-site/proj5.jpg" alt="Projeto 5" loading="lazy" decoding="async">
+            <img src="imagem-site/proj6.jpg" alt="Projeto 6" loading="lazy" decoding="async">
+            <img src="imagem-site/proj7.jpg" alt="Projeto 7" loading="lazy" decoding="async">
+            <img src="imagem-site/proj8.jpg" alt="Projeto 8" loading="lazy" decoding="async">
+            <img src="imagem-site/proj9.jpg" alt="Projeto 9" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="case-label">Projetos Concluídos</span>
@@ -442,16 +487,17 @@ Esys Energia. Seu presente mais sustentável. Seu futuro mais brilhante.</p>
       <div class="case-item">
         <div class="case-image">
           <div class="carousel">
-            <img src="imagem-site/tec1.jpeg" class="active" alt="Tecnologia 1">
-            <img src="imagem-site/tec2.jpeg" alt="Tecnologia 2">
-            <img src="imagem-site/tec3.jpeg" alt="Tecnologia 3">
-            <img src="imagem-site/tec4.jpeg" alt="Tecnologia 4">
-            <img src="imagem-site/tec5.jpeg" alt="Tecnologia 5">
+            <img src="imagem-site/tec1.jpeg" class="active" alt="Tecnologia 1" loading="lazy" decoding="async">
+            <img src="imagem-site/tec2.jpeg" alt="Tecnologia 2" loading="lazy" decoding="async">
+            <img src="imagem-site/tec3.jpeg" alt="Tecnologia 3" loading="lazy" decoding="async">
+            <img src="imagem-site/tec4.jpeg" alt="Tecnologia 4" loading="lazy" decoding="async">
+            <img src="imagem-site/tec5.jpeg" alt="Tecnologia 5" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="case-label">Tecnologia Avançada</span>
       </div>
 
+    </div><!-- /.cases-grid -->
   </div>
 </section>
 
@@ -469,48 +515,49 @@ Esys Energia. Seu presente mais sustentável. Seu futuro mais brilhante.</p>
       <div class="partners-viewport">
         <div class="partners-track" id="partnersTrack">
           <div class="partner-item">
-            <img src="imagem-site/solfacil.png" alt="Solfácil" loading="eager" decoding="async" />
+            <img src="imagem-site/solfacil.png" alt="Solfácil" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item is-featured">
-            <img src="imagem-site/Banco BV.png" alt="Banco BV" loading="eager" decoding="async" />
+            <img src="imagem-site/Banco BV.png" alt="Banco BV" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item partner-card">
-            <img src="imagem-site/Pieta.tech.png" alt="Pieta.tech" loading="eager" decoding="async" />
+            <img src="imagem-site/Pieta.tech.png" alt="Pieta.tech" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/Huawei.png" alt="Huawei" loading="eager" decoding="async" />
+            <img src="imagem-site/Huawei.png" alt="Huawei" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/taranis solar.png" alt="Taranis Solar" loading="eager" decoding="async" />
+            <img src="imagem-site/taranis solar.png" alt="Taranis Solar" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/intelbras.png" alt="Intelbras" loading="eager" decoding="async" />
+            <img src="imagem-site/intelbras.png" alt="Intelbras" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/weg.png" alt="WEG" loading="eager" decoding="async" />
+            <img src="imagem-site/weg.png" alt="WEG" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/idealtech.png" alt="Idealtech" loading="eager" decoding="async" />
+            <img src="imagem-site/idealtech.png" alt="Idealtech" loading="lazy" decoding="async" />
           </div>
 
         <div class="partner-item">
-          <img src="imagem-site/ekaza.png" alt="EKA Energia" loading="eager" decoding="async" />  
+          <img src="imagem-site/ekaza.png" alt="EKA Energia" loading="lazy" decoding="async" />  
         </div>
 
         <div class="partner-item">
-          <img src="imagem-site/novadigital.png" alt="Nova Digital" loading="eager" decoding="async" />
+          <img src="imagem-site/novadigital.png" alt="Nova Digital" loading="lazy" decoding="async" />
         </div>
-      </div>
+      </div><!-- /.partners-track -->
+      </div><!-- /.partners-viewport -->
 
       <button class="partners-btn next" id="partnersNext" type="button" aria-label="Próximo parceiro">›</button>
-    </div>
+    </div><!-- /.partners-carousel -->
 
     <div class="partners-dots" id="partnersDots" aria-label="Navegação do carrossel de parceiros"></div>
   </div>
@@ -636,7 +683,7 @@ Esys Energia. Seu presente mais sustentável. Seu futuro mais brilhante.</p>
 </footer>
 
 <!-- ✅ melhor prática: script no fim -->
-<script src="app.js"></script>
+<script src="app.js" defer></script>
 
 </body>
 </html>

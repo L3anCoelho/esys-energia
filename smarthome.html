@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smarthome — Esys Energia</title>
 
+    <!-- ✅ Favicon -->
+  <link rel="icon" href="imagem-site/logo esys.png" type="image/png" />
+  <link rel="apple-touch-icon" href="imagem-site/logo esys.png" />
+  <meta name="theme-color" content="#c45a14" />
+
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="smarthome.css" />
 </head>
@@ -13,25 +18,71 @@
 
   <!-- ✅ HEADER -->
   <header class="site-header">
-    <div class="header-container">
-      <div class="header-left">
-        <a class="logo" href="index.html#topo">
-          <img src="imagem-site/ilogo esys.png" alt="Esys Energia">
-        </a>
+  <div class="header-container">
 
-        <nav class="menu-left">
+    <!-- BLOCO ESQUERDO -->
+    <div class="header-left">
+      <a class="logo" href="index.html#topo">
+        <img src="imagem-site/logo esys.png" alt="Esys Energia" width="260" height="170" fetchpriority="high" decoding="async">
+      </a>
+
+      <nav class="menu-left" aria-label="Seções do site">
+        <div class="nav-item">
           <a href="index.html#topo">Energia Solar</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Energia Solar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-panel" role="menu">
+            <a href="index.html#simulador" role="menuitem">Simulador de economia</a>
+            <a href="index.html#faq" role="menuitem">Vantagens e como funciona</a>
+            <a href="index.html#sobre" role="menuitem">Quem somos</a>
+            <a href="index.html#depoimentos" role="menuitem">Depoimentos</a>
+            <a href="index.html#cases" role="menuitem">Nossos cases</a>
+            <a href="index.html#parceiros" role="menuitem">Empresas parceiras</a>
+          </div>
+        </div>
+        <div class="nav-item">
           <a href="eletromobilidade.html">Eletromobilidade</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Eletromobilidade"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-panel" role="menu">
+            <a href="eletromobilidade.html#vantagens" role="menuitem">Vantagens</a>
+            <a href="eletromobilidade.html#solar-e-carregador" role="menuitem">Solar + carregador</a>
+            <a href="eletromobilidade.html#simulador" role="menuitem">Simulador de custo</a>
+            <a href="eletromobilidade.html#depoimentos" role="menuitem">Depoimentos</a>
+            <a href="eletromobilidade.html#cases" role="menuitem">Nossos cases</a>
+            <a href="eletromobilidade.html#parceiros" role="menuitem">Empresas parceiras</a>
+          </div>
+        </div>
+        <div class="nav-item">
           <a href="smarthome.html" class="active">Smarthome</a>
-        </nav>
-      </div>
-
-      <nav class="menu-right">
-        <a href="sobre.html">Sobre nós</a>
-        <a href="faq.html">FAQ</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Smarthome"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="nav-panel" role="menu">
+            <a href="smarthome.html#conteudo" role="menuitem">O que sua casa pode fazer</a>
+            <a href="smarthome.html#app-control" role="menuitem">Controle pelo aplicativo</a>
+            <a href="smarthome.html#solar-smart" role="menuitem">Integração com solar</a>
+            <a href="smarthome.html#redes-mesh" role="menuitem">Redes Mesh</a>
+            <a href="smarthome.html#depoimentos" role="menuitem">Depoimentos</a>
+            <a href="smarthome.html#cases" role="menuitem">Nossos cases</a>
+          </div>
+        </div>
       </nav>
     </div>
-  </header>
+
+    <!-- BLOCO DIREITO -->
+    <nav class="menu-right" aria-label="Institucional">
+      <div class="nav-item">
+        <a href="sobre.html">Sobre nós</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Atalhos de Sobre nós"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="nav-panel nav-panel-right" role="menu">
+            <a href="sobre.html#quem-somos" role="menuitem">Missão, visão e valores</a>
+            <a href="sobre.html#esg" role="menuitem">Sustentabilidade e ESG</a>
+            <a href="sobre.html#esg-qualidade" role="menuitem">Qualidade e segurança</a>
+            <a href="sobre.html#esg-indicadores" role="menuitem">Indicadores ESG</a>
+        </div>
+      </div>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+  </div>
+</header>
 
   <main class="smart-page">
 
@@ -100,7 +151,7 @@
         <div class="smart-showcase-grid">
           <!-- Card 1 -->
           <div class="smart-showcase-card">
-            <img src="imagem-site/smarthome iluminacao.jpg" alt="Iluminação automática">
+            <img src="imagem-site/smarthome iluminacao.jpg" alt="Iluminação automática" loading="lazy" decoding="async">
             <div class="smart-overlay"></div>
             <div class="smart-card-content">
               <h3>Iluminação automática</h3>
@@ -111,7 +162,7 @@
 
           <!-- Card 2 -->
           <div class="smart-showcase-card">
-            <img src="imagem-site/smarthome fechadura.jpg" alt="Fechadura inteligente">
+            <img src="imagem-site/smarthome fechadura.jpg" alt="Fechadura inteligente" loading="lazy" decoding="async">
             <div class="smart-overlay"></div>
             <div class="smart-card-content">
               <h3>Fechadura inteligente</h3>
@@ -122,7 +173,7 @@
 
           <!-- Card 3 -->
           <div class="smart-showcase-card">
-            <img src="imagem-site/smarthome monitoramento.jpg" alt="Monitoramento remoto">
+            <img src="imagem-site/smarthome monitoramento.jpg" alt="Monitoramento remoto" loading="lazy" decoding="async">
             <div class="smart-overlay"></div>
             <div class="smart-card-content">
               <h3>Monitoramento remoto</h3>
@@ -133,7 +184,7 @@
 
           <!-- Card 4 -->
           <div class="smart-showcase-card">
-            <img src="imagem-site/smarthome cheguei.jpg" alt="Cena Cheguei">
+            <img src="imagem-site/smarthome cheguei.jpg" alt="Cena Cheguei" loading="lazy" decoding="async">
             <div class="smart-overlay"></div>
             <div class="smart-card-content">
               <h3>Cena “Cheguei”</h3>
@@ -144,7 +195,7 @@
 
           <!-- Card 5 -->
           <div class="smart-showcase-card">
-            <img src="imagem-site/smarthome dormir.jpg" alt="Modo Dormir">
+            <img src="imagem-site/smarthome dormir.jpg" alt="Modo Dormir" loading="lazy" decoding="async">
             <div class="smart-overlay"></div>
             <div class="smart-card-content">
               <h3>Modo Dormir</h3>
@@ -155,7 +206,7 @@
 
           <!-- Card 6 -->
           <div class="smart-showcase-card">
-            <img src="imagem-site/smarthome controle.jpg" alt="Controle total">
+            <img src="imagem-site/smarthome controle.jpg" alt="Controle total" loading="lazy" decoding="async">
             <div class="smart-overlay"></div>
             <div class="smart-card-content">
               <h3>Controle total</h3>
@@ -169,7 +220,7 @@
     </section><!-- ✅ FECHAMENTO QUE ESTAVA FALTANDO: smart-showcase -->
 
     <!-- ✅ BLOCO APP -->
-    <section class="smart-app-control">
+    <section class="smart-app-control" id="app-control">
       <div class="smart-container smart-app-grid">
 
         <div class="smart-app-text">
@@ -181,18 +232,18 @@
         </div>
 
         <div class="smart-app-visual">
-          <img src="imagem-site/controle pelo app.png" alt="Controle pelo aplicativo">
+          <img src="imagem-site/controle pelo app.png" alt="Controle pelo aplicativo" loading="lazy" decoding="async">
         </div>
 
       </div>
     </section>
 
     <!-- ✅ INTEGRAÇÃO SOLAR -->
-    <section class="smart-solar-integration">
+    <section class="smart-solar-integration" id="solar-smart">
       <div class="smart-container smart-solar-grid">
 
         <div class="smart-solar-visual">
-          <img src="imagem-site/integraçao solarhome.png" alt="Integração energia solar">
+          <img src="imagem-site/integraçao solarhome.png" alt="Integração energia solar" loading="lazy" decoding="async">
         </div>
 
         <div class="smart-solar-text">
@@ -273,7 +324,7 @@
     <div class="esys-mesh__right">
       <div class="esys-mesh__imageCard" role="img" aria-label="Ilustração de rede mesh em casa">
         <!-- Troque a imagem abaixo pela sua quando quiser -->
-        <img class="esys-mesh__img" src="imagem-site/mesh.jpg" alt="Rede mesh com pontos distribuídos" loading="lazy">
+        <img class="esys-mesh__img" src="imagem-site/mesh.jpg" alt="Rede mesh com pontos distribuídos" loading="lazy" decoding="async">
         <div class="esys-mesh__glow"></div>
 
         <!-- bolinhas animadas (decorativas) -->
@@ -420,11 +471,11 @@
       <div class="case-item">
         <div class="case-image">
           <div class="carousel">
-            <img src="imagem-site/insta1.png" class="active" alt="Instalação 1">
-            <img src="imagem-site/insta2.png" alt="Instalação 2">
-            <img src="imagem-site/insta3.png" alt="Instalação 3">
-            <img src="imagem-site/insta4.png" alt="Instalação 4">
-            <img src="imagem-site/insta5.png" alt="Instalação 5">
+            <img src="imagem-site/insta1.png" class="active" alt="Instalação 1" loading="lazy" decoding="async">
+            <img src="imagem-site/insta2.png" alt="Instalação 2" loading="lazy" decoding="async">
+            <img src="imagem-site/insta3.png" alt="Instalação 3" loading="lazy" decoding="async">
+            <img src="imagem-site/insta4.png" alt="Instalação 4" loading="lazy" decoding="async">
+            <img src="imagem-site/insta5.png" alt="Instalação 5" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="case-label">Instalação Profissional</span>
@@ -434,15 +485,15 @@
       <div class="case-item">
         <div class="case-image">
           <div class="carousel">
-            <img src="imagem-site/proj1.jpg" class="active" alt="Projeto 1">
-            <img src="imagem-site/proj2.jpg" alt="Projeto 2">
-            <img src="imagem-site/proj3.jpg" alt="Projeto 3">
-            <img src="imagem-site/proj4.jpg" alt="Projeto 4">
-            <img src="imagem-site/proj5.jpg" alt="Projeto 5">
-            <img src="imagem-site/proj6.jpg" alt="Projeto 6">
-            <img src="imagem-site/proj7.jpg" alt="Projeto 7">
-            <img src="imagem-site/proj8.jpg" alt="Projeto 8">
-            <img src="imagem-site/proj9.jpg" alt="Projeto 9">
+            <img src="imagem-site/proj1.jpg" class="active" alt="Projeto 1" loading="lazy" decoding="async">
+            <img src="imagem-site/proj2.jpg" alt="Projeto 2" loading="lazy" decoding="async">
+            <img src="imagem-site/proj3.jpg" alt="Projeto 3" loading="lazy" decoding="async">
+            <img src="imagem-site/proj4.jpg" alt="Projeto 4" loading="lazy" decoding="async">
+            <img src="imagem-site/proj5.jpg" alt="Projeto 5" loading="lazy" decoding="async">
+            <img src="imagem-site/proj6.jpg" alt="Projeto 6" loading="lazy" decoding="async">
+            <img src="imagem-site/proj7.jpg" alt="Projeto 7" loading="lazy" decoding="async">
+            <img src="imagem-site/proj8.jpg" alt="Projeto 8" loading="lazy" decoding="async">
+            <img src="imagem-site/proj9.jpg" alt="Projeto 9" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="case-label">Projetos Concluídos</span>
@@ -452,11 +503,11 @@
       <div class="case-item">
         <div class="case-image">
           <div class="carousel">
-            <img src="imagem-site/tec1.jpeg" class="active" alt="Tecnologia 1">
-            <img src="imagem-site/tec2.jpeg" alt="Tecnologia 2">
-            <img src="imagem-site/tec3.jpeg" alt="Tecnologia 3">
-            <img src="imagem-site/tec4.jpeg" alt="Tecnologia 4">
-            <img src="imagem-site/tec5.jpeg" alt="Tecnologia 5">
+            <img src="imagem-site/tec1.jpeg" class="active" alt="Tecnologia 1" loading="lazy" decoding="async">
+            <img src="imagem-site/tec2.jpeg" alt="Tecnologia 2" loading="lazy" decoding="async">
+            <img src="imagem-site/tec3.jpeg" alt="Tecnologia 3" loading="lazy" decoding="async">
+            <img src="imagem-site/tec4.jpeg" alt="Tecnologia 4" loading="lazy" decoding="async">
+            <img src="imagem-site/tec5.jpeg" alt="Tecnologia 5" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="case-label">Tecnologia Avançada</span>
@@ -482,44 +533,44 @@
       <div class="partners-viewport">
         <div class="partners-track" id="partnersTrack">
           <div class="partner-item">
-            <img src="imagem-site/solfacil.png" alt="Solfácil" loading="eager" decoding="async" />
+            <img src="imagem-site/solfacil.png" alt="Solfácil" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item is-featured">
-            <img src="imagem-site/Banco BV.png" alt="Banco BV" loading="eager" decoding="async" />
+            <img src="imagem-site/Banco BV.png" alt="Banco BV" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item partner-card">
-            <img src="imagem-site/Pieta.tech.png" alt="Pieta.tech" loading="eager" decoding="async" />
+            <img src="imagem-site/Pieta.tech.png" alt="Pieta.tech" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/Huawei.png" alt="Huawei" loading="eager" decoding="async" />
+            <img src="imagem-site/Huawei.png" alt="Huawei" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/taranis solar.png" alt="Taranis Solar" loading="eager" decoding="async" />
+            <img src="imagem-site/taranis solar.png" alt="Taranis Solar" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/intelbras.png" alt="Intelbras" loading="eager" decoding="async" />
+            <img src="imagem-site/intelbras.png" alt="Intelbras" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-          <img src="imagem-site/ekaza.png" alt="EKA Energia" loading="eager" decoding="async" />  
+          <img src="imagem-site/ekaza.png" alt="EKA Energia" loading="lazy" decoding="async" />  
         </div>
 
         <div class="partner-item">
-          <img src="imagem-site/novadigital.png" alt="Nova Digital" loading="eager" decoding="async" />
+          <img src="imagem-site/novadigital.png" alt="Nova Digital" loading="lazy" decoding="async" />
         </div>
   
 
           <div class="partner-item">
-            <img src="imagem-site/weg.png" alt="WEG" loading="eager" decoding="async" />
+            <img src="imagem-site/weg.png" alt="WEG" loading="lazy" decoding="async" />
           </div>
 
           <div class="partner-item">
-            <img src="imagem-site/idealtech.png" alt="Idealtech" loading="eager" decoding="async" />
+            <img src="imagem-site/idealtech.png" alt="Idealtech" loading="lazy" decoding="async" />
           </div>
         </div>
       </div>
@@ -619,7 +670,7 @@
     </svg>
   </a>
 
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 
 </body>
 </html>
