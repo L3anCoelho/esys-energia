@@ -66,79 +66,8 @@
       line-height: 1.5;
     }
 
-    .mvv{
-      background: #fff;
-      padding: 90px 20px 110px;
-    }
-
-    .mvv-container{
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    .mvv-grid{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 70px;
-      align-items: start;
-      text-align: center;
-    }
-
-    .mvv-item{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    .mvv-icon{
-      width: 76px;
-      height: 76px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      border: 2px solid #FFD22E;
-      margin-bottom: 18px;
-    }
-
-    /* cada ícone com cor levemente diferente */
-    .mvv-item:nth-child(1) .mvv-icon{ border-color: #FFD22E; }
-    .mvv-item:nth-child(2) .mvv-icon{ border-color: #c45a14; }
-    .mvv-item:nth-child(3) .mvv-icon{ border-color: #FFD22E; }
-
-    .mvv-icon svg{
-      width: 34px;
-      height: 34px;
-      display: block;
-    }
-
-    .mvv-item:nth-child(1) .mvv-icon svg{ color: #FFD22E; }
-    .mvv-item:nth-child(2) .mvv-icon svg{ color: #c45a14; }
-    .mvv-item:nth-child(3) .mvv-icon svg{ color: #FFD22E; }
-
-    .mvv-title{
-      font-weight: 900;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      font-size: 18px;
-      color: #111;
-    }
-
-    .mvv-text{
-      max-width: 360px;
-      color: #111;
-      font-size: 18px;
-      line-height: 1.85;
-      font-weight: 500;
-    }
-
     @media (max-width: 980px){
       .about-hero-title{ font-size: 44px; }
-      .mvv-grid{ grid-template-columns: 1fr; gap: 46px; }
-      .mvv-text{ max-width: 520px; }
     }
   </style>
 
@@ -182,57 +111,69 @@
     </div>
   </section>
 
-  <section class="mvv" id="quem-somos">
-    <div class="mvv-container">
-      <div class="mvv-grid">
+  <!-- ============================================================
+       DESTAQUES INSTITUCIONAIS — Missão/visão/valores + Compliance
+       Reaproveita o visual de card do documento ESG (.esg-bloco)
+  ============================================================ -->
+  <section class="esg esg-destaques" id="quem-somos">
+    <div class="esg-destaques-inner esg-leitura">
 
-        <div class="mvv-item">
-          <div class="mvv-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 19V5" />
-              <path d="M4 19h16" />
-              <path d="M8 15v-4" />
-              <path d="M12 15V9" />
-              <path d="M16 15v-7" />
-            </svg>
-          </div>
-          <h3 class="mvv-title">NOSSA MISSÃO</h3>
-          <p class="mvv-text">
-            Conectar pessoas à fontes de energia limpa e renovável, levando conforto e economia para milhares de lares,
-            industrias e comércios.
-          </p>
-        </div>
+      <article class="esg-bloco" id="esg-mvv">
+        <h3>Missão, visão e valores</h3>
 
-        <div class="mvv-item">
-          <div class="mvv-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
-              <circle cx="12" cy="12" r="3" />
-            </svg>
-          </div>
-          <h3 class="mvv-title">NOSSA VISÃO</h3>
-          <p class="mvv-text">
-            Alcançar excelência em nossos projetos e atendimentos, prezando pelo custos reduzidos e benefícios presentes
-            apresentando sempre novas tecnologias e métodos.
-          </p>
-        </div>
+        <h4>Missão</h4>
+        <p>
+          Desenvolver soluções em engenharia elétrica, energia solar fotovoltaica, infraestrutura
+          elétrica e eficiência energética, entregando serviços com excelência técnica, inovação,
+          segurança e compromisso com resultados.
+        </p>
 
-        <div class="mvv-item">
-          <div class="mvv-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                 stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2l3 7 7 .6-5.3 4.6 1.7 7.2L12 18l-6.4 3.4 1.7-7.2L2 9.6 9 9l3-7z"/>
-            </svg>
-          </div>
-          <h3 class="mvv-title">NOSSOS VALORES</h3>
-          <p class="mvv-text">
-            Nossos valores abrange foco nas estratégias e ética nas operações seja elas quais forem.
-          </p>
-        </div>
+        <h4>Visão</h4>
+        <p>
+          Ser reconhecida como referência em engenharia elétrica e soluções energéticas, destacando-se
+          pela qualidade, confiabilidade, inovação e responsabilidade socioambiental.
+        </p>
 
-      </div>
+        <h4>Valores</h4>
+        <ul class="esg-valores">
+          <li>Ética e integridade</li>
+          <li>Transparência</li>
+          <li>Excelência técnica</li>
+          <li>Segurança</li>
+          <li>Comprometimento</li>
+          <li>Inovação</li>
+          <li>Sustentabilidade</li>
+          <li>Respeito às pessoas</li>
+          <li>Melhoria contínua</li>
+          <li>Responsabilidade técnica</li>
+        </ul>
+      </article>
+
+      <article class="esg-bloco" id="esg-compliance">
+        <h3>Compliance e proteção de dados</h3>
+
+        <p>
+          Na Esys Energia, atuamos com ética, transparência e responsabilidade em todas as nossas relações
+          comerciais e operacionais.
+        </p>
+
+        <p>
+          Adotamos boas práticas de governança, segurança da informação e proteção de dados pessoais,
+          observando os princípios da Lei Geral de Proteção de Dados – LGPD (Lei nº 13.709/2018).
+        </p>
+
+        <p>
+          As informações de clientes, parceiros, fornecedores e colaboradores são tratadas de forma
+          responsável, utilizadas apenas para finalidades legítimas e relacionadas às nossas atividades,
+          com medidas voltadas à preservação da confidencialidade, integridade e segurança dos dados.
+        </p>
+
+        <p>
+          Nosso compromisso é manter relações pautadas pela confiança, conformidade legal e respeito
+          à privacidade.
+        </p>
+      </article>
+
     </div>
   </section>
 
@@ -272,8 +213,6 @@
       <nav class="esg-sumario" id="esgSumario" aria-label="Índice do documento">
         <h3>Neste documento</h3>
         <ol>
-          <li><a href="#esg-essencia">Nossa essência</a></li>
-          <li><a href="#esg-mvv">Missão, visão e valores</a></li>
           <li><a href="#esg-compromisso">Compromisso ESG</a></li>
           <li><a href="#esg-qualidade">Qualidade e segurança</a></li>
           <li><a href="#esg-relacionamentos">Relacionamentos</a></li>
@@ -284,50 +223,6 @@
 
       <!-- leitura -->
       <div class="esg-leitura">
-
-        <article class="esg-bloco" id="esg-essencia">
-          <h3>Nossa essência</h3>
-          <p>
-            Mais do que executar instalações e projetos, desenvolvemos soluções que contribuem para a
-            eficiência energética, a confiabilidade operacional e a geração de valor para nossos clientes.
-          </p>
-          <p>
-            Nosso compromisso é unir qualidade técnica, inovação e conduta responsável para apoiar empresas,
-            condomínios e organizações na construção de um futuro energeticamente mais eficiente, seguro
-            e sustentável.
-          </p>
-        </article>
-
-        <article class="esg-bloco" id="esg-mvv">
-          <h3>Missão, visão e valores</h3>
-
-          <h4>Missão</h4>
-          <p>
-            Desenvolver soluções em engenharia elétrica, energia solar fotovoltaica, infraestrutura
-            elétrica e eficiência energética, entregando serviços com excelência técnica, inovação,
-            segurança e compromisso com resultados.
-          </p>
-
-          <h4>Visão</h4>
-          <p>
-            Ser reconhecida como referência em engenharia elétrica e soluções energéticas, destacando-se
-            pela qualidade, confiabilidade, inovação e responsabilidade socioambiental.
-          </p>
-
-          <h4>Valores</h4>
-          <ul class="esg-valores">
-            <li>Ética e integridade</li>
-            <li>Transparência</li>
-            <li>Excelência técnica</li>
-            <li>Segurança</li>
-            <li>Comprometimento</li>
-            <li>Inovação</li>
-            <li>Sustentabilidade</li>
-            <li>Respeito às pessoas</li>
-            <li>Melhoria contínua</li>
-            <li>Responsabilidade técnica</li>
-          </ul>
-        </article>
 
         <article class="esg-bloco" id="esg-compromisso">
           <h3>Nosso compromisso ESG</h3>
@@ -402,11 +297,15 @@
             Esperamos o mesmo compromisso ético de colaboradores, clientes, fornecedores e parceiros.
           </p>
 
-          <h4>Compliance e proteção de dados</h4>
+          <h4>Nossa essência</h4>
           <p>
-            Nossos serviços observam a legislação brasileira, as normas da ABNT, as normas regulamentadoras
-            do Ministério do Trabalho, os requisitos técnicos das concessionárias de energia, a LGPD e as
-            boas práticas de engenharia.
+            Mais do que executar instalações e projetos, desenvolvemos soluções que contribuem para a
+            eficiência energética, a confiabilidade operacional e a geração de valor para nossos clientes.
+          </p>
+          <p>
+            Nosso compromisso é unir qualidade técnica, inovação e conduta responsável para apoiar empresas,
+            condomínios e organizações na construção de um futuro energeticamente mais eficiente, seguro
+            e sustentável.
           </p>
         </article>
 

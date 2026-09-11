@@ -69,6 +69,17 @@
 }
 
 /* =========================
+   DESTAQUES DO TOPO (#quem-somos)
+   Cards fora do documento ESG: mesmo visual (.esg-bloco),
+   só sem o grid sumário + leitura.
+========================= */
+.esg-destaques-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 64px 20px;
+}
+
+/* =========================
    CORPO — sumário + leitura
 ========================= */
 .esg-corpo {
@@ -453,6 +464,10 @@
 
   .esg-corpo {
     padding: 34px 16px 60px;
+  }
+
+  .esg-destaques-inner {
+    padding: 34px 16px;
   }
 
   .esg-bloco {
