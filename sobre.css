@@ -98,7 +98,7 @@
 /* ---- sumário ---- */
 .esg-sumario {
   position: sticky;
-  top: calc(var(--header-h, 120px) + 20px);
+  top: calc(var(--header-h, 126px) + 20px);
 
   min-width: 0;
   padding: 24px 22px;

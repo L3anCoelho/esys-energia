@@ -161,7 +161,8 @@ body {
 
 .header-container {
   max-width: 1400px;
-  height: 120px;
+  /* barra ~5% mais alta que os 120px originais, pra dar folga ao logo */
+  height: 126px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
@@ -175,9 +176,18 @@ body {
   gap: 40px;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
 .logo img {
-  height: 170px;
+  /* menor que a barra (126px) pra ficar enquadrado, sem estourar as bordas */
+  height: 109px;
   width: auto;
+  max-width: 100%;
+  object-fit: contain;
   display: block;
 }
 
@@ -1501,7 +1511,7 @@ body {
   }
 
   .logo img {
-    height: 125px;
+    height: 131px;
     width: auto;
     max-height: none;
     display: block;
@@ -1832,7 +1842,7 @@ body {
 
 :root {
   /* altura real do header — medida pelo app.js */
-  --header-h: 120px;
+  --header-h: 126px;
 }
 
 /* header é fixed, então o conteúdo precisa começar abaixo dele */
