@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18544728575"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18544728575');
+  </script>
   <title>Esys Energia Solar</title>
     <!-- ✅ Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="imagem-site/favicon-32.png" />
@@ -43,6 +51,7 @@
     <div class="subnav-track" id="subnavTrack">
       <a href="#simulador">Simulador de economia</a>
       <a href="#faq">Vantagens e como funciona</a>
+      <a href="#baterias">Baterias</a>
       <a href="#sobre">Quem somos</a>
       <a href="#depoimentos">Depoimentos</a>
       <a href="#cases">Nossos cases</a>
@@ -63,7 +72,7 @@
     <div class="hero-dots" id="heroDots" aria-label="Navegação do hero"></div>
 
     <div class="hero-content">
-      <button type="button" id="btnOrcamentoTopo">Peça seu orçamento</button>
+      <button type="button" id="btnOrcamentoTopo" data-whats-button="1">Peça seu orçamento</button>
     </div>
   </section>
 
@@ -216,7 +225,7 @@
         <div class="steps-figure">
           <img
             class="steps-illustration"
-            src="imagem-site/como funciona.gif"
+            src="Como funciona.gif"
             alt="Diagrama de como funciona a energia solar: painéis, inversor, consumo e rede elétrica"
             loading="lazy" decoding="async" />
           <p class="steps-caption">
@@ -259,6 +268,57 @@
       </div>
       <a class="info-cta-btn" href="#simulador">Simular agora</a>
     </div>
+
+  </div>
+</section>
+
+<!-- ✅ BATERIAS -->
+<section class="baterias reveal" id="baterias">
+  <div class="baterias-container">
+
+    <header class="info-header reveal">
+      <span class="info-badge">Armazenamento de Energia</span>
+      <h2 class="info-title">Armazenamento Inteligente de Energia</h2>
+    </header>
+
+    <div class="baterias-grid">
+      <div class="baterias-text reveal">
+        <p>
+          Armazene a energia gerada pelo seu sistema solar e tenha mais controle sobre o seu consumo.
+          Com soluções de armazenamento por baterias, é possível utilizar a energia acumulada quando a
+          geração solar não está disponível, contribuindo para maior autonomia e eficiência energética.
+        </p>
+        <p class="baterias-note">
+          Uma solução inteligente para aproveitar melhor a energia produzida e ampliar a flexibilidade
+          do seu sistema.
+        </p>
+      </div>
+
+      <div class="bateria-carousel" tabindex="0" role="region" aria-label="Fotos de instalações de baterias da Esys">
+        <button class="carousel-btn prev" id="bateriaPrev" type="button" aria-label="Imagem anterior de baterias">‹</button>
+
+        <div class="bateria-viewport">
+          <div class="bateria-track" id="bateriaTrack">
+            <div class="bateria-slide">
+              <img src="imagem-site/bateria-1.jpg" alt="Inversor e baterias LuxPower instalados em sala técnica" loading="lazy" decoding="async">
+            </div>
+            <div class="bateria-slide">
+              <img src="imagem-site/bateria-2.jpg" alt="Detalhe do inversor híbrido com bateria de backup instalado na parede" loading="lazy" decoding="async">
+            </div>
+            <div class="bateria-slide">
+              <img src="imagem-site/bateria-3.jpg" alt="Sistema de armazenamento por bateria instalado em garagem residencial" loading="lazy" decoding="async">
+            </div>
+            <div class="bateria-slide">
+              <img src="imagem-site/bateria-4.png" alt="Técnico da Esys realizando testes no sistema de baterias" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-btn next" id="bateriaNext" type="button" aria-label="Próxima imagem de baterias">›</button>
+      </div>
+    </div>
+
+    <div class="carousel-dots bateria-dots" id="bateriaDots" aria-label="Navegação do carrossel de baterias"></div>
 
   </div>
 </section>
@@ -431,6 +491,9 @@ Esys Energia. Seu presente mais sustentável. Seu futuro mais brilhante.</p>
             <img src="imagem-site/insta3.png" alt="Instalação 3" loading="lazy" decoding="async">
             <img src="imagem-site/insta4.png" alt="Instalação 4" loading="lazy" decoding="async">
             <img src="imagem-site/insta5.png" alt="Instalação 5" loading="lazy" decoding="async">
+            <img src="imagem-site/insta6.jpg" alt="Painéis solares instalados em telhado residencial cercado por vegetação" loading="lazy" decoding="async">
+            <img src="imagem-site/insta7.jpg" alt="Módulos fotovoltaicos vistos de perto em telhado metálico" loading="lazy" decoding="async">
+            <img src="imagem-site/insta8.jpg" alt="Painéis solares instalados em telhado de telha cerâmica com vista para a serra" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="case-label">Instalação Profissional</span>
@@ -449,6 +512,9 @@ Esys Energia. Seu presente mais sustentável. Seu futuro mais brilhante.</p>
             <img src="imagem-site/proj7.jpg" alt="Projeto 7" loading="lazy" decoding="async">
             <img src="imagem-site/proj8.jpg" alt="Projeto 8" loading="lazy" decoding="async">
             <img src="imagem-site/proj9.jpg" alt="Projeto 9" loading="lazy" decoding="async">
+            <img src="imagem-site/proj10.jpg" alt="Técnico da Esys inspecionando o encaixe entre módulos fotovoltaicos" loading="lazy" decoding="async">
+            <img src="imagem-site/proj11.jpg" alt="Detalhe da fiação e fixação dos painéis solares no telhado" loading="lazy" decoding="async">
+            <img src="imagem-site/proj12.jpg" alt="Conectores e cabeamento entre módulos solares durante a instalação" loading="lazy" decoding="async">
           </div>
         </div>
         <span class="case-label">Projetos Concluídos</span>

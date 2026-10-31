@@ -638,6 +638,80 @@ body {
 }
 
 /* ===========================
+   SEÇÃO BATERIAS
+=========================== */
+.baterias {
+  background: var(--bg);
+  padding: 85px 20px;
+}
+
+.baterias-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.baterias-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.baterias-text p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.baterias-note {
+  font-style: italic;
+  color: rgba(0,0,0,.6) !important;
+}
+
+.bateria-carousel {
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 10px;
+}
+
+.bateria-carousel:focus-visible {
+  outline: 2px solid var(--laranja);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+.bateria-viewport {
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: var(--shadow2);
+}
+
+.bateria-track {
+  display: flex;
+  transform: translateX(0);
+  transition: transform .5s ease;
+  will-change: transform;
+}
+
+.bateria-slide {
+  flex: 0 0 100%;
+}
+
+.bateria-slide img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.bateria-dots {
+  margin-top: 16px;
+}
+
+/* ===========================
    SEÇÃO INFO
 =========================== */
 .info {
@@ -1651,6 +1725,8 @@ body {
 
   .about-photos { grid-template-columns: 1fr; }
   .about-photo img { height: 380px; }
+
+  .baterias-grid { grid-template-columns: 1fr; gap: 28px; }
 
   .footer-top { grid-template-columns: 1fr; }
 

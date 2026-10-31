@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18544728575"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18544728575');
+  </script>
   <title>Eletromobilidade — Esys Energia</title>
 
   <!-- CSS global (header/footer/whats + seções reaproveitadas da Home) -->
@@ -111,6 +119,14 @@
 
                 <div class="eletro-slide">
                   <img src="imagem-site/eletrohero3.png" alt="Infraestrutura de recarga em condomínio" loading="lazy" decoding="async">
+                </div>
+
+                <div class="eletro-slide">
+                  <img src="imagem-site/wallbox-ac.png" alt="Instalação de carregador veicular Wallbox AC em garagem" loading="lazy" decoding="async">
+                </div>
+
+                <div class="eletro-slide">
+                  <img src="imagem-site/wallbox-dc.png" alt="Eletroposto de recarga rápida Wallbox DC em via pública" loading="lazy" decoding="async">
                 </div>
 
               </div>
@@ -351,7 +367,7 @@
                     <span id="comboMiniText">Quero integrar wallbox ao meu sistema e maximizar o aproveitamento da geração.</span>
                   </div>
 
-                  <a class="combo-mini-cta" id="comboMiniCTA"
+                  <a class="combo-mini-cta" id="comboMiniCTA" data-tipo-cta="orcamento"
                      href="https://wa.me/5511996187450?text=Ol%C3%A1!%20J%C3%A1%20tenho%20energia%20solar%20e%20quero%20integrar%20um%20carregador%20veicular%20(wallbox)%20com%20projeto%20el%C3%A9trico,%20prote%C3%A7%C3%B5es%20e%20dimensionamento."
                      target="_blank" rel="noopener">
                     Quero proposta do combo →
@@ -469,7 +485,7 @@
             </div>
 
             <div class="sim-cta-wrap">
-              <button type="button" class="sim-cta" id="btnSimWhats">
+              <button type="button" class="sim-cta" id="btnSimWhats" data-whats-button="1">
                 Solicitar proposta técnica
               </button>
               <div class="sim-cta-note">

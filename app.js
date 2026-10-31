@@ -1,7 +1,7 @@
 /* =========================================================
    APP.JS — ESYS (UNIFICADO)
    Inclui:
-   - GLOBAL (WhatsApp, reveal, footer year)
+   - GLOBAL (WhatsApp, rastreamento, reveal, footer year)
    - HOME (hero carrossel, simulador, depoimentos, parceiros, stats)
    - ELETROMOBILIDADE (carrossel hero, simulador EV, combo solar+carregador)
    - SMARTHOME (vídeo hero + toggle som)
@@ -22,6 +22,50 @@ const WHATSAPP_ATIVO = WHATSAPP_NUMEROS.principal;
 function montarLinkWhats(mensagem, numero = WHATSAPP_ATIVO) {
   const texto = encodeURIComponent(mensagem);
   return `https://wa.me/${numero}?text=${texto}`;
+}
+
+/* =========================
+   ✅ RASTREAMENTO (GOOGLE ADS)
+   A Google tag fica no <head> de cada página.
+========================= */
+const GOOGLE_ADS_ID = "AW-18544728575";
+
+// Label da conversão "WhatsApp – Site Esys Energia" (vem do painel do Google Ads).
+// Vazio = whatsapp_click sai como evento comum e NÃO conta como conversão.
+// Não inventar: só o administrador do Google Ads fornece esse valor.
+//
+// ⚠️ PENDENTE DE CONFIRMAÇÃO — ver relatório. O Conversion ID "AW-123456789" enviado junto
+// com este label não foi usado aqui (mantém-se AW-18544728575, já instalado). O padrão deste
+// label ("AbCdEfGhIjKlMnOp" = alfabeto em sequência) também tem aparência de valor de exemplo,
+// não de credencial real do Google Ads. Confirme com o cliente antes de considerar a conversão
+// validada.
+const GOOGLE_ADS_LABEL_WHATSAPP = "AbCdEfGhIjKlMnOp";
+
+// Lista de inclusão explícita: só os tipo_cta aqui contam como conversão comercial.
+// Canal de ética e contatos informativos do rodapé ficam de fora por não constarem
+// na lista — mesmo que um novo CTA não comercial apareça no futuro, ele nunca conta
+// sem ser adicionado aqui.
+const CTA_COMERCIAIS_AUTORIZADOS = new Set(["orcamento"]);
+
+const RE_LINK_WHATS = /^(https?:\/\/(wa\.me|api\.whatsapp\.com|web\.whatsapp\.com)\/|whatsapp:)/i;
+const RE_CTA_ORCAMENTO = /or(c|ç|%c3%a7)amento|proposta|especialista|avali/i;
+
+function enviarEvento(nome, params) {
+  if (typeof gtag !== "function") return;
+  gtag("event", nome, params);
+}
+
+// ⚠️ O href nunca vai nos parâmetros: o link do simulador leva nome e telefone do visitante.
+function dadosDoCta(el) {
+  const texto = (el.textContent.trim() || el.getAttribute("aria-label") || "").replace(/\s+/g, " ");
+  const href = el.getAttribute("href") || "";
+  const secao = el.closest("footer") ? "rodape" : el.closest("section[id], aside[id]")?.id;
+
+  return {
+    origem_cta: el.id || secao || el.className.split(" ")[0],
+    texto_cta: texto.slice(0, 100),
+    tipo_cta: el.dataset.tipoCta || (RE_CTA_ORCAMENTO.test(`${texto} ${href}`) ? "orcamento" : "contato"),
+  };
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -155,6 +199,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroSlides = [
     { img: "imagem-site/hero 1.png", href: null },
     { img: "imagem-site/hero 2.png", href: null },
+    { img: "imagem-site/hero-equipe-usina.png", href: null },
+    { img: "imagem-site/hero-monitoramento.png", href: null },
+    { img: "imagem-site/hero-eletrica.png", href: null },
     { img: "imagem-site/hero smarthome.png", href: "smarthome.html" },
     { img: "imagem-site/hero eletro.png", href: "eletromobilidade.html" },
   ];
@@ -299,6 +346,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  let ultimaSimulacao = "";
+
   if (btnSimular) {
     btnSimular.addEventListener("click", () => {
       clearError();
@@ -357,6 +406,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const btnWhatsResultado = document.getElementById("btnWhatsResultado");
       if (btnWhatsResultado) btnWhatsResultado.href = montarLinkWhats(msg);
+
+      // Clicar de novo sem mudar os dados não é outra simulação
+      const simulacao = [nome, email, telefone, conta].join("|");
+      if (resultado && simulacao !== ultimaSimulacao) {
+        ultimaSimulacao = simulacao;
+        enviarEvento("simulacao_concluida", { tipo_simulador: "solar" });
+      }
     });
   }
 
@@ -671,6 +727,104 @@ if (partnersTrack && partnersViewport) {
     statsObserver.observe(statsSection);
   }
 
+  // =========================
+  // ✅ CARROSSEL BATERIAS (HOME)
+  //    Setas, dots, teclado (← →) e toque/arraste. Pausa com o mouse em
+  //    cima e só roda sozinho enquanto a seção está visível na tela.
+  // =========================
+  const bateriaCarousel = document.querySelector(".bateria-carousel");
+  const bateriaTrack = document.getElementById("bateriaTrack");
+  const bateriaDots = document.getElementById("bateriaDots");
+  const bateriaPrev = document.getElementById("bateriaPrev");
+  const bateriaNext = document.getElementById("bateriaNext");
+
+  if (bateriaCarousel && bateriaTrack && bateriaDots && bateriaPrev && bateriaNext) {
+    const slides = Array.from(bateriaTrack.children);
+    const total = slides.length;
+
+    if (total > 1) {
+      let index = 0;
+      let timer = null;
+
+      function buildDots() {
+        bateriaDots.innerHTML = "";
+        for (let i = 0; i < total; i++) {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "carousel-dot" + (i === 0 ? " active" : "");
+          b.setAttribute("aria-label", `Ir para imagem ${i + 1} de ${total}`);
+          b.addEventListener("click", () => goTo(i));
+          bateriaDots.appendChild(b);
+        }
+      }
+
+      function setActiveDot() {
+        const dots = bateriaDots.querySelectorAll(".carousel-dot");
+        dots.forEach((d, i) => d.classList.toggle("active", i === index));
+      }
+
+      function goTo(i) {
+        index = (i + total) % total;
+        bateriaTrack.style.transform = `translateX(-${index * 100}%)`;
+        setActiveDot();
+      }
+
+      function startAuto() {
+        stopAuto();
+        timer = setInterval(() => {
+          if (document.hidden) return;
+          goTo(index + 1);
+        }, 5500);
+      }
+
+      function stopAuto() {
+        if (timer) clearInterval(timer);
+        timer = null;
+      }
+
+      bateriaPrev.addEventListener("click", () => goTo(index - 1));
+      bateriaNext.addEventListener("click", () => goTo(index + 1));
+
+      bateriaCarousel.addEventListener("mouseenter", stopAuto);
+      bateriaCarousel.addEventListener("mouseleave", startAuto);
+
+      // Teclado: setas esquerda/direita navegam quando o carrossel tem foco
+      bateriaCarousel.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") { e.preventDefault(); goTo(index - 1); }
+        else if (e.key === "ArrowRight") { e.preventDefault(); goTo(index + 1); }
+      });
+
+      // Toque/arraste (mobile): swipe horizontal troca a imagem
+      let touchStartX = null;
+      bateriaTrack.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+        stopAuto();
+      }, { passive: true });
+
+      bateriaTrack.addEventListener("touchend", (e) => {
+        if (touchStartX === null) return;
+        const deltaX = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(deltaX) > 40) goTo(deltaX < 0 ? index + 1 : index - 1);
+        touchStartX = null;
+        startAuto();
+      });
+
+      buildDots();
+      goTo(0);
+
+      // Só roda sozinho enquanto a seção estiver visível (mesma lógica dos cases)
+      if ("IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => entries.forEach((e) => (e.isIntersecting ? startAuto() : stopAuto())),
+          { rootMargin: "200px 0px" }
+        );
+        io.observe(bateriaCarousel);
+      } else {
+        startAuto();
+      }
+    }
+  }
+
   /* =========================================================
      ✅ ELETROMOBILIDADE (eletromobilidade.html)
   ========================================================= */
@@ -942,6 +1096,36 @@ if (partnersTrack && partnersViewport) {
       smartBtnSound.textContent = newMuted ? "Som: OFF" : "Som: ON";
     });
   }
+
+  // =========================
+  // ✅ RASTREAMENTO — clique delegado (GLOBAL)
+  //    Registrado por último neste bloco, depois que os links dinâmicos
+  //    (flutuante, combo) já receberam o href definitivo.
+  //    Cobre também os links que ainda vão trocar de href depois (resultado
+  //    do simulador), pois o href é lido no momento do clique, não do registro.
+  // =========================
+  document.addEventListener("click", (e) => {
+    if (e.detail > 1) return; // segundo clique de um duplo clique
+
+    // Botões sem href (abrem o WhatsApp via window.open) usam data-whats-button="1"
+    const el = e.target.closest("a[href], [data-whats-button]");
+    if (!el) return;
+
+    const href = el.getAttribute("href") || "";
+    const ehBotaoWhats = el.hasAttribute("data-whats-button");
+    const cta = dadosDoCta(el);
+
+    if (ehBotaoWhats || RE_LINK_WHATS.test(href)) {
+      enviarEvento("whatsapp_click", cta);
+      if (GOOGLE_ADS_LABEL_WHATSAPP && CTA_COMERCIAIS_AUTORIZADOS.has(cta.tipo_cta)) {
+        enviarEvento("conversion", { send_to: `${GOOGLE_ADS_ID}/${GOOGLE_ADS_LABEL_WHATSAPP}` });
+      }
+    } else if (/^tel:/i.test(href)) {
+      enviarEvento("phone_click", cta);
+    } else if (cta.tipo_cta === "orcamento") {
+      enviarEvento("orcamento_click", cta);
+    }
+  });
 });
 
 
