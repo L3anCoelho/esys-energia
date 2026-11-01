@@ -34,12 +34,8 @@ const GOOGLE_ADS_ID = "AW-18544728575";
 // Vazio = whatsapp_click sai como evento comum e NÃO conta como conversão.
 // Não inventar: só o administrador do Google Ads fornece esse valor.
 //
-// ⚠️ PENDENTE DE CONFIRMAÇÃO — ver relatório. O Conversion ID "AW-123456789" enviado junto
-// com este label não foi usado aqui (mantém-se AW-18544728575, já instalado). O padrão deste
-// label ("AbCdEfGhIjKlMnOp" = alfabeto em sequência) também tem aparência de valor de exemplo,
-// não de credencial real do Google Ads. Confirme com o cliente antes de considerar a conversão
-// validada.
-const GOOGLE_ADS_LABEL_WHATSAPP = "AbCdEfGhIjKlMnOp";
+// Confirmado pelo cliente: AW-18544728575/McsFCMDIta4dEP-z6IpF
+const GOOGLE_ADS_LABEL_WHATSAPP = "McsFCMDIta4dEP-z6IpF";
 
 // Lista de inclusão explícita: só os tipo_cta aqui contam como conversão comercial.
 // Canal de ética e contatos informativos do rodapé ficam de fora por não constarem
