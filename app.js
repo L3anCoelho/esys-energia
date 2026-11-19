@@ -1168,3 +1168,141 @@ document.querySelectorAll('.carousel').forEach((carousel) => {
     if (document.hidden) pause();
   });
 });
+
+
+/* =========================================================
+   ✅ HEADER ANIMADO (todas as páginas)
+   - encolhe quando a página sai do topo
+   - some ao rolar pra baixo, volta na hora ao rolar pra cima
+   - volta também ao encostar o mouse no topo, ao usar o teclado
+     e ao clicar em qualquer âncora -> navegação continua rápida
+========================================================= */
+(function () {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  const semAnimacao = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // botãozinho que reaparece quando o header está escondido
+  const peek = document.createElement("button");
+  peek.type = "button";
+  peek.className = "header-peek";
+  peek.setAttribute("aria-label", "Mostrar o menu");
+  peek.innerHTML = "&#9662;";
+  document.body.appendChild(peek);
+
+  const LIMIAR_COMPACTO = 80;   // a partir daqui a barra encolhe
+  const LIMIAR_ESCONDER = 260;  // só esconde depois de descer de verdade
+  const TOLERANCIA = 6;         // ignora micro-rolagens
+
+  let ultimoY = window.pageYOffset || 0;
+  let escondido = false;
+  let travado = false;          // trava temporária (clique em âncora, hover no topo)
+  let timerTrava = null;
+  let agendado = false;
+
+  const mostrar = () => {
+    if (!escondido) return;
+    escondido = false;
+    header.classList.remove("is-hidden");
+    peek.classList.remove("is-visible");
+  };
+
+  const esconder = () => {
+    if (escondido || travado || semAnimacao) return;
+    // se o usuário está navegando pelo teclado dentro do header, não esconde
+    const foco = document.activeElement;
+    if (foco && header.contains(foco)) {
+      try {
+        if (foco.matches(":focus-visible")) return;
+      } catch (err) {
+        return;
+      }
+    }
+    escondido = true;
+    header.classList.add("is-hidden");
+    peek.classList.add("is-visible");
+  };
+
+  const travarPorUmInstante = (ms) => {
+    travado = true;
+    mostrar();
+    clearTimeout(timerTrava);
+    timerTrava = setTimeout(() => { travado = false; }, ms || 900);
+  };
+
+  const aoRolar = () => {
+    const y = Math.max(0, window.pageYOffset || 0);
+
+    header.classList.toggle("is-compact", y > LIMIAR_COMPACTO);
+
+    const delta = y - ultimoY;
+
+    if (y <= LIMIAR_ESCONDER) {
+      mostrar();
+    } else if (Math.abs(delta) > TOLERANCIA) {
+      if (delta > 0) esconder();
+      else mostrar();
+    }
+
+    ultimoY = y;
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (agendado) return;
+      agendado = true;
+      window.requestAnimationFrame(() => {
+        agendado = false;
+        aoRolar();
+      });
+    },
+    { passive: true }
+  );
+
+  // mouse encostou no topo da tela -> header volta
+  window.addEventListener(
+    "mousemove",
+    (e) => {
+      if (e.clientY <= 70) mostrar();
+    },
+    { passive: true }
+  );
+
+  // teclado / leitor de tela entrando no header
+  document.addEventListener("focusin", (e) => {
+    if (!header.contains(e.target)) return;
+    let teclado = true;
+    try {
+      teclado = e.target.matches(":focus-visible");
+    } catch (err) {
+      teclado = true;
+    }
+    if (teclado) mostrar();
+  });
+
+  // clicou numa âncora (subnav, botões, rodapé) -> mantém o menu visível
+  // durante a rolagem suave, pra dar pra clicar na próxima seção em seguida
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest('a[href*="#"]');
+    if (link) travarPorUmInstante(1100);
+  });
+
+  // clique na setinha: volta o header
+  peek.addEventListener("click", () => {
+    travarPorUmInstante(1500);
+  });
+
+  // toque no topo da tela (celular)
+  window.addEventListener(
+    "touchstart",
+    (e) => {
+      const t = e.touches && e.touches[0];
+      if (t && t.clientY <= 70) mostrar();
+    },
+    { passive: true }
+  );
+
+  aoRolar();
+})();
